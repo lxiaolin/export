@@ -72,3 +72,16 @@ body {
     border: 1px solid #000000;
     width: 18%;
 }
+
+#align {
+    position: relative;
+    top: 15px;
+    width: 98%;
+}
+
+#select {
+    position: relative;
+    left: 20px;
+    width: 88%;
+    background: #c3bfc4;
+}

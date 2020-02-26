@@ -24,9 +24,9 @@
     </div>
 </header>
 <!-- 内容部分 -->
+<body>
 <section>
     <!-- TODO: write new code here-->
-    <body>
     <!--左下容器-->
     <div id="leftDown">
         <div id="header">Header</div>
@@ -37,14 +37,14 @@
             <form style="position: relative;top: 5px;">Sub-Title<br>
                 <label style="width: 100%;"><input type="text" id="input_subtitle"></label>
             </form>
-            <form style="position: relative;top: 15px;left: 10px;width: 98%;">Align:
-                <select style="width:85%;position: relative;left: 20px;background: #c3bfc4;">
+            <div id="align">Align:
+                <select id="select">
                     <option>a</option>
                     <option>b</option>
                     <option>c</option>
                     <option>d</option>
                 </select>
-            </form>
+            </div>
             <div id="logoAll">
                 <div style="position: absolute;top: 0px;">Logo</div>
                 <div style="border: 1px solid#333;padding: 10px;position: relative;top: 25px;height: 60%;"></div>
@@ -54,7 +54,6 @@
             <div id="updateLogo">Update Report</div>
         </div>
     </div>
-    </body>
     <!--  end of new code  -->
     <!--  自定义Alert  -->
     <aside id="alertDownloading" class="myAlert">
@@ -68,4 +67,5 @@
 <script type="text/javascript" src="../../../lib/jquery/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../../../lib/layui/layui.js"></script>
 <script type="text/javascript" src="js/export.js"></script>
+</body>
 </html>
