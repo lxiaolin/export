@@ -1,0 +1,40 @@
+.customScrollbar::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+}
+
+.customScrollbar::-webkit-scrollbar-button {
+    height: 0;
+    width: 0;
+    display: none;
+}
+
+.customScrollbar::-webkit-scrollbar-track,
+.customScrollbar::-webkit-scrollbar-thumb {
+    border: 0;
+    border-radius: 5px;
+}
+
+.customScrollbar::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+.customScrollbar::-webkit-scrollbar-thumb {
+    padding-top: 100px;
+    padding-left: 100px;
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset -1px -1px 0 rgba(0, 0, 0, .07);
+    background-color: #dadada;
+    min-height: 28px;
+    min-width: 28px;
+}
+
+.customScrollbar::-webkit-scrollbar-thumb:hover {
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .25);
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.customScrollbar::-webkit-scrollbar-thumb:active {
+    -webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, .35);
+    background-color: rgba(0, 0, 0, .5);
+}

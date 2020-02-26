@@ -1,0 +1,47 @@
+.icon-experiment {
+    background-position-y: 0;
+}
+
+.icon-plate {
+    background-position-y: -25px;
+}
+
+.icon-protocol {
+    background-position-y: -50px;
+}
+
+.icon-run {
+    background-position-y: -75px;
+}
+
+.icon-analysis {
+    background-position-y: -100px;
+}
+
+.icon-export {
+    background-position-y: -125px;
+}
+
+.icon-dataManage {
+    background-position-y: -150px;
+}
+
+.icon-help {
+    background-position-y: -175px;
+}
+
+.icon-wifi {
+    background-position-y: -144px;
+}
+
+.icon-machine {
+    background-position-y: -180px;
+}
+
+.icon-machineConnected {
+    background-position-y: -200px;
+}
+
+.icon-instrumentSetting{
+    background-position-y: -330px;
+}

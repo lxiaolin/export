@@ -1,0 +1,202 @@
+.deviceChannelSetting {
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    padding-left: 10px;
+    display: none;
+    z-index: 99;
+}
+
+.deviceChannelSettingHeader {
+    height: 40px;
+    border-bottom: 3px solid #59f;
+}
+
+.deviceChannelSettingLogoTitle {
+    margin: 0 10px 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/0.png');
+    background-size: cover;
+    float: left;
+}
+
+.deviceChannelSettingTitle {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20pt;
+    margin-left: 10px;
+}
+
+.divBtnShell {
+    float: right;
+    height: 28px;
+    margin-right: 15px;
+}
+
+.divBtnShell > div {
+    width: 100px;
+    height: 100%;
+    border: 3px solid #59f;
+    border-radius: 11px;
+    margin: 0 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.divBtnShell > div > img {
+    width: 20px;
+    height: 20px;
+    margin: 1px 5px 1px 10px;
+}
+
+.divBtnShell > div > span {
+    vertical-align: middle;
+}
+
+.deviceChannelSettingContent {
+    overflow: hidden;
+    margin: 10px 15px 0 0;
+    height: calc(100vh - 10px - 40px - 20px - 30px);
+    padding-left: 20px;
+}
+
+.deviceChannelSettingSectionTitle {
+    position: relative;
+    width: 300px;
+    padding-left: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 1.4em;
+    color: #fff;
+    background-color: #59f;
+    border-bottom-width: 0;
+    border-radius: 10px;
+}
+
+.icon-channel {
+    position: absolute;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px 0;
+    left: 20px;
+    background-size: cover;
+    background-image: url("../images/channel.png");
+}
+
+.channel {
+    padding-top: 10px;
+}
+
+.channel > div:nth-child(odd) {
+    display: flex;
+}
+
+.channel > div:nth-child(even) {
+    height: 40px
+}
+
+.channelTitle > div {
+    flex: 1;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    color: #59f;
+    font-size: 16pt;
+}
+
+.channelTop {
+    background: linear-gradient(to right, #5534ff, #5534ff, #3d49ff, #1f66ff, #43d269, #72ff22, #82ff27, #3cfc4f, #fbc211, #d7870e, #ae4b0a, #af1f14, #b91e24);
+    border-radius: 15px 15px 0 0;
+}
+
+.channelBottom {
+    background: linear-gradient(to right, #205bff, #235aff, #40a0ae, #67fb43, #92ff2f, #b2f323, #c7dd20, #dcc51d, #c14416, #a00a15, #7f0915, #640815, #630913);
+    border-radius: 0 0 15px 15px;
+}
+
+.channelTopBottom {
+    display: flex;
+}
+
+.channelTopBottom > div {
+    flex: 1;
+    line-height: 40px;
+    font-size: 16pt;
+    text-align: center;
+    color: #fff;
+}
+
+.channelContent {
+    padding-bottom: 30px;
+    border: 2px solid #59f;
+}
+
+.channelContent > section {
+    flex: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.channelContent div,
+.channelContent p {
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    font-size: 16pt;
+    color: lightgray;
+    cursor: pointer;
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+
+.channelContent input {
+    text-align: center;
+    color: lightgray;
+    border: 0;
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+}
+
+.channelContent input::-webkit-input-placeholder { /* WebKit browsers 适配谷歌 */
+    color: lightgray;
+}
+
+.channelContent input:-moz-placeholder { /* Mozilla Firefox 4 to 18 适配火狐 */
+    color: lightgray;
+}
+
+.channelContent input::-moz-placeholder { /* Mozilla Firefox 19+ 适配火狐 */
+    color: lightgray;
+}
+
+.channelContent input:-ms-input-placeholder { /* Internet Explorer 10+  适配ie*/
+    color: lightgray;
+}
+
+.channelContent input:focus {
+    color: #000 !important;
+}
+
+.channelSelected {
+    color: #000 !important;
+}
+
+.imgClear {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 7px;
+    right: 95px;
+    background: url("../images/clear.png") 0 0 no-repeat;
+    cursor: pointer;
+}
+
+.imgClear:hover {
+    background-position-x: -13px;
+}

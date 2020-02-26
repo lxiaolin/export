@@ -1,0 +1,196 @@
+body {
+    overflow: hidden;
+    /*background: #eee;*/
+    /*background-image: url("../images/furley_bg.png");*/
+}
+
+.top {
+    width: 100%;
+    height: 30px;
+    border-radius: 0 0 13px 13px;
+    background: #59f;
+    color: white;
+}
+
+.title {
+    float: left;
+    padding-left: 20px;
+}
+
+.home {
+    float: right;
+    padding-right: 20px;
+}
+
+.title,
+.home {
+    height: 30px;
+    line-height: 30px;
+    color: white !important;
+}
+
+.home:hover {
+    cursor: pointer;
+}
+
+.left {
+    width: 200px;
+    float: left;
+}
+
+.left > div:first-child {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    padding: 7px 0 0 0;
+}
+
+.left ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.left li {
+    width: 180px;
+    height: 35px;
+    line-height: 35px;
+    margin: 7px 0;
+    background: #aaa;
+    text-align: center;
+    border-radius: 0 0 6px 0;
+    padding-left: 20px;
+}
+
+.menuActive,
+.left li:hover {
+    cursor: pointer;
+    background: #ddd !important;
+}
+
+.content {
+    float: left;
+    position: relative;
+}
+
+.iframe {
+    border-width: 0;
+    display: none;
+    width: calc(100vw - 200px);
+    height: calc(100vh - 30px);
+    padding: 20px 0;
+}
+
+/* machine */
+.machineList,
+.btnConnect {
+    width: 160px;
+    height: 32px;
+    line-height: 29px;
+    margin: 20px 17px;
+    padding: 0 0 0 20px;
+    text-align: center;
+    border: 3px solid #59F;
+    border-radius: 12px;
+    font-size: smaller;
+}
+
+.btnConnect div {
+    width: 18px;
+    height: 18px;
+    background-image: url("../images/0.png");
+    background-size: cover;
+    margin: 4px;
+    display: inline-block;
+    position: absolute;
+    left: 30px;
+}
+
+.btnConnect:hover {
+    cursor: pointer;
+}
+
+.machine {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.machine li {
+    padding-left: 0;
+    height: 32px;
+    border: 1px solid #59f;
+    border-radius: 0 6px 6px 0;
+    border-left-width: 0;
+}
+
+.machine li span {
+    display: inline-block;
+    width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight: 700;
+    line-height: 30px;
+}
+
+.left li div:first-child,
+.machine li div:first-child,
+.machine li div:last-child {
+    margin: 5px;
+    display: inline-block;
+    position: absolute;
+}
+
+.left li div:first-child,
+.machine li div:first-child {
+    background-image: url("../images/0.png");
+    background-size: cover;
+    left: 10px;
+}
+
+.left li div:first-child {
+    width: 25px;
+    height: 25px;
+}
+
+.machine li div:first-child,
+.machine li div:last-child {
+    width: 20px;
+    height: 20px;
+}
+
+.machine li div:last-child {
+    border: 2px solid;
+    border-radius: 50%;
+    left: 140px;
+}
+
+.machineList {
+    position: relative;
+    overflow-y: auto;
+    height: unset;
+    line-height: unset;
+    flex: 1;
+    border-width: 0;
+    width: 197px;
+    margin: 0;
+    padding: 0;
+}
+
+.machineConnect span {
+    color: #0f0 !important;
+}
+
+.machineConnect div:last-child {
+    background: #0f0 !important;
+    border-color: #0f0 !important;
+}
+
+.machineDisconnect span {
+    color: #00f !important;
+}
+
+.machineDisconnect div:last-child {
+    background: #f00 !important;
+    border-color: #f00 !important;
+}

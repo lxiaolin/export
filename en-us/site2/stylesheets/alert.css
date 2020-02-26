@@ -1,0 +1,82 @@
+/* Alert 弹出层*/
+.myAlert {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(190, 190, 190, 0.7);
+    top: 0;
+    left: 0;
+}
+
+.myAlert > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 600px;
+    height: 140px;
+    margin: auto;
+    padding: 30px 25px;
+    border-radius: 15px;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.myAlert > div > p {
+    margin-right: 50px;
+    /*margin-bottom: 30px;*/
+    font-size: larger;
+}
+
+.myAlert .button {
+    border-radius: 8px;
+    background-color: rgba(85, 153, 255, 0.5);
+    float: right;
+    padding: 5px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.myAlert .button:hover {
+    color: red;
+}
+
+.myAlert label {
+    margin: 10px 20px 10px 0;
+}
+
+.myAlert label > input[type="checkbox"],
+.myAlert label > input[type="radio"] {
+    margin-right: 4px !important;
+}
+
+.myAlert label > input[type="number"] {
+    padding-left: 15px;
+}
+
+.myAlert label > span {
+    vertical-align: top;
+}
+
+.myAlert label > p {
+    display: inline-block;
+    line-height: 30px;
+}
+
+.myAlert label > input[type="text"] {
+    flex: 1;
+    height: 30px;
+    margin: 0 20px;
+}
+
+.imgClose {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 40px;
+    top: 35px;
+}

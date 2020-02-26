@@ -1,0 +1,104 @@
+body {
+    overflow: hidden;
+    padding-left: 10px;
+    /*background: #eee;*/
+    /*background-image: url("../images/furley_bg.png");*/
+}
+
+header {
+    height: 40px;
+    border-bottom: 3px solid #59f;
+}
+
+.border {
+    border: 2px solid #59f;
+    border-radius: 15px;
+}
+
+.logoTitle {
+    margin: 0 10px 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url('../images/0.png');
+    background-size: cover;
+    float: left;
+}
+
+.title {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20pt;
+    margin-left: 10px;
+}
+
+.content {
+    display: flex;
+    padding-left: 20px;
+}
+
+.content,
+.content0 {
+    overflow: hidden;
+    margin: 10px 15px 0 0;
+    height: calc(100vh - 40px - 10px);
+    width: calc(100vw - 10px - 15px);
+}
+
+.divBtnShell {
+    float: right;
+    height: 28px;
+    margin-right: 15px;
+}
+
+.divBtnShell > div {
+    width: 100px;
+    height: 100%;
+    border: 3px solid #59f;
+    border-radius: 11px;
+    margin: 0 10px;
+    float: left;
+    cursor: pointer;
+}
+
+.divBtnShell > div > img {
+    width: 20px;
+    height: 20px;
+    margin: 1px 5px 1px 10px;
+}
+
+.divBtnShell > div > span {
+    vertical-align: middle;
+}
+
+.icon-experiment {
+    background-position-y: 0;
+}
+
+.icon-plate {
+    background-position-y: -30px;
+}
+
+.icon-protocol {
+    background-position-y: -60px;
+}
+
+.icon-run {
+    background-position-y: -90px;
+}
+
+.icon-analysis {
+    background-position-y: -120px;
+}
+
+.icon-export {
+    background-position-y: -150px;
+}
+
+.icon-dataManage {
+    background-position-y: -180px;
+}
+
+.icon-help {
+    background-position-y: -210px;
+}
