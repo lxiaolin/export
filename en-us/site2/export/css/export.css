@@ -1,7 +1,7 @@
 body {
 }
 
-#leftDown {
+.leftDown {
     background: #f5f1f6;
     width: 30%;
     height: 45vh;
@@ -11,25 +11,13 @@ body {
     padding: 10px;
 }
 
-#header {
+.header {
     position: absolute;
     top: 0px;
     left: 15px;
 }
 
-#input_title {
-    position: relative;
-    top: 5px;
-    width: 98%;
-}
-
-#input_subtitle {
-    position: relative;
-    top: 5px;
-    width: 98%;
-}
-
-#inputAll {
+.experiment {
     position: absolute;
     top: 20px;
     left: 5px;
@@ -37,51 +25,71 @@ body {
     height: 100%;
 }
 
-#logoAll {
+.input_title {
     position: relative;
-    top: 20px;
+    top: 5px;
+    width: 98%;
+}
+
+.input_subtitle {
+    position: relative;
+    top: 5px;
+    width: 98%;
+}
+
+
+.logoAll {
+    margin: 1% 0%;
     width: 98%;
     height: 58%;
 }
 
-#selectLogo {
+.selectLogo {
     background: #c3bfc4;
     padding: 3px;
     position: relative;
-    top: 30px;
+    top: 3%;
     margin-right: 10px;
     border: 1px solid #000000;
     float: right;
 }
 
-#clearLogo {
+.clearLogo {
     background: #c3bfc4;
     padding: 3px;
     position: relative;
-    top: 30px;
+    top: 3%;
     margin-right: 5px;
     border: 1px solid #000000;
     float: right;
 }
 
-#updateLogo {
+.updateLogo {
     background: #c3bfc4;
     padding: 3px;
     position: relative;
+    top: 20%;
     left: 40%;
     border: 1px solid #000000;
-    width: 18%;
+    width: 20%;
 }
 
-#align {
-    position: relative;
-    top: 15px;
+.align {
+    margin: 0.5% 0% 0% 0%;
     width: 98%;
 }
 
-#select {
+.select {
     position: relative;
     left: 20px;
     width: 88%;
     background: #c3bfc4;
+}
+
+.logoText {
+    border: 1px solid #333;
+    padding: 10px;
+    position: relative;
+    top: 2%;
+    height: 55%
 }
