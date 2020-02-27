@@ -25,44 +25,40 @@
 </header>
 <!-- 内容部分 -->
 <body>
-<section>
-    <!-- TODO: write new code here-->
-    <!--左下容器-->
-    <div class="leftDown">
-        <div class="header"><label>Header</label></div>
-        <div class="experiment">
-            <section style="margin: 2% 0% 0% 0%;">
-                <label>Title</label>
-                <label style="width: 100%;position: relative;top: 5%;"><input type="text" class="input_title"></label>
-            </section>
+<!-- TODO: write new code here-->
+<!--左下容器-->
+<div class="leftDown">
+    <!--header-->
+    <div class="header">
+        <div class="topHeader">Header</div>
 
-            <section>
-                <label>Sub-Title</label>
-                <label style="width: 100%;position: relative;top: 5%;"><input type="text"
-                                                                              class="input_subtitle"></label>
-            </section>
+        <section style="margin: 2% 0% 0% 0%;/*border: 1px solid red;*/">
+            <span style="display: block">Title</span><input type="text" class="input_title"></label>
+        </section>
 
-            <section class="align">
-                <label>Align:</label>
-                <select class="select">
-                    <option>Left</option>
-                    <option>Right</option>
-                    <option selected>Center</option>
-                </select>
-            </section>
+        <section style="margin: 0%;/*border: 1px solid red;*/">
+            <span style="display: block">Sub-Title</span><input type="text" class="input_subtitle"></label>
+        </section>
 
-            <section class="logoAll">
-                <div><label>Logo</label></div>
-                <article class="logoText"></article>
-                <div class="clearLogo"><label>Clear Logo</label></div>
-                <div class="selectLogo"><label>Select Logo</label></div>
-                <div class="updateLogo"><label>Update Report</label></div>
-            </section>
-        </div>
-        <!--  end of new code  -->
-        <!--  自定义Alert  -->
+        <section class="align">
+            <span style="margin-left: 1.5%;">Align:</span>
+            <select class="select">
+                <option>Left</option>
+                <option>Right</option>
+                <option selected>Center</option>
+            </select>
+        </section>
+
+        <section class="logoAll">
+            <span style="display: block;margin-top: -2%;margin-left: 3%;">Logo</span>
+            <article class="logoText"></article>
+            <div class="clearLogo">Clear Logo</div>
+            <div class="selectLogo">Select Logo</div>
+        </section>
     </div>
-</section>
+    <!--  end of new code  -->
+    <!--  自定义Alert  -->
+</div>
 <aside id="alertDownloading" class="myAlert">
     <div style="height: 100px;">
         <p>It is generating file that can be export, please wait for a few seconds.</p>

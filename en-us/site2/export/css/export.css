@@ -12,44 +12,33 @@ body {
 }
 
 .header {
-    position: absolute;
-    top: 0px;
-    left: 15px;
-}
-
-.experiment {
-    position: absolute;
-    top: 20px;
-    left: 5px;
-    width: 100%;
+    border: 1px solid #dfdbe0;
     height: 100%;
 }
 
+.topHeader {
+    /*border: 1px solid red;*/
+    margin-top: -2%;
+    padding-left: 1.5%;
+}
+
 .input_title {
-    position: relative;
-    top: 5px;
-    width: 98%;
+    /*border: 1px solid blueviolet;*/
+    margin-top: 1.5%;
+    width: 100%;
 }
 
 .input_subtitle {
-    position: relative;
-    top: 5px;
-    width: 98%;
-}
-
-
-.logoAll {
-    margin: 1% 0%;
-    width: 98%;
-    height: 58%;
+    /*border: 1px solid blueviolet;*/
+    margin-top: 1.5%;
+    width: 100%;
 }
 
 .selectLogo {
     background: #c3bfc4;
     padding: 3px;
-    position: relative;
-    top: 3%;
-    margin-right: 10px;
+    margin-top: 1.5%;
+    margin-right: 1.5%;
     border: 1px solid #000000;
     float: right;
 }
@@ -57,39 +46,54 @@ body {
 .clearLogo {
     background: #c3bfc4;
     padding: 3px;
-    position: relative;
-    top: 3%;
-    margin-right: 5px;
+    margin-top: 1.5%;
+    margin-right: 1.5%;
     border: 1px solid #000000;
     float: right;
 }
 
-.updateLogo {
-    background: #c3bfc4;
-    padding: 3px;
-    position: relative;
-    top: 20%;
-    left: 40%;
-    border: 1px solid #000000;
-    width: 20%;
-}
 
 .align {
-    margin: 0.5% 0% 0% 0%;
-    width: 98%;
+    /*border: 1px solid red;*/
+    margin: 2% 0% 0% 0%;
+    width: 100%;
 }
 
 .select {
-    position: relative;
-    left: 20px;
-    width: 88%;
+    /*border: 1px solid blueviolet;*/
+    margin-left: 3%;
+    width: 87%;
     background: #c3bfc4;
+}
+
+.logoAll {
+    border: 1px solid #dfdbe0;
+    margin: 2% 0% 0% 0%;
+    width: 100%;
+    height: 48%;
 }
 
 .logoText {
     border: 1px solid #333;
+    margin: 1px;
     padding: 10px;
-    position: relative;
-    top: 2%;
-    height: 55%
+    height: 70%;
+}
+
+.button {
+    /*border: 1px solid red;*/
+    margin: 1% 0% 0% 0%;
+}
+
+.updateButton {
+    /*background: #c3bfc4;
+    padding: 3px;
+    margin-left: 40%;
+    border: 1px solid #000000;
+    width: 20%;*/
+
+    background: #c3bfc4;
+    padding: 3px;
+    margin:0% 40%;
+    border: 1px solid #000000;
 }
