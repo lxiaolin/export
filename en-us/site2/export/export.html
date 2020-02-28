@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/export.css">
     <link rel="stylesheet" type="text/css" href="../stylesheets/alert.css">
 </head>
+<body>
 <header>
     <div class="logoTitle icon-export"></div>
     <div class="title">Export</div>
@@ -24,43 +25,60 @@
     </div>
 </header>
 <!-- 内容部分 -->
-<body>
 <!-- TODO: write new code here-->
-<!--左下容器-->
-<div class="leftDown">
-    <!--header-->
-        <div class="header">
-            <div class="topHeader">Header</div>
-
-            <section style="margin: 2% 0% 0% 0%;/*border: 1px solid red;*/">
-                <span style="display: block">Title</span><input type="text" class="input_title"></label>
-            </section>
-
-            <section style="margin: 0%;/*border: 1px solid red;*/">
-                <span style="display: block">Sub-Title</span><input type="text" class="input_subtitle"></label>
-            </section>
-
-            <section class="align">
-                <span style="margin-left: 1.5%;">Align:</span>
-                <select class="select">
-                    <option>Left</option>
-                    <option>Right</option>
-                    <option selected>Center</option>
-                </select>
-            </section>
-
-            <section class="logoAll">
-                <span style="display: block;margin-top: -2%;margin-left: 3%;">Logo</span>
-                <article class="logoText"></article>
-                <div class="clearLogo">Clear Logo</div>
-                <div class="selectLogo">Select Logo</div>
-            </section>
-        </div>
-
-    <div class="updateButton">Update Report</div>
-    <!--  end of new code  -->
-    <!--  自定义Alert  -->
+<!--header-->
+<div style="height: calc(100vh - 40px);width: calc(100vw - 10px);">
+    <!--左容器-->
+    <div style="height: 100%;width: 35%;float: left;">
+        <!--左上容器-->
+        <section style="height: 50%;width: 100%;"></section>
+        <!--左下容器-->
+        <section style="height: 50%;width: 100%;">
+            <div class="leftDown">
+                <div class="header">
+                    <div style="position: absolute;top: -12px;left: 20px;background-color: #fff;">
+                        Header
+                    </div>
+                    <div class="_title">
+                        <div>Title</div>
+                        <input type="text">
+                    </div>
+                    <div class="subtitle">
+                        <div>Sub-Title</div>
+                        <input type="text">
+                    </div>
+                    <div class="align">
+                        <div>Align:</div>
+                        <select>
+                            <option>Left</option>
+                            <option>Right</option>
+                            <option selected>Center</option>
+                        </select>
+                    </div>
+                    <div class="logoAll">
+                        <div style="position: absolute;top:-12px;left:20px;background-color: #fff;">Logo
+                        </div>
+                        <div class="logoText">
+                            <img src="../images/text.jpg" alt=""
+                                 style="width: 100%;height: 100%;border: 1px solid #000">
+                        </div>
+                        <div class="clearLogo">Clear Logo</div>
+                        <div class="selectLogo">Select Logo</div>
+                    </div>
+                    <!-- <div class="clearLogo">Clear Logo</div>
+                     <div class="selectLogo">Select Logo</div>-->
+                </div>
+            </div>
+            <div class="button">
+                <div class="updateButton">Update Report</div>
+            </div>
+        </section>
+    </div>
+    <!--右容器-->
+    <div style="height: 100%;width: 65%;float: right;"></div>
 </div>
+<!--  end of new code  -->
+<!--  自定义Alert  -->
 <aside id="alertDownloading" class="myAlert">
     <div style="height: 100px;">
         <p>It is generating file that can be export, please wait for a few seconds.</p>
