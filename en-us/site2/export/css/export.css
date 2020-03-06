@@ -1,8 +1,10 @@
+/*左下容器*/
 .leftDown {
     height: calc(100% - 30px);
     width: 100%;
     padding: 15px 15px 5px 15px;
     border: 1px solid #8a868b;
+    margin-top: -5px;
 }
 
 .header {
@@ -119,3 +121,35 @@
 .scroll::-webkit-scrollbar {
     display: none;
 }
+
+/*左上容器*/
+.leftUp {
+    height: calc(100% - 15px);
+    width: 100%;
+    padding: 0px 5px;
+    border: 1px solid #8a868b;
+    margin-top: 5px;
+    overflow: auto;
+}
+
+.leftUp ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.main ul {
+    display: none;
+}
+
+.listImg {
+    background-image: url(../images/leftUp1.png); /*在CSS里面应该如何定位？？*/
+}
+
+.div_1 {
+    width: 100px;
+    height: 50px;
+    border: 1px solid red;
+    /*background: url(../images/leftUp+.png);
+    margin: 10px;*/
+}
+

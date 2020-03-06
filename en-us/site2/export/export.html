@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Export</title>
     <link rel="stylesheet" type="text/css" href="../../../lib/layui/css/layui.css">
     <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap/css/bootstrap.css">
@@ -27,12 +28,235 @@
 </header>
 <!-- 内容部分 -->
 <!-- TODO: write new code here-->
-<!--header-->
 <div style="height: calc(100vh - 40px);width: calc(100vw - 10px);">
     <!--左容器-->
     <div style="height: 100%;width: 35%;float: left;">
         <!--左上容器-->
-        <section style="height: 50%;width: 100%;"></section>
+        <section style="height: 50%;width: 100%;">
+            <div class="leftUp">
+                <ul style="padding: 0">
+                    <div style="background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                        <li class="main">
+                            <input type="checkbox"><a href="#"
+                                                      style="text-decoration: none;color: #000000;">Experiment</a>
+                            <ul>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Information</a>
+                                        <ul>
+                                            <li><input type="checkbox">Name</input></li>
+                                            <li><input type="checkbox">Barcode</input></li>
+                                            <li><input type="checkbox">User Name</input></li>
+                                            <li><input type="checkbox">Instrument Name</input></li>
+                                            <li><input type="checkbox">Block Type</input></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Experiment
+                                        Setting</a>
+                                        <ul>
+                                            <li><input type="checkbox">Experiment Type</input></li>
+                                            <li><input type="checkbox">Chemistry</input></li>
+                                            <li><input type="checkbox">Run Mode</input></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Parameter
+                                        Setting</a>
+                                        <ul>
+                                            <li><input type="checkbox">Reaction Volume</input></li>
+                                            <li><input type="checkbox">Lid Heating Switch</input></li>
+                                            <li><input type="checkbox">Cover Temp</input></li>
+                                            <li><input type="checkbox">Lid Close Temp</input></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li><input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Comments</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li><input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Load
+                                        Preview</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                    </div>
+                    <div style="background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                        <li class="main">
+                            <input type="checkbox"><a href="#" style="text-decoration: none;color: #000000;">Plate
+                            edit</a>
+                            <ul>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Plate
+                                        Edit</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Task
+                                        信息</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Target
+                                        信息</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Split
+                                        Plate</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Sample
+                                        信息</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Standard
+                                        信息</a>
+                                        <ul>
+                                            <li><input type="checkbox">Select Target</input></li>
+                                            <li><input type="checkbox">Standard Amount</input></li>
+                                            <li><input type="checkbox">Standard Number</input></li>
+                                            <li><input type="checkbox">Factor</input></li>
+                                            <li><input type="checkbox">Dilution Factor</input></li>
+                                            <li><input type="checkbox">Unit</input></li>
+                                            <li><input type="checkbox">Replicates</input></li>
+                                            <li><input type="checkbox">Increasing/Decreasing</input></li>
+                                            <li><input type="checkbox">Assignment</input></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                    </div>
+                    <div style="background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                        <li class="main">
+                            <input type="checkbox"><a href="#"
+                                                      style="text-decoration: none;color: #000000;">Protocol Edit</a>
+                            <ul>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Protocol</a>
+                                        <ul>
+                                            <li><input type="checkbox">Protocol graph</input></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                    </div>
+                    <div style="background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                        <li class="main">
+                            <input type="checkbox"><a href="#"
+                                                      style="text-decoration: none;color: #000000;">Run 原始结果信息</a>
+                            <ul>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Run
+                                        time</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Temperature
+                                        curve</a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                    </div>
+                    <div style="background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                        <li class="main">
+                            <input type="checkbox"><a href="#"
+                                                      style="text-decoration: none;color: #000000;">Analysis 信息</a>
+                            <ul>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Quantification</a>
+                                        <ul>
+                                            <li><input type="checkbox">Amplification curve-Cq</input></li>
+                                            <li><input type="checkbox">Amplification curve-log</input></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">标准曲线</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Quantification
+                                        data</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Melt
+                                        curve</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Melt
+                                        data</a>
+                                    </li>
+                                </div>
+                                <div style="margin-left: -5px;background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                                    <li>
+                                        <input type="checkbox"><a href="#"
+                                                                  style="text-decoration: none;color: #000000;">Gene
+                                        expression</a>
+                                        <ul>
+                                            <li><input type="checkbox">Bar 图</input></li>
+                                            <li><input type="checkbox">分析模型</input></li>
+                                            <li><input type="checkbox">gene expression 数据</input></li>
+                                        </ul>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                    </div>
+                    <div style="background: url(../images/leftUp+.png) no-repeat 5px 6px;padding-left: 15px;">
+                        <li class="main">
+                            <input type="checkbox"><a href="#"
+                                                      style="text-decoration: none;color: #000000;">QC</a>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </section>
         <!--左下容器-->
         <section style="height: 50%;width: 100%;">
             <div class="leftDown">
@@ -46,7 +270,7 @@
                     </div>
                     <div class="subtitle">
                         <div>Sub-Title</div>
-                        <input type="text" id="myDate">
+                        <input type="text" id="myDate" readonly>
                     </div>
                     <div class="align">
                         <div>Align:</div>
@@ -66,8 +290,6 @@
                         <div class="clearLogo">Clear Logo</div>
                         <div class="selectLogo">Select Logo</div>
                     </div>
-                    <!-- <div class="clearLogo">Clear Logo</div>
-                     <div class="selectLogo">Select Logo</div>-->
                 </div>
             </div>
             <div class="button">
@@ -78,6 +300,7 @@
     <!--右容器-->
     <div style="height: 100%;width: 65%;float: right;"></div>
 </div>
+
 <!--  end of new code  -->
 <!--  自定义Alert  -->
 <aside id="alertDownloading" class="myAlert">
@@ -95,6 +318,14 @@
     var now = new Date();
     myDate.value = now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDate() + ' ' + now.getHours() + ':' + now.getMinutes();
 </script>
-
+<script>
+    $(document).ready(function () {
+        $(".main  a").click(
+            function () {
+                $(this).next().toggle();
+            }
+        );
+    });
+</script>
 </body>
 </html>
