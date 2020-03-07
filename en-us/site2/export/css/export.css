@@ -1,5 +1,5 @@
 /*左下容器*/
-.leftDown {
+.bottomLeft {
     height: calc(100% - 30px);
     width: 100%;
     padding: 15px 15px 5px 15px;
@@ -79,22 +79,33 @@
     margin: 5px;
     border: 1px solid #dfdbe0;
     position: relative;
+    padding: 10px;
 }
 
 .logoText {
-    height: 90%;
     width: 100%;
     padding: 10px;
-    overflow: hidden;
-    margin-bottom: -5px;
+    overflow: auto;
+    margin: 0 0 5px 0;
+    border: 1px solid #000;
+    height: calc(100% - 25px);
 }
 
-.selectLogo {
+#selectLogo {
     line-height: 20px;
     margin-right: 10px;
     background: #c3bfc4;
     border: 1px solid #000000;
     float: right;
+    cursor: pointer;
+}
+
+#inputLogo{
+    height: 20px;
+    width: 76px;
+    margin-right: -76px;
+    float: right;
+    opacity: 0;
 }
 
 .clearLogo {
@@ -103,11 +114,13 @@
     background: #c3bfc4;
     border: 1px solid #000000;
     float: right;
+    cursor: pointer;
 }
 
 .button {
     line-height: 20px;
     width: 100%;
+    cursor: pointer;
 }
 
 .updateButton {
@@ -123,7 +136,7 @@
 }
 
 /*左上容器*/
-.leftUp {
+.topLeft {
     height: calc(100% - 15px);
     width: 100%;
     padding: 0 5px;
@@ -132,9 +145,13 @@
     overflow: auto;
 }
 
-.leftUp ul {
+.topLeft ul {
     list-style: none;
     padding-left: 20px;
+}
+
+.topLeft ul li {
+    margin: 5px 0;
 }
 
 .main ul {
@@ -142,8 +159,7 @@
 }
 
 .picture1 {
-    background: url(../../images/leftUp+.png) no-repeat;
-    padding-left: 15px;
+    background: url(../../images/topLeft+.png) no-repeat;
     height: 9px;
     width: 9px;
     float: left;
@@ -151,7 +167,7 @@
 }
 
 .picture2 {
-    background: url(../../images/leftUp-.png) no-repeat;
+    background: url(../../images/topLeft-.png) no-repeat;
     padding-left: 15px;
     height: 9px;
     width: 9px;
@@ -166,10 +182,13 @@
     margin-left: 23px;
 }
 
-.leftUp ul li ul li input{
+.topLeft ul li ul li input {
     margin-left: 10px;
 }
 
-.leftUp ul li input{
-    margin-left: -10px;
+.topLeft ul li input {
+    vertical-align: top;
+    margin-right: 2px;
 }
+
+/*右容器*/
