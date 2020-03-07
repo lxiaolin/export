@@ -85,7 +85,7 @@
     height: 90%;
     width: 100%;
     padding: 10px;
-    overflow: auto;
+    overflow: hidden;
     margin-bottom: -5px;
 }
 
@@ -168,4 +168,8 @@
 
 .leftUp ul li ul li input{
     margin-left: 10px;
+}
+
+.leftUp ul li input{
+    margin-left: -10px;
 }
