@@ -145,11 +145,13 @@
     background-image: url(../images/leftUp1.png); /*在CSS里面应该如何定位？？*/
 }
 
-.div_1 {
-    width: 100px;
-    height: 50px;
-    border: 1px solid red;
-    /*background: url(../images/leftUp+.png);
-    margin: 10px;*/
+.divList {
+    text-decoration: none;
+    color: #000000;
+    margin-top: -22px;
+    margin-left: 23px;
 }
 
+.leftUp ul li ul li input{
+    margin-left: 10px;
+}
