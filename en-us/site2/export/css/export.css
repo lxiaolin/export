@@ -141,8 +141,22 @@
     display: none;
 }
 
-.listImg {
-    background-image: url(../images/leftUp1.png); /*在CSS里面应该如何定位？？*/
+.picture1 {
+    background: url(../../images/leftUp+.png) no-repeat;
+    padding-left: 15px;
+    height: 9px;
+    width: 9px;
+    float: left;
+    margin: 6px 5px;
+}
+
+.picture2 {
+    background: url(../../images/leftUp-.png) no-repeat;
+    padding-left: 15px;
+    height: 9px;
+    width: 9px;
+    float: left;
+    margin: 6px 5px;
 }
 
 .divList {

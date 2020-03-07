@@ -10,28 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/export.css">
     <link rel="stylesheet" type="text/css" href="../stylesheetslert.css">
     <script type="javascript" src="js/export.js"></script>
-
-    <style type="text/css">
-        .picture1 {
-            background: url(../images/leftUp+.png) no-repeat;
-            padding-left: 15px;
-
-            height: 9px;
-            width: 9px;
-            float: left;
-            margin: 6px 5px;
-        }
-
-        .picture2 {
-            background: url(../images/leftUp-.png) no-repeat;
-            padding-left: 15px;
-
-            height: 9px;
-            width: 9px;
-            float: left;
-            margin: 6px 5px;
-        }
-    </style>
 </head>
 <body>
 <header>
@@ -59,7 +37,7 @@
                 <ul style="padding: 0">
 <!--                    <div class="picture1">-->
                         <li class="main">
-                            <input type="checkbox" style="margin-left: -10px">Experiment
+                            <input type="checkbox" style="margin-left: -10px"><span>Experiment</span>
                             <div class="picture1"></div>
                             <ul>
                                 <li>
@@ -300,7 +278,7 @@
 
             /*图标变换*/
             $(document).ready(function () {
-                $(".picture1").click(function () {
+                $(".picture1").on("click",function () {
                     if ($(this).hasClass('picture1')) {
                         $(this).addClass('picture2').removeClass('picture1');
                     } else {
@@ -309,5 +287,7 @@
                 });
             })
         </script>
+    </side>
+</aside>
 </body>
 </html>
