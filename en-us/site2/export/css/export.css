@@ -126,7 +126,7 @@
 .leftUp {
     height: calc(100% - 15px);
     width: 100%;
-    padding: 0px 5px;
+    padding: 0 5px;
     border: 1px solid #8a868b;
     margin-top: 5px;
     overflow: auto;
