@@ -41,6 +41,6 @@ fileDom.addEventListener("change", e => {
 
 /*清除图片*/
 $(".clearLogo").on("click", function () {
-    var initialize_picture = document.getElementById("preview");
-    initialize_picture.src=""
+    var blank_preview = document.getElementById("preview");
+    blank_preview.src=""
 })
