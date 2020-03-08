@@ -100,7 +100,9 @@
     cursor: pointer;
 }
 
-#inputLogo{
+#inputLogo {
+    cursor: pointer;
+    font-size: 0;
     height: 20px;
     width: 76px;
     margin-right: -76px;
@@ -192,3 +194,47 @@
 }
 
 /*右容器*/
+.right {
+    height: 99%;
+    width: 99.5%;
+    background-color: #d8d8d8;
+    padding: 10px;
+    overflow: auto;
+    margin: 4.5px 1px;
+}
+
+.right div {
+    overflow: hidden;
+    padding: 2.5px 3px;
+    border: 2px outset #000;
+    height: 50px;
+    width: 1215px;
+    background-color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.docTittle {
+    font-size: 22pt;
+}
+
+.docSubTittle {
+    font-size: 16pt;
+}
+
+.docH1 {
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+.docH2 {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.docText {
+    text-align: left;
+    text-indent: 2em;
+    letter-spacing: 0.5px;
+    line-height: 1.5em;
+}
+
