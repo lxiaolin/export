@@ -170,7 +170,6 @@
 
 .picture2 {
     background: url(../../images/topLeft-.png) no-repeat;
-    padding-left: 15px;
     height: 9px;
     width: 9px;
     float: left;
@@ -195,8 +194,8 @@
 
 /*右容器*/
 .right {
-    height: 99%;
-    width: 99.5%;
+    height: 100%;
+    width: 65%;
     background-color: #d8d8d8;
     padding: 10px;
     overflow: auto;
