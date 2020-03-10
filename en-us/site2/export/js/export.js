@@ -43,8 +43,24 @@ $(function () {
         var blank_preview = document.getElementById("preview");
         blank_preview.src = ""
     })
-
-
-
 });
+
+/*缩放*/
+window.onload = function () {
+    var myScale = document.getElementById('scale');
+    myScale.onmousewheel = mouseScale;  //给div添加鼠标滚轮事件
+    function mouseScale(e) {
+        var flag = true;  //设置鼠标向上还是向下滚动的变量
+        // flag = e.wheelDelta > 0 ? true : false;
+        flag = e.wheelDelta > 0;
+        if (flag) { //如果滚轮向上
+            this.style.height = this.offsetHeight + 28 + 'px';
+            this.style.width = this.offsetWidth + 20 + 'px';
+        } else {
+            this.style.height = this.offsetHeight - 28+ 'px';
+            this.style.width = this.offsetWidth - 20 + 'px';
+        }
+        return false;
+    }
+}
 
