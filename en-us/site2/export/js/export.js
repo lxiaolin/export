@@ -20,6 +20,7 @@ $(function () {
         }
     });
 
+
     /*上传图片*/
     let fileDom = document.getElementById("inputLogo");
     let previewDom = document.getElementById("preview");
