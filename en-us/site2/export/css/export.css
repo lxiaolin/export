@@ -207,10 +207,8 @@
     overflow: hidden;
     padding: 2.54cm 3.17cm;
     border: 1px outset;
-    height: 100%;
-    width: 60%;
-    min-width: 607px; /*在缩放的时候保持原有的宽度不变,想要在缩放时还是width=60%,但是设置min-width=60%没有效果,就先设置成607px*/
-    min-height: 801px;
+    height: 29.7cm;
+    width: 21cm;
     background-color: #FFF;
     margin: auto;
     line-height: 1.5;
