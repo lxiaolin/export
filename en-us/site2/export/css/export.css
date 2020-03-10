@@ -193,7 +193,7 @@
 }
 
 /*右容器*/
-.right {
+.right{
     height: 100%;
     width: 65%;
     background-color: #d8d8d8;
@@ -239,3 +239,51 @@
     line-height: 1.5em;
 }
 
+.change0{
+    transform: scale(0.5);
+}
+
+.change1{
+    transform: scale(0.6);
+}
+
+.change2{
+    transform: scale(0.7);
+}
+
+.change3{
+    transform: scale(0.8);
+}
+
+.change4{
+    transform: scale(0.9);
+}
+
+.change5{
+    transform: scale(1);
+}
+
+.change6{
+    transform-origin: left top;
+    transform: scale(1.2);
+}
+
+.change7{
+    transform-origin: left top;
+    transform: scale(1.4);
+}
+
+.change8{
+    transform-origin: left top;
+    transform: scale(1.6);
+}
+
+.change9{
+    transform-origin: left top;
+    transform: scale(1.8);
+}
+
+.change10{
+    transform-origin: left top;
+    transform: scale(2);
+}

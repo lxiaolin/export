@@ -43,10 +43,27 @@ $(function () {
     $(".clearLogo").on("click", function () {
         let blank_preview = document.getElementById("preview");
         blank_preview.src = ""
-    })
+    });
+
+    /*缩放*/
+    let count = 5;
+    $(".change_up").on("click", function() {
+        if(count < 10) {
+            $(".right div").removeClass("change" + count).addClass("change" + ++count);
+        }
+    });
+
+    $(".change_down").on("click", function() {
+        if(count > 0 && count <= 10) {
+            $(".right div").removeClass("change" + count).addClass("change" + --count);
+        }
+    });
+
+
 });
 
-/*缩放*/
+/*
+/!*缩放*!/
 window.onload = function () {
     let myScale = document.getElementById('scale');
     myScale.onmousewheel = mouseScale;  //给div添加鼠标滚轮事件
@@ -58,10 +75,15 @@ window.onload = function () {
             this.style.height = this.offsetHeight + 28 + 'px';
             this.style.width = this.offsetWidth + 20 + 'px';
         } else {
-            this.style.height = this.offsetHeight - 28+ 'px';
+            this.style.height = this.offsetHeight - 28 + 'px';
             this.style.width = this.offsetWidth - 20 + 'px';
         }
         return false;
     }
 }
+
+
+*/
+
+
 
