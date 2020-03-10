@@ -1,6 +1,7 @@
 $(function () {
     /*显示时间*/
     var now = new Date();
+    var myDate = document.getElementById("myDate")
     myDate.value = now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDate() + ' ' + now.getHours() + ':' + now.getMinutes();
 
     /*文件树开关*/
@@ -40,7 +41,10 @@ $(function () {
     /*清除图片*/
     $(".clearLogo").on("click", function () {
         var blank_preview = document.getElementById("preview");
-        blank_preview.src=""
+        blank_preview.src = ""
     })
+
+
+
 });
 
