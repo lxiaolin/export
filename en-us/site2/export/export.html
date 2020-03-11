@@ -38,7 +38,7 @@
                 <ul style="padding: 0">
                     <li class="main">
                         <input type="checkbox" checked id="chk_experiment"><span>Experiment</span>
-                        <div class="picture1"></div>
+                        <div class="expand"></div>
                         <ul>
                             <li>
                                 <input type="checkbox" checked id="chk_information">
@@ -82,7 +82,7 @@
                     </li>
                     <li class="main">
                         <input type="checkbox" checked id="chk_plateEdit"><span>Plate edit</span>
-                        <div class="picture1"></div>
+                        <div class="expand"></div>
                         <ul>
                             <li>
                                 <input type="checkbox" checked disabled>
@@ -123,7 +123,7 @@
                     </li>
                     <li class="main">
                         <input type="checkbox" checked id="chk_protocolEdit"><span>Protocol Edit</span>
-                        <div class="picture1"></div>
+                        <div class="expand"></div>
                         <ul>
                             <li>
                                 <input type="checkbox" checked disabled>
@@ -136,7 +136,7 @@
                     </li>
                     <li class="main">
                         <input type="checkbox" checked id="chk_run"><span>Run 原始结果信息</span>
-                        <div class="picture1"></div>
+                        <div class="expand"></div>
                         <ul>
                             <li>
                                 <input type="checkbox" checked disabled>
@@ -150,7 +150,7 @@
                     </li>
                     <li class="main">
                         <input type="checkbox" checked disabled><span>Analysis 信息</span>
-                        <div class="picture1"></div>
+                        <div class="expand"></div>
                         <ul>
                             <li>
                                 <input type="checkbox" checked disabled>
@@ -189,7 +189,7 @@
                     </li>
                     <li class="main">
                         <input type="checkbox" checked id="chk_qc"><span>QC</span>
-                        <div class="picture1"></div>
+                        <div class="expand"></div>
                     </li>
                 </ul>
             </div>
@@ -232,15 +232,15 @@
                     </div>
                 </div>
             </div>
-            <div class="button">
+            <!--<div class="button">
                 <div class="updateButton">Update Report</div>
-            </div>
+            </div>-->
         </section>
     </div>
     <!--右容器-->
     <div id="right">
-        <!--<span class="change_down" style="margin-right: 10px;">缩小</span>
-        <span class="change_up">放大</span>-->
+        <span class="change_down" style="position: fixed;left: 37%;top: 10%;z-index: 1;">缩小</span>
+        <span class="change_up" style="position: fixed;left: 37%;z-index: 1;">放大</span>
         <div class="change5"></div>
     </div>
 </section>
@@ -256,6 +256,7 @@
     <script type="text/javascript" src="../../../lib/jquery/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="../../../lib/layui/layui.js"></script>
     <script type="text/javascript" src="js/export.js"></script>
+    <script type="text/javascript" src="js/export1.js"></script>
 </aside>
 </body>
 </html>

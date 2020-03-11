@@ -1,6 +1,6 @@
 /*左下容器*/
 .bottomLeft {
-    height: calc(100% - 30px);
+    height: 100%;
     width: 100%;
     padding: 15px 15px 5px 15px;
     border: 1px solid #8a868b;
@@ -160,7 +160,7 @@
     display: none;
 }
 
-.picture1 {
+.expand {
     background: url(../../images/topLeft+.png) no-repeat;
     height: 9px;
     width: 9px;
@@ -168,7 +168,7 @@
     margin: 6px 5px;
 }
 
-.picture2 {
+.collapse_ {
     background: url(../../images/topLeft-.png) no-repeat;
     height: 9px;
     width: 9px;
