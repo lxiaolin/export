@@ -61,27 +61,23 @@ $(function () {
 
     /*滚轮缩放*/
     let count = 5;
-    let MouseWheelHandler = function (e) {
-        // e.preventDefault();
-        var e = e || event;
-        if (event.altKey) {
-            if (e.wheelDelta > 0) {
+    $("#right").on("wheel", function (e) {
+        if (keyCtrlDowning) {
+            e.preventDefault();
+            if (event.wheelDelta > 0) {
                 if (count < 10) {
-                    $(".right div").removeClass("change" + count).addClass("change" + ++count);
+                    $(this).children("div").removeClass().addClass("change" + (++count));
                 }
-            } else if (e.wheelDelta < 0) {
+            } else if (event.wheelDelta < 0) {
                 if (count > 0 && count <= 10) {
-                    $(".right div").removeClass("change" + count).addClass("change" + --count);
+                    $(this).children("div").removeClass().addClass("change" + (--count));
                 }
             }
         }
-    };
+    });
 
-    // $(".right").addEventListener("wheel", MouseWheelHandler);
-
-    $("#right").addEventListener("wheel", e=>e.preventDefault());
-
-    // document.addEventListener("wheel", MouseWheelHandler);
+    document.addEventListener("keydown", e => (e.key === "Control") && (keyCtrlDowning = true));
+    document.addEventListener("keyup", () => keyCtrlDowning = false);
 });
 
 
