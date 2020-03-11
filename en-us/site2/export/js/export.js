@@ -59,7 +59,6 @@ $(function () {
          }
      });*/
 
-
     /*缩放滚轮*/
     let count = 5;
     var MouseWheelHandler = function (e) {
