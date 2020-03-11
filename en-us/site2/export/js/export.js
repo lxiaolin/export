@@ -61,8 +61,8 @@ $(function () {
 
     /*缩放滚轮*/
     let count = 5;
-    var MouseWheelHandler = function (e) {
-        var e = e || window.event;
+    let MouseWheelHandler = function (e) {
+        var e = e || event;
         if (event.altKey) {
             if (e.wheelDelta > 0) {
                 if (count < 10) {
@@ -76,7 +76,8 @@ $(function () {
 
         }
     };
-    window.addEventListener("wheel", MouseWheelHandler)
+
+    document.addEventListener("wheel", MouseWheelHandler)
 
 });
 
