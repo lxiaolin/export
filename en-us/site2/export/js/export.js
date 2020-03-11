@@ -45,20 +45,39 @@ $(function () {
         blank_preview.src = ""
     });
 
-    /*缩放*/
+    /*缩放按钮*/
+    /*let count = 5;
+     $(".change_up").on("click", function () {
+         if (count < 10) {
+             $(".right div").removeClass("change" + count).addClass("change" + ++count);
+         }
+     });
+
+     $(".change_down").on("click", function () {
+         if (count > 0 && count <= 10) {
+             $(".right div").removeClass("change" + count).addClass("change" + --count);
+         }
+     });*/
+
+
+    /*缩放滚轮*/
     let count = 5;
-    $(".change_up").on("click", function() {
-        if(count < 10) {
-            $(".right div").removeClass("change" + count).addClass("change" + ++count);
-        }
-    });
+    var MouseWheelHandler = function (e) {
+        var e = e || window.event;
+        if (event.altKey) {
+            if (e.wheelDelta > 0) {
+                if (count < 10) {
+                    $(".right div").removeClass("change" + count).addClass("change" + ++count);
+                }
+            } else if (e.wheelDelta < 0) {
+                if (count > 0 && count <= 10) {
+                    $(".right div").removeClass("change" + count).addClass("change" + --count);
+                }
+            }
 
-    $(".change_down").on("click", function() {
-        if(count > 0 && count <= 10) {
-            $(".right div").removeClass("change" + count).addClass("change" + --count);
         }
-    });
-
+    };
+    window.addEventListener("wheel", MouseWheelHandler)
 
 });
 
