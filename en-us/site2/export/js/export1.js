@@ -177,6 +177,7 @@ $(() => {
         updateReport1();
     });
 
+
     // 清除图片
     $(".clearLogo").on("click", function () {
         let blank_preview = document.getElementById("preview");
