@@ -62,6 +62,7 @@ $(function () {
     /*滚轮缩放*/
     let count = 5;
     let MouseWheelHandler = function (e) {
+        // e.preventDefault();
         var e = e || event;
         if (event.altKey) {
             if (e.wheelDelta > 0) {
@@ -73,12 +74,14 @@ $(function () {
                     $(".right div").removeClass("change" + count).addClass("change" + --count);
                 }
             }
-
         }
     };
 
-    document.addEventListener("wheel", MouseWheelHandler)
+    // $(".right").addEventListener("wheel", MouseWheelHandler);
 
+    $("#right").addEventListener("wheel", e=>e.preventDefault());
+
+    // document.addEventListener("wheel", MouseWheelHandler);
 });
 
 
