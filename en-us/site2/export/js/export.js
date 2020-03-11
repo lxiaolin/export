@@ -45,7 +45,7 @@ $(function () {
         blank_preview.src = ""
     });
 
-    /*缩放按钮*/
+    /*按钮缩放*/
     /*let count = 5;
      $(".change_up").on("click", function () {
          if (count < 10) {
@@ -59,7 +59,7 @@ $(function () {
          }
      });*/
 
-    /*缩放滚轮*/
+    /*滚轮缩放*/
     let count = 5;
     let MouseWheelHandler = function (e) {
         var e = e || event;
