@@ -13,9 +13,9 @@ $(function () {
 
         // 图标变换
         if ($(this).hasClass('expand')) {
-            $(this).addClass('collapse_').removeClass('expand');
+            $(this).addClass('collapse').removeClass('expand');
         } else {
-            $(this).addClass('expand').removeClass('collapse_');
+            $(this).addClass('expand').removeClass('collapse');
         }
     });
 
@@ -47,33 +47,32 @@ $(function () {
     });*/
 
     // 按钮缩放
-    let count1 = 5;
+    let count = 5;
     $(".change_up").on("click", function () {
-        if (count1 < 10) {
-            $("#right div").removeClass("change" + count1).addClass("change" + (++count1));
+        if (count < 10) {
+            $("#right div").removeClass().addClass("change" + (++count));
         }
     });
 
     $(".change_down").on("click", function () {
-        if (count1 > 0 && count1 <= 10) {
-            $("#right div").removeClass("change" + count1).addClass("change" + (--count1));
+        if (count > 0 && count <= 10) {
+            $("#right div").removeClass().addClass("change" + (--count));
         }
     });
 
     // 滚轮缩放
-    let count2 = 5;
     let keyCtrlDowning = false;
     $("#right").on("mousewheel DOMMouseScroll", function (e, delta) {
         delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1))
         if (keyCtrlDowning) {
             e.preventDefault();
             if (delta > 0) {
-                if (count2 < 10) {
-                    $(this).children("div").removeClass().addClass("change" + (++count2));
+                if (count < 10) {
+                    $(this).children("div").removeClass().addClass("change" + (++count));
                 }
             } else if (delta < 0) {
-                if (count2 > 0 && count2 <= 10) {
-                    $(this).children("div").removeClass().addClass("change" + (--count2));
+                if (count > 0 && count <= 10) {
+                    $(this).children("div").removeClass().addClass("change" + (--count));
                 }
             }
         }

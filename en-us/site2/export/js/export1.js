@@ -108,7 +108,7 @@ $(() => {
             fromObject.forEach(item => toObject[toObject.length] = item);
         } else {
             for (let item in fromObject) {
-                if (fromObject.hasOwnProperty(item) && fromObject.hasOwnProperty(item)) {
+                if (fromObject.hasOwnProperty(item) && toObject.hasOwnProperty(item)) {
                     if (typeof toObject[item] === "object") {
                         update(toObject[item], fromObject[item]);
                     } else {
@@ -122,6 +122,7 @@ $(() => {
     // 本页面的更新主方法
     updateReport = (obj = {}) => {
         update(data, obj);
+        updateDate();
     };
 
     $("#save").on("click", () => {
@@ -146,17 +147,12 @@ $(() => {
     // 新增
 
     // 更新时间
-    function updateData() {
+    function updateDate() {
         let now = new Date();
-        let myDate = document.getElementById("myDate")
+        let myDate = document.getElementById("myDate");
         myDate.value = now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDate() + ' ' + now.getHours() + ':' + now.getMinutes();
     }
 
-
-    function updateReport1() {
-        updateData();
-        update(data, obj);
-    }
 
     // 上传图片
     let fileDom = document.getElementById("inputLogo");
@@ -174,15 +170,19 @@ $(() => {
             previewDom.src = e.target.result;
         };
         fileReader.readAsDataURL(file);
-        updateReport1();
+
+       // 更新数据
+        updateReport(data.header.imgLogo = previewDom.src, data.header.hasLogo = true);
     });
 
 
     // 清除图片
     $(".clearLogo").on("click", function () {
         let blank_preview = document.getElementById("preview");
-        blank_preview.src = ""
-        updateReport1();
+        blank_preview.src = "";
+
+        // 更新数据
+        updateReport(data.header.imgLogo = "", data.header.hasLogo = false);
     });
 
 });
