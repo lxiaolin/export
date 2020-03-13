@@ -153,7 +153,6 @@ $(() => {
         myDate.value = now.getFullYear() + '/' + (now.getMonth() + 1) + '/' + now.getDate() + ' ' + now.getHours() + ':' + now.getMinutes();
     }
 
-
     // 上传图片
     let fileDom = document.getElementById("inputLogo");
     let previewDom = document.getElementById("preview");
@@ -168,11 +167,17 @@ $(() => {
         let fileReader = new FileReader();
         fileReader.onload = e => {
             previewDom.src = e.target.result;
+            path = fileReader.result;
+
+            updateReport(obj = {
+                header: {
+                    hasLogo: true,
+                    imgLogo: path.split(",")[1]
+                }
+            });
         };
         fileReader.readAsDataURL(file);
 
-       // 更新数据
-        updateReport(data.header.imgLogo = previewDom.src, data.header.hasLogo = true);
     });
 
 
@@ -182,7 +187,336 @@ $(() => {
         blank_preview.src = "";
 
         // 更新数据
-        updateReport(data.header.imgLogo = "", data.header.hasLogo = false);
+        updateReport(obj = {
+            header: {
+                hasLogo: false,
+                imgLogo: ""
+            }
+        });
     });
+
+    // 绑定checkbox
+    let flag_experiment = 1;
+    $("#chk_experiment").on("click", function () {
+        if (flag_experiment % 2 === 0) {
+            flag_experiment++;
+            updateReport(obj = {
+                hasExperiment: true
+            });
+        } else {
+            flag_experiment++;
+            updateReport(obj = {
+                hasExperiment: false
+            });
+        }
+    });
+
+    let flag_information = 1;
+    $("#chk_information").on("click", function () {
+        if (flag_information % 2 === 0) {
+            flag_information++;
+            updateReport(obj = {
+                experiment: {
+                    hasInformation: true
+                }
+            });
+        } else {
+            flag_information++;
+            updateReport(obj = {
+                experiment: {
+                    hasInformation: false
+                }
+            });
+        }
+    });
+
+    let flag_experimentSetting = 1;
+    $("#chk_experimentSetting").on("click", function () {
+
+        if (flag_experimentSetting % 2 === 0) {
+            flag_experimentSetting++;
+            updateReport(obj = {
+                experiment: {
+                    hasExperimentSetting: true
+                }
+            });
+        } else {
+            flag_experimentSetting++;
+            updateReport(obj = {
+                experiment: {
+                    hasExperimentSetting: false
+                }
+            });
+        }
+    });
+
+    let flag_parameterSetting = 1;
+    $("#chk_parameterSetting").on("click", function () {
+
+        if (flag_parameterSetting % 2 === 0) {
+            flag_parameterSetting++;
+            updateReport(obj = {
+                experiment: {
+                    hasParameterSetting: true
+                }
+            });
+        } else {
+            flag_parameterSetting++;
+            updateReport(obj = {
+                experiment: {
+                    hasParameterSetting: false
+                }
+            });
+        }
+    });
+
+    let flag_comments=1;
+    $("#chk_comments").on("click", function () {
+
+        if (flag_comments % 2 === 0) {
+            flag_comments++;
+            updateReport(obj = {
+                experiment: {
+                    hasComments: true
+                }
+            });
+        } else {
+            flag_comments++;
+            updateReport(obj = {
+                experiment: {
+                    hasComments: false
+                }
+            });
+        }
+    });
+
+    let flag_loadPreview=1;
+    $("#chk_loadPreview").on("click", function () {
+
+        if (flag_loadPreview % 2 === 0) {
+            flag_loadPreview++;
+            updateReport(obj = {
+                experiment: {
+                    hasLoadPreview: true
+                }
+            });
+        } else {
+            flag_loadPreview++;
+            updateReport(obj = {
+                experiment: {
+                    hasLoadPreview: false
+                }
+            });
+        }
+    });
+
+    let flag_plateEdit=1;
+    $("#chk_plateEdit").on("click", function () {
+
+        if (flag_plateEdit % 2 === 0) {
+            flag_plateEdit++;
+            updateReport(obj = {
+                hasPlate: true
+            });
+        } else {
+            flag_plateEdit++;
+            updateReport(obj = {
+                hasPlate: false
+            });
+        }
+    });
+
+    $("#chk_plateLayout").on("click", function () {
+        updateReport(obj = {
+            plate: {
+                hasPlateLayout: true
+            }
+        });
+    });
+
+    $("#chk_task").on("click", function () {
+        updateReport(obj = {
+            plate: {
+                hasTask: true
+            }
+        });
+    });
+
+    $("#chk_target").on("click", function () {
+        updateReport(obj = {
+            plate: {
+                hasTarget: true
+            }
+        });
+    });
+
+    $("#chk_splitPlate").on("click", function () {
+        updateReport(obj = {
+            plate: {
+                hasSplitPlate: true
+            }
+        });
+    });
+
+    let flag_sample=1;
+    $("#chk_sample").on("click", function () {
+
+        if (flag_sample % 2 === 0) {
+            flag_sample++;
+            updateReport(obj = {
+                plate: {
+                    hasSample: true
+                }
+            });
+        } else {
+            flag_sample++;
+            updateReport(obj = {
+                plate: {
+                    hasSample: false
+                }
+            });
+        }
+    });
+
+    $("#chk_standard").on("click", function () {
+        updateReport(obj = {
+            plate: {
+                hasStandard: true
+            }
+        });
+    });
+
+    let flag_protocolEdit=1;
+    $("#chk_protocolEdit").on("click", function () {
+        if (flag_protocolEdit % 2 === 0) {
+            flag_protocolEdit++;
+            updateReport(obj = {
+                hasProtocol: true
+            });
+        } else {
+            flag_protocolEdit++;
+            updateReport(obj = {
+                hasProtocol: false
+            });
+        }
+    });
+
+    $("#chk_protocol").on("click", function () {
+        updateReport(obj = {
+            protocol: {
+                hasProtocol: true
+            }
+        });
+    });
+
+    let flag_run=1;
+    $("#chk_run").on("click", function () {
+
+        if (flag_run % 2 === 0) {
+            flag_run++;
+            updateReport(obj = {
+                hasRun: true
+            });
+        } else {
+            flag_run++;
+            updateReport(obj = {
+                hasRun: false
+            });
+        }
+    });
+
+    $("#chk_runTime").on("click", function () {
+        updateReport(obj = {
+            run: {
+                hasRunTime: true
+            }
+        });
+    });
+
+    let flag_temperatureCurve=1;
+    $("#chk_temperatureCurve").on("click", function () {
+
+        if (flag_temperatureCurve % 2 === 0) {
+            flag_temperatureCurve++;
+            updateReport(obj = {
+                run: {
+                    hasTemperatureCurve: true
+                }
+            });
+        } else {
+            flag_temperatureCurve++;
+            updateReport(obj = {
+                run: {
+                    hasTemperatureCurve: false
+                }
+            });
+        }
+    });
+
+    $("#chk_analysis").on("click", function () {
+        updateReport(obj = {
+            hasAnalysis: true
+        });
+    });
+
+    $("#chk_quantification").on("click", function () {
+        updateReport(obj = {
+            analysis: {
+                hasQuantification: true
+            }
+        });
+    });
+
+    $("#chk_standardCurve").on("click", function () {
+        updateReport(obj = {
+            analysis: {
+                hasStandardCurve: true
+            }
+        });
+    });
+
+    $("#chk_quantificationData").on("click", function () {
+        updateReport(obj = {
+            analysis: {
+                hasQuantificationData: true
+            }
+        });
+    });
+
+    $("#chk_meltCurve").on("click", function () {
+        updateReport(obj = {
+            analysis: {
+                hasMelt: true
+            }
+        });
+    });
+
+    $("#chk_meltData").on("click", function () {
+        updateReport(obj = {
+            analysis: {
+                hasMeltData: true
+            }
+        });
+    });
+
+    $("#chk_geneExpression").on("click", function () {
+        updateReport(obj = {
+            analysis: {
+                hasGeneExpression: true
+            }
+        });
+    });
+
+    /*let flag_qc=1;
+    $("#chk_qc").on("click", function () {
+
+        if (flag_qc % 2 === 0) {
+            flag_qc++;
+            updateReport(obj = {});
+        } else {
+            flag_qc++;
+            updateReport(obj = {});
+        }
+    });*/
 
 });

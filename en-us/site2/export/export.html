@@ -85,19 +85,19 @@
                         <div class="expand"></div>
                         <ul>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_plateLayout">
                                 <div class="divList">Plate Edit</div>
                             </li>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_task">
                                 <div class="divList">Task 信息</div>
                             </li>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_target">
                                 <div class="divList">Target 信息</div>
                             </li>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_splitPlate">
                                 <div class="divList">Split Plate</div>
                             </li>
                             <li>
@@ -105,7 +105,7 @@
                                 <div class="divList">Sample 信息</div>
                             </li>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_standard">
                                 <div class="divList">Standard 信息</div>
                                 <!--<ul>
                                     <li><input type="checkbox" checked=checked>Select Target</input></li>
@@ -126,7 +126,7 @@
                         <div class="expand"></div>
                         <ul>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_protocol">
                                 <div class="divList">Protocol</div>
                                 <!--<ul>
                                     <li><input type="checkbox" checked=checked>Protocol graph</input></li>
@@ -139,7 +139,7 @@
                         <div class="expand"></div>
                         <ul>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_runTime">
                                 <div class="divList">Run time</div>
                             </li>
                             <li>
@@ -149,11 +149,11 @@
                         </ul>
                     </li>
                     <li class="main">
-                        <input type="checkbox" checked disabled><span>Analysis 信息</span>
+                        <input type="checkbox" checked disabled id="chk_analysis"><span>Analysis 信息</span>
                         <div class="expand"></div>
                         <ul>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_quantification">
                                 <div class="divList">Quantification</div>
                                 <!--<ul>
                                     <li><input type="checkbox" checked=checked>Amplification curve-Cq</input></li>
@@ -161,23 +161,23 @@
                                 </ul>-->
                             </li>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_standardCurve">
                                 <div class="divList">标准曲线</div>
                             </li>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_quantificationData">
                                 <div class="divList">Quantification data</div>
                             </li>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_meltCurve">
                                 <div class="divList">Melt curve</div>
                             </li>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_meltData">
                                 <div class="divList">Melt data</div>
                             </li>
                             <li>
-                                <input type="checkbox" checked disabled>
+                                <input type="checkbox" checked disabled id="chk_geneExpression">
                                 <div class="divList">Gene expression</div>
                                 <!--<ul>
                                     <li><input type="checkbox" checked=checked>Bar 图</input></li>
@@ -227,7 +227,7 @@
                             </div>
                         </div>
                         <div class="clearLogo">Clear Logo</div>
-                        <div id="selectLogo">Select Logo</div>
+                        <div class="selectLogo">Select Logo</div>
                         <input id="inputLogo" type="file" accept="image/*">
                     </div>
                 </div>
@@ -238,15 +238,11 @@
         </section>
     </div>
     <!--右容器-->
-    <div id="right">
-        <!--<div style="border: 1px solid red">-->
-       <!-- <ul>
-            <li class="change_down">缩小</li>
-            <li class="change_up">放大</li>
-        </ul>-->
+    <div class="right">
+        <section>
             <span class="change_down">缩小</span>
             <span class="change_up">放大</span>
-       <!-- </div>-->
+        </section>
         <div class="change5"></div>
     </div>
 </section>

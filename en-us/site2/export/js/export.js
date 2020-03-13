@@ -50,19 +50,19 @@ $(function () {
     let count = 5;
     $(".change_up").on("click", function () {
         if (count < 10) {
-            $("#right div").removeClass().addClass("change" + (++count));
+            $(".right div").removeClass().addClass("change" + (++count));
         }
     });
 
     $(".change_down").on("click", function () {
         if (count > 0 && count <= 10) {
-            $("#right div").removeClass().addClass("change" + (--count));
+            $(".right div").removeClass().addClass("change" + (--count));
         }
     });
 
     // 滚轮缩放
     let keyCtrlDowning = false;
-    $("#right").on("mousewheel DOMMouseScroll", function (e, delta) {
+    $(".right").on("mousewheel DOMMouseScroll", function (e, delta) {
         delta = (e.originalEvent.wheelDelta && (e.originalEvent.wheelDelta > 0 ? 1 : -1))
         if (keyCtrlDowning) {
             e.preventDefault();

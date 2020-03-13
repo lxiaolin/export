@@ -91,7 +91,7 @@
     height: calc(100% - 25px);
 }
 
-#selectLogo {
+.selectLogo {
     line-height: 20px;
     margin-right: 10px;
     background: #c3bfc4;
@@ -194,7 +194,7 @@
 }
 
 /*右容器*/
-#right {
+.right {
     height: 100%;
     width: 65%;
     background-color: #d8d8d8;
@@ -203,38 +203,29 @@
     margin: 4.5px 1px;
 }
 
-#right > div {
+.right > div {
     overflow: hidden;
     padding: 2.54cm 3.17cm;
     border: 1px outset;
     height: 29.7cm;
     width: 21cm;
     background-color: #FFF;
-    margin: auto;
+    margin: 30px auto;
     line-height: 1.5;
     text-indent: 2em;
 }
 
-#right span {
+.right section{
+    position: fixed;
+    right: 40px;
+    z-index: 1;
+}
+
+.right span {
+    padding: 2px;
     border: 1px solid;
     background-color: #9F9F9F;
     cursor: pointer;
-}
-
-.change_up {
-    padding: 2px;
-    position: fixed;
-    left:37vw;
-    top: 80px;
-    z-index: 1;
-}
-
-.change_down {
-    padding: 2px;
-    position: fixed;
-    left: 37vw;
-    top: 120px;
-    z-index: 1;
 }
 
 .docTittle {
