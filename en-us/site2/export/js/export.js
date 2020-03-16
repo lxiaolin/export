@@ -10,6 +10,7 @@ $(function () {
     $(".main").on("click", "div", function () {
 
         $(this).next().slideToggle("fast");
+        // $(".main ul li").slideToggle("fast");
 
         // 图标变换
         if ($(this).hasClass('expand')) {
@@ -20,8 +21,8 @@ $(function () {
     });
 
 
-    /*// 上传图片
-    let fileDom = document.getElementById("inputLogo");
+    // 上传图片
+    /*let fileDom = document.getElementById("inputLogo");
     let previewDom = document.getElementById("preview");
     fileDom.addEventListener("change", e => {
         let file = fileDom.files[0];
@@ -50,13 +51,13 @@ $(function () {
     let count = 5;
     $(".change_up").on("click", function () {
         if (count < 10) {
-            $(".right div").removeClass().addClass("change" + (++count));
+            $(".right").children("div").removeClass().addClass("change" + (++count));
         }
     });
 
     $(".change_down").on("click", function () {
         if (count > 0 && count <= 10) {
-            $(".right div").removeClass().addClass("change" + (--count));
+            $(".right").children("div").removeClass().addClass("change" + (--count));
         }
     });
 
@@ -79,6 +80,9 @@ $(function () {
     });
     document.addEventListener("keydown", e => (e.key === "Control") && (keyCtrlDowning = true));
     document.addEventListener("keyup", () => keyCtrlDowning = false);
+
+
+
 });
 
 
