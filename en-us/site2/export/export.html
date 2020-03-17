@@ -191,7 +191,7 @@
                         <div class="customScrollbar"
                              style="width: 100%;padding: 10px;overflow: auto;margin: 0 0 5px 0;border: 1px solid #000;height: calc(100% - 25px);">
                             <div style="border: 1px solid #dfdbe0;height: 100%;width: 100%;">
-                                <img src="" id="preview" style="display: block;">
+                                <img src="../images/1.png" id="preview" style="display: block;">
                             </div>
                         </div>
                         <div class="clearLogo">Clear Logo</div>
@@ -206,90 +206,93 @@
         </section>
     </div>
     <!--右容器-->
-    <div class="right" id="wordText">
-        <section>
-            <span class="change_down">缩小</span>
-            <span class="change_up">放大</span>
-        </section>
+
+    <section style="position: absolute;right: 50px;top:65px;z-index: 1;">
+        <span class="change_down" style="padding: 2px;border: 1px solid;background-color: #9F9F9F;cursor: pointer;">缩小</span>
+        <span class="change_up" style="padding: 2px;border: 1px solid;background-color: #9F9F9F;cursor: pointer;">放大</span>
+    </section>
+    <div class="right" id="container">
+        <!--        <section>-->
+        <!--            <span class="change_down">缩小</span>-->
+        <!--            <span class="change_up">放大</span>-->
+        <!--        </section>-->
         <div class="change5" id="word">
-            <img id="show0" src="" style="display: none"><!--head-->
-            <p id="show1" class="docTittle"></p><!--title-->
-            <p id="show2" class="docSubTittle"></p><!--subTitle-->
-            <p id="show3" class="docH1">Experiment</p>
+            <img id="head" src="" style="display: none"><!--head-->
+            <p id="title" class="docTittle"></p><!--title-->
+            <p id="subTitle" class="docSubTittle"></p><!--subTitle-->
+            <p id="experimentTitle" class="docH1">Experiment</p>
             <!--            <div id="showInformation">-->
-            <p id="show4" class="docH2">Information</p>
-            <p id="show5">
+            <p id="informationTitle" class="docH2">Information</p>
+            <p id="informationName">
                 <span>Name:</span>
                 <span id="Information_Name"></span>
             </p>
-            <p id="show6">
+            <p id="informationBarcode">
                 <span>Barcode:</span>
                 <span id="Information_Barcode"></span>
             </p>
-            <p id="show7">
+            <p id="informationUserName">
                 <span>User Name:</span>
                 <span id="Information_UserName"></span>
             </p>
-            <p id="show8">
+            <p id="informationInsName">
                 <span>Instrument Name:</span>
                 <span id="Information_InsName"></span>
             </p>
-            <p id="show9">
+            <p id="informationBlockType">
                 <span>Block type:</span>
                 <span id="Information_BlockType"></span>
             </p>
             <!--            </div>-->
             <!--            <div id="showExperimentSetting">-->
-            <p id="show10" class="docH2">Experiment Setting</p>
-            <p id="show11">
+            <p id="experimentSettingTitle" class="docH2">Experiment Setting</p>
+            <p id="experimentSetting_ET">
                 <span>Experiment Type:</span>
                 <span id="ES_ET"></span>
             </p>
-            <p id="show12">
+            <p id="experimentSettingChemistry">
                 <span>Chemistry:</span>
                 <span id="ES_Chemistry"></span>
             </p>
-            <p id="show13">
+            <p id="experimentSettingRunMode">
                 <span>Run Mode:</span>
                 <span id="ES_RunMode"></span>
             </p>
             <!--            </div>-->
             <!--            <div id="showParameterSetting">-->
-            <p id="show14" class="docH2">Parameter Setting</p>
-            <p id="show15">
+            <p id="parameterSettingTitle" class="docH2">Parameter Setting</p>
+            <p id="parameterSettingRV">
                 <span>Reaction Volume:</span>
                 <span id="PS_RV"></span>
             </p>
-            <p id="show16">
+            <p id="parameterSettingLHS">
                 <span>Lid Heating Switch:</span>
                 <span id="PS_LHS"></span>
             </p>
-            <p id="show17">
+            <p id="parameterSettingCT">
                 <span>Cover Temp:</span>
                 <span id="PS_CT"></span>
             </p>
-            <p id="show18">
+            <p id="parameterSettingLCT">
                 <span>Lid Close Temp:</span>
                 <span id="PS_LCT"></span>
             </p>
             <!--            </div>-->
             <!--            <div id="showComments">-->
-            <p id="show19" class="docH2">Comments</p>
-            <img id="show20" src="" style="display: none">
+            <p id="commentsTitle" class="docH2">Comments</p>
+            <img id="commentsIMG" src="" style="display: none">
             <!--            </div>-->
             <!--            <div id="showLoadPreview">-->
-            <p id="show21" class="docH2">Load Preview</p>
-            <img id="show22" src="" style="display: none">
+            <p id="loadPreviewTitle" class="docH2">Load Preview</p>
+            <img id="loadPreviewIMG" src="" style="display: none">
             <!--            </div>-->
-            <p id="show23" class="docH1">Plate edit</p>
+            <p id="plateEditTitleH1" class="docH1">Plate edit</p>
             <!--            <div id="showPlate">-->
-            <p id="show24" class="docH2">Plate Edit</p>
-            <table id="show25" border="1" style="width: 600px;">
-                <tbody id="plateBody"></tbody>
-            </table>
+            <p id="plateEditTitleH2" class="docH2">Plate Edit</p>
+            <table id="plateEditTable" border="1" style="width: 650px;margin-left: -50px;"></table>
             <!--            </div>-->
             <!--            <div id="showTask">-->
-            <p id="show26" class="docH2">Task 信息</p>
+            <p id="plateEditTaskTitle" class="docH2">Task 信息</p>
             <!--<p>
                 <span>Unknow:</span>
                 <span id="Task_Unkonw"></span>
@@ -310,125 +313,110 @@
                 <span>STD:</span>
                 <span id="Task_STD"></span>
             </p>-->
-            <div id="show27"></div>
+            <div id="plateEditTaskText"></div>
             <!--            </div>-->
             <!--            <div id="showTarget">-->
-            <p id="show28" class="docH2">Target 信息</p>
-            <table id="show29" class="tableTh" border="1">
-                <thead id="targetHead"></thead>
-                <tbody id="targetBody"></tbody>
-            </table>
+            <p id="plateEditTargetTitle" class="docH2">Target 信息</p>
+            <table id="plateEditTargetTable" class="tableTh" border="1"></table>
             <!--            </div>-->
             <!--            <div id="showSplit">-->
-            <p id="show30" class="docH2">Split Plate</p>
-            <div id="show31"></div>
+            <p id="plateEditSplitPlateTitle" class="docH2">Split Plate</p>
+            <div id="plateEditSplitPlateText"></div>
             <!--            </div>-->
             <!--            <div id="showSample">-->
-            <p id="show32" class="docH2">Sample 信息</p>
-            <table id="show33" class="tableTh" border="1">
-                <thead id="sampleHead"></thead>
-                <tbody id="sampleBody"></tbody>
-            </table>
+            <p id="plateEditSampleTitle" class="docH2">Sample 信息</p>
+            <table id="plateEditSampleTable" class="tableTh" border="1"></table>
             <!--            </div>-->
             <!--            <div id="showStandard">-->
-            <p id="show34" class="docH2">Standard 信息</p>
-            <p id="show35">
+            <p id="plateEditStandardTitle" class="docH2">Standard 信息</p>
+            <p id="plateEditStandardSt">
                 <span>Select Target:</span>
                 <span id="standard_ST"></span>
             </p>
-            <p id="show36">
+            <p id="plateEditStandardSA">
                 <span>Standard Amount:</span>
                 <span id="standard_SA"></span>
             </p>
-            <p id="show37">
+            <p id="plateEditStandardSN">
                 <span>Standard Number:</span>
                 <span id="standard_SN"></span>
             </p>
-            <p id="show38">
+            <p id="plateEditStandardF">
                 <span>Factor:</span>
                 <span id="standard_F"></span>
             </p>
-            <p id="show39">
+            <p id="plateEditStandardDF">
                 <span>Dilution Factor:</span>
                 <span id="standard_DF"></span>
             </p>
-            <p id="show40">
+            <p id="plateEditStandardUnit">
                 <span>Unit:</span>
                 <span id="standard_Unit"></span>
             </p>
-            <p id="show41">
+            <p id="plateEditStandardR">
                 <span>Replicates:</span>
                 <span id="standard_R"></span>
             </p>
-            <p id="show42">
+            <p id="plateEditStandardID">
                 <span>Increasing/Decreasing:</span>
                 <span id="standard_ID"></span>
             </p>
-            <p id="show43">
+            <p id="plateEditStandardA">
                 <span>Assignment:</span>
                 <span id="standard_Assignment"></span>
             </p>
             <!--            </div>-->
-            <p id="show44" class="docH1">Protocol Edit</p>
+            <p id="protocolEditTitle" class="docH1">Protocol Edit</p>
             <!--            <div id="showProtocol">-->
-            <p id="show45" class="docH2">Protocol</p>
-            <div id="show46"></div>
+            <p id="protocolTitle" class="docH2">Protocol</p>
+            <div id="protocolText"></div>
             <!--            </div>-->
-            <p id="show47" class="docH1">Run 原始结果信息</p>
+            <p id="runTitle" class="docH1">Run 原始结果信息</p>
             <!--            <div id="showRunTime">-->
-            <p id="show48" class="docH2">Run Time</p>
-            <div id="show49"></div>
+            <p id="runTime" class="docH2">Run Time</p>
+            <div id="runTimeText"></div>
             <!--            </div>-->
             <!--            <div id="showTemperatureCurve">-->
-            <p id="show50" class="docH2">Temperature Curve</p>
-            <img id="show51" src="" style="display: none">
+            <p id="runTemperatureCurveTitle" class="docH2">Temperature Curve</p>
+            <img id="runTemperatureCurveIMG" src="" style="display: none">
             <!--            </div>-->
-            <p id="show52" class="docH1">Analysis 信息</p>
+            <p id="analysisTitle" class="docH1">Analysis 信息</p>
             <!--            <div id="showQuantification">-->
-            <p id="show53" class="docH2">Quantification</p>
-            <p id="show54" class="docText">Amplification curve-Cq</p>
-            <img id="show55" src="" style="display: none">
-            <p id="show56" class="docText">Amplification curve-Log</p>
-            <img id="show57" src="" style="display: none">
+            <p id="analysisQuantification" class="docH2">Quantification</p>
+            <p id="analysisCurveCq" class="docText">Amplification curve-Cq</p>
+            <img id="analysisCurveCqIMG" src="" style="display: none">
+            <p id="analysisCurveClog" class="docText">Amplification curve-Log</p>
+            <img id="analysisCurveClogIMG" src="" style="display: none">
             <!--            </div>-->
             <!--            <div id="showStandardCurve">-->
-            <p id="show58" class="docH2">标准曲线</p>
-            <img id="show59" src="" style="display: none">
+            <p id="analysisStandardCurveTitle" class="docH2">标准曲线</p>
+            <img id="analysisStandardCurveIMG" src="" style="display: none">
             <!--            </div>-->
             <!--            <div id="showQuantificationData">-->
-            <p id="show60" class="docH2">Quantification Data</p>
-            <table id="show61" class="tableTh" border="1">
-                <thead id="QDHead"></thead>
-                <tbody id="QDBody"></tbody>
-            </table>
+            <p id="analysisQDTitle" class="docH2">Quantification Data</p>
+            <table id="analysisQDTable" class="tableTh" border="1"></table>
             <!--            </div>-->
             <!--            <div id="showMeltCurve">-->
-            <p id="show62" class="docH2">Melt Curve</p>
-            <p id="show63" class="docText">原始曲线</p>
-            <img id="show64" src="" style="display: none">
-            <p id="show65" class="docText">一阶导数图</p>
-            <img id="show66" src="" style="display: none">
+            <p id="analysisMeltCurve" class="docH2">Melt Curve</p>
+            <p id="analysisPreCurve" class="docText">原始曲线</p>
+            <img id="analysisPreCurveIMG" src="" style="display: none">
+            <p id="analysisMeltPeak" class="docText">一阶导数图</p>
+            <img id="analysisMeltPeakIMG" src="" style="display: none">
             <!--            </div>-->
             <!--            <div id="showMeltData">-->
-            <p id="show67" class="docH2">Melt data</p>
-            <table id="show68" class="tableTh" border="1">
-                <thead id="MTHead"></thead>
-                <tbody id="MTBody"></tbody>
-            </table>
+            <p id="analysisMeltDataTitle" class="docH2">Melt data</p>
+            <table id="analysisMeltDataTable" class="tableTh" border="1"></table>
             <!--            </div>-->
             <!--            <div id="showGeneExpression">-->
-            <p id="show69" class="docH2">Gene expression</p>
-            <p id="show70" class="docText">Bar 图</p>
-            <img id="show71" src="" style="display: none">
-            <p id="show72">
+            <p id="analysisGeneExpressionTitle" class="docH2">Gene expression</p>
+            <p id="analysisGeneExpressionBar" class="docText">Bar 图</p>
+            <img id="analysisGeneExpressionBarIMG" src="" style="display: none">
+            <p id="analysisGeneExpressionMode">
                 <span>分析模型:</span>
                 <span id="geneExpressionMode"></span>
             </p>
-            <p id="show73" class="docText">gene expression数据</p>
-            <table id="show74" class="tableTh" border="1" style="margin-left: -70px;width: 700px;">
-                <thead id="GEHead"></thead>
-                <tbody id="GEBody"></tbody>
-            </table>
+            <p id="analysisGeneExpressionData" class="docText">gene expression数据</p>
+            <table id="analysisGeneExpressionDataTable" class="tableTh" border="1" style="margin-left: -70px;width: 700px;"></table>
             <!--            </div>-->
         </div>
     </div>

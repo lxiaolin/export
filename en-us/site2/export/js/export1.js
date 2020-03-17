@@ -10,8 +10,8 @@ $(() => {
             tittle: "Experiment Name",
             hasSubTittle: true,
             subTittle: "2020/3/13 23:53",
-            hasLogo: true,
-            imgLogo: "data:image/png;base64,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"
+            hasLogo: false,
+            imgLogo: ""
         },
         hasExperiment: true,
         experiment: {
@@ -239,202 +239,6 @@ $(() => {
                     true,
                     "A2",
                     ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "A3",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "A4",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "A5",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "A6",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "A7",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "A8",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "A9",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "B1",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "B2",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "B3",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "B4",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "B5",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "B6",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "B7",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "B8",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "B9",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "C1",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "C2",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "C3",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "C4",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "C5",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "C6",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "C7",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "C8",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "C9",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "D1",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "D2",
-                    ""
-                ],
-                [
-                    "",
-                    "sample",
-                    true,
-                    "D3",
-                    ""
                 ]
             ],
             hasStandard: true,
@@ -600,7 +404,7 @@ $(() => {
         update(data, obj);
         updateDate();
         showDiv();
-        // adjust();
+        adjust();
     };
 
     $("#save").on("click", () => {
@@ -658,9 +462,7 @@ $(() => {
 
     // 清除图片
     $(".clearLogo").on("click", function () {
-        let blank_preview = document.getElementById("preview");
-        blank_preview.src = "";
-
+        document.getElementById("preview").src = "";
         // 更新数据
         updateReport({
             header: {
@@ -727,21 +529,47 @@ $(() => {
     insertText();
     adjust();
 
+
     function adjust() {
-        let heightSum = 0;
-        for (let i = 0; i < 75; i++) {
-            heightSum += document.getElementById("show" + i).offsetHeight;
-            if (heightSum > 700) {
-                let div = document.createElement("div");
-                for (let j = i; j < 75; j++) {
-                    heightSum += document.getElementById("show" + j).offsetHeight;
-                    div.append(document.getElementById("show" + j));
+        let h = 0, margin = 30, pageHeight = 1400, htmlList = [""];
+        $("#container > div > p, #container > div > img, #container > div > table, #container > div > div").each(function () {
+            let $this = $(this);
+            let outerHTML = this.outerHTML; // 当前元素的 html 字符串
+            if (this.style.display === "none") {
+                htmlList[htmlList.length - 1] += outerHTML; // 如果隐藏直接塞进去
+            } /*else {
+                if (this.tagName.toLowerCase() === "table") { // 如果是 table 标签
+                    $this.find("tr").each(function () { // 对每个 tr 遍历
+                        let $this = $(this);
+                        let outerHTML = this.outerHTML;
+                        console.log(outerHTML);
+                        let height = $this.outerHeight();   // tr 高度
+                        if (h + height > pageHeight) {  // 超出一页
+                            if ($this.index() !== 0) htmlList[htmlList.length - 1] += "</table>";// 如果不是第一个 tr，则给上一个封底
+                            htmlList[htmlList.length] = "<table>" + outerHTML; // 起新的一页，封顶，不写 thead 和 tbody，让浏览器自行处理
+                            h = height;  // 重置高度
+                        } else {    // 没超出一页
+                            h += height;    // 对计算高度累加
+                            if ($this.index() === 0) htmlList[htmlList.length - 1] += "<table>";    // 如果是第一个 tr，则先封顶
+                            htmlList[htmlList.length - 1] += outerHTML; // 将 tr 塞进去
+                        }
+                    });
+                    htmlList[htmlList.length - 1] += "</table>";    // 封底
+                } */else {    // 非 table 标签
+                    let height = $this.outerHeight() + margin;  // 计算高度，height + padding + margin
+                    if (h + height > pageHeight) {  // 超出一页
+                        htmlList[htmlList.length] = outerHTML;  // 起新的一页，直接塞进去
+                        h = height; // 重置高度
+                    } else {    // 未超出一页
+                        h += height;    // 对计算高度累加
+                        htmlList[htmlList.length - 1] += outerHTML; // 直接塞进去
+                    }
                 }
-                $("#wordText").append(div);
-                heightSum = 0;
-            }
-        }
-        // alert("heightSum=" + heightSum);
+            // }
+        });
+        console.log(htmlList);
+        $("#container").html(htmlList.map(html => `<div>${html}</div>`).join(""));
+
     }
 
 
@@ -749,270 +577,282 @@ $(() => {
     function showDiv() {
         // Header
         if (data.header.hasTittle) {
-            document.getElementById("show1").style.display = "block";
+            document.getElementById("title").style.display = "block";
         } else {
-            document.getElementById("show1").style.display = "none";
+            document.getElementById("title").style.display = "none";
         }
 
         if (data.header.hasSubTittle) {
-            document.getElementById("show2").style.display = "block";
+            document.getElementById("subTitle").style.display = "block";
         } else {
-            document.getElementById("show2").style.display = "none";
+            document.getElementById("subTitle").style.display = "none";
         }
 
         if (data.header.hasLogo) {
-            document.getElementById("show0").style.display = "block";
+            document.getElementById("head").style.display = "block";
         } else {
-            document.getElementById("show0").style.display = "none";
+            document.getElementById("head").style.display = "none";
         }
 
         // Experiment
         if (document.getElementById("chk_experiment").checked) {
-            document.getElementById("show3").style.display = "block";
+            document.getElementById("experimentTitle").style.display = "block";
         } else {
-            document.getElementById("show3").style.display = "none";
+            document.getElementById("experimentTitle").style.display = "none";
         }
 
+        // Information
         if (document.getElementById("chk_experiment").checked && document.getElementById("chk_information").checked) {
-            document.getElementById("show4").style.display = "block";
-            document.getElementById("show5").style.display = "block";
-            document.getElementById("show6").style.display = "block";
-            document.getElementById("show7").style.display = "block";
-            document.getElementById("show8").style.display = "block";
-            document.getElementById("show9").style.display = "block";
+            document.getElementById("informationTitle").style.display = "block";
+            document.getElementById("informationName").style.display = "block";
+            document.getElementById("informationBarcode").style.display = "block";
+            document.getElementById("informationUserName").style.display = "block";
+            document.getElementById("informationInsName").style.display = "block";
+            document.getElementById("informationBlockType").style.display = "block";
         } else {
-            document.getElementById("show4").style.display = "none";
-            document.getElementById("show5").style.display = "none";
-            document.getElementById("show6").style.display = "none";
-            document.getElementById("show7").style.display = "none";
-            document.getElementById("show8").style.display = "none";
-            document.getElementById("show9").style.display = "none";
+            document.getElementById("informationTitle").style.display = "none";
+            document.getElementById("informationName").style.display = "none";
+            document.getElementById("informationBarcode").style.display = "none";
+            document.getElementById("informationUserName").style.display = "none";
+            document.getElementById("informationInsName").style.display = "none";
+            document.getElementById("informationBlockType").style.display = "none";
         }
 
+        // experimentSetting
         if (document.getElementById("chk_experiment").checked && document.getElementById("chk_experimentSetting").checked) {
-            document.getElementById("show10").style.display = "block";
-            document.getElementById("show11").style.display = "block";
-            document.getElementById("show12").style.display = "block";
-            document.getElementById("show13").style.display = "block";
+            document.getElementById("experimentSettingTitle").style.display = "block";
+            document.getElementById("experimentSetting_ET").style.display = "block";
+            document.getElementById("experimentSettingChemistry").style.display = "block";
+            document.getElementById("experimentSettingRunMode").style.display = "block";
         } else {
-            document.getElementById("show10").style.display = "none";
-            document.getElementById("show11").style.display = "none";
-            document.getElementById("show12").style.display = "none";
-            document.getElementById("show13").style.display = "none";
+            document.getElementById("experimentSettingTitle").style.display = "none";
+            document.getElementById("experimentSetting_ET").style.display = "none";
+            document.getElementById("experimentSettingChemistry").style.display = "none";
+            document.getElementById("experimentSettingRunMode").style.display = "none";
         }
 
+        // Parameter Setting
         if (document.getElementById("chk_experiment").checked && document.getElementById("chk_parameterSetting").checked) {
-            document.getElementById("show14").style.display = "block";
-            document.getElementById("show15").style.display = "block";
-            document.getElementById("show16").style.display = "block";
-            document.getElementById("show17").style.display = "block";
-            document.getElementById("show18").style.display = "block";
+            document.getElementById("parameterSettingTitle").style.display = "block";
+            document.getElementById("parameterSettingRV").style.display = "block";
+            document.getElementById("parameterSettingLHS").style.display = "block";
+            document.getElementById("parameterSettingCT").style.display = "block";
+            document.getElementById("parameterSettingLCT").style.display = "block";
         } else {
-            document.getElementById("show14").style.display = "none";
-            document.getElementById("show15").style.display = "none";
-            document.getElementById("show16").style.display = "none";
-            document.getElementById("show17").style.display = "none";
-            document.getElementById("show18").style.display = "none";
+            document.getElementById("parameterSettingTitle").style.display = "none";
+            document.getElementById("parameterSettingRV").style.display = "none";
+            document.getElementById("parameterSettingLHS").style.display = "none";
+            document.getElementById("parameterSettingCT").style.display = "none";
+            document.getElementById("parameterSettingLCT").style.display = "none";
         }
 
+        // Comments
         if (document.getElementById("chk_experiment").checked && document.getElementById("chk_comments").checked) {
-            document.getElementById("show19").style.display = "block";
-            document.getElementById("show20").style.display = "block";
+            document.getElementById("commentsTitle").style.display = "block";
+            document.getElementById("commentsIMG").style.display = "block";
         } else {
-            document.getElementById("show19").style.display = "none";
-            document.getElementById("show20").style.display = "none";
+            document.getElementById("commentsTitle").style.display = "none";
+            document.getElementById("commentsIMG").style.display = "none";
         }
 
+        // Load Preview
         if (document.getElementById("chk_experiment").checked && document.getElementById("chk_loadPreview").checked) {
-            document.getElementById("show21").style.display = "block";
-            document.getElementById("show22").style.display = "block";
+            document.getElementById("loadPreviewTitle").style.display = "block";
+            document.getElementById("loadPreviewIMG").style.display = "block";
         } else {
-            document.getElementById("show21").style.display = "none";
-            document.getElementById("show22").style.display = "none";
+            document.getElementById("loadPreviewTitle").style.display = "none";
+            document.getElementById("loadPreviewIMG").style.display = "none";
         }
 
         // Plate
         if (document.getElementById("chk_plateEdit").checked) {
-            document.getElementById("show23").style.display = "block";
+            document.getElementById("plateEditTitleH1").style.display = "block";
         } else {
-            document.getElementById("show23").style.display = "none";
+            document.getElementById("plateEditTitleH1").style.display = "none";
         }
 
+        // Plate Edit
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_plateLayout").checked) {
-            document.getElementById("show24").style.display = "block";
-            document.getElementById("show25").style.display = "block";
+            document.getElementById("plateEditTitleH2").style.display = "block";
+            document.getElementById("plateEditTable").style.display = "block";
         } else {
-            document.getElementById("show24").style.display = "none";
-            document.getElementById("show25").style.display = "none";
+            document.getElementById("plateEditTitleH2").style.display = "none";
+            document.getElementById("plateEditTable").style.display = "none";
         }
 
+        // Task 信息
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_task").checked) {
-            document.getElementById("show26").style.display = "block";
-            document.getElementById("show27").style.display = "block";
+            document.getElementById("plateEditTaskTitle").style.display = "block";
+            document.getElementById("plateEditTaskText").style.display = "block";
         } else {
-            document.getElementById("show26").style.display = "none";
-            document.getElementById("show27").style.display = "none";
+            document.getElementById("plateEditTaskTitle").style.display = "none";
+            document.getElementById("plateEditTaskText").style.display = "none";
         }
 
-        if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_target").checked) {
-            document.getElementById("show28").style.display = "block";
-            document.getElementById("show29").style.display = "block";
+        // Target 信息
+        if (document.getElementById("plateEditTaskTitle").checked && document.getElementById("chk_target").checked) {
+            document.getElementById("plateEditTargetTitle").style.display = "block";
+            document.getElementById("plateEditTargetTable").style.display = "block";
         } else {
-            document.getElementById("show28").style.display = "none";
-            document.getElementById("show29").style.display = "none";
+            document.getElementById("plateEditTargetTitle").style.display = "none";
+            document.getElementById("plateEditTargetTable").style.display = "none";
         }
 
+        // Split Plate
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_splitPlate").checked) {
-            document.getElementById("show30").style.display = "block";
-            document.getElementById("show31").style.display = "block";
+            document.getElementById("plateEditSplitPlateTitle").style.display = "block";
+            document.getElementById("plateEditSplitPlateText").style.display = "block";
         } else {
-            document.getElementById("show30").style.display = "none";
-            document.getElementById("show31").style.display = "none";
+            document.getElementById("plateEditSplitPlateTitle").style.display = "none";
+            document.getElementById("plateEditSplitPlateText").style.display = "none";
         }
 
+        //Sample 信息
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_sample").checked) {
-            document.getElementById("show32").style.display = "block";
-            document.getElementById("show33").style.display = "block";
+            document.getElementById("plateEditSampleTitle").style.display = "block";
+            document.getElementById("plateEditSampleTable").style.display = "block";
         } else {
-            document.getElementById("show32").style.display = "none";
-            document.getElementById("show33").style.display = "none";
+            document.getElementById("plateEditSampleTitle").style.display = "none";
+            document.getElementById("plateEditSampleTable").style.display = "none";
         }
 
+        //Standard 信息
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_standard").checked) {
-            document.getElementById("show34").style.display = "block";
-            document.getElementById("show35").style.display = "block";
-            document.getElementById("show36").style.display = "block";
-            document.getElementById("show37").style.display = "block";
-            document.getElementById("show38").style.display = "block";
-            document.getElementById("show39").style.display = "block";
-            document.getElementById("show40").style.display = "block";
-            document.getElementById("show41").style.display = "block";
-            document.getElementById("show42").style.display = "block";
-            document.getElementById("show43").style.display = "block";
+            document.getElementById("plateEditStandardTitle").style.display = "block";
+            document.getElementById("plateEditStandardSt").style.display = "block";
+            document.getElementById("plateEditStandardSA").style.display = "block";
+            document.getElementById("plateEditStandardSN").style.display = "block";
+            document.getElementById("plateEditStandardF").style.display = "block";
+            document.getElementById("plateEditStandardDF").style.display = "block";
+            document.getElementById("plateEditStandardUnit").style.display = "block";
+            document.getElementById("plateEditStandardR").style.display = "block";
+            document.getElementById("plateEditStandardID").style.display = "block";
+            document.getElementById("plateEditStandardA").style.display = "block";
         } else {
-            document.getElementById("show34").style.display = "none";
-            document.getElementById("show35").style.display = "none";
-            document.getElementById("show36").style.display = "none";
-            document.getElementById("show37").style.display = "none";
-            document.getElementById("show38").style.display = "none";
-            document.getElementById("show39").style.display = "none";
-            document.getElementById("show40").style.display = "none";
-            document.getElementById("show41").style.display = "none";
-            document.getElementById("show42").style.display = "none";
-            document.getElementById("show43").style.display = "none";
+            document.getElementById("plateEditStandardTitle").style.display = "none";
+            document.getElementById("plateEditStandardSt").style.display = "none";
+            document.getElementById("plateEditStandardSA").style.display = "none";
+            document.getElementById("plateEditStandardSN").style.display = "none";
+            document.getElementById("plateEditStandardF").style.display = "none";
+            document.getElementById("plateEditStandardDF").style.display = "none";
+            document.getElementById("plateEditStandardUnit").style.display = "none";
+            document.getElementById("plateEditStandardR").style.display = "none";
+            document.getElementById("plateEditStandardID").style.display = "none";
+            document.getElementById("plateEditStandardA").style.display = "none";
         }
 
         // Protocol
         if (document.getElementById("chk_protocolEdit").checked) {
-            document.getElementById("show44").style.display = "block";
+            document.getElementById("protocolEditTitle").style.display = "block";
         } else {
-            document.getElementById("show44").style.display = "none";
+            document.getElementById("protocolEditTitle").style.display = "none";
         }
 
         if (document.getElementById("chk_protocolEdit").checked && document.getElementById("chk_protocol").checked) {
-            document.getElementById("show45").style.display = "block";
-            document.getElementById("show46").style.display = "block";
+            document.getElementById("protocolTitle").style.display = "block";
+            document.getElementById("protocolText").style.display = "block";
         } else {
-            document.getElementById("show45").style.display = "none";
-            document.getElementById("show46").style.display = "none";
+            document.getElementById("protocolTitle").style.display = "none";
+            document.getElementById("protocolText").style.display = "none";
         }
 
         // Run
         if (document.getElementById("chk_run").checked) {
-            document.getElementById("show47").style.display = "block";
+            document.getElementById("runTitle").style.display = "block";
         } else {
-            document.getElementById("show47").style.display = "none";
+            document.getElementById("runTitle").style.display = "none";
         }
 
         if (document.getElementById("chk_run").checked && document.getElementById("chk_runTime").checked) {
-            document.getElementById("show48").style.display = "block";
-            document.getElementById("show49").style.display = "block";
+            document.getElementById("runTime").style.display = "block";
+            document.getElementById("runTimeText").style.display = "block";
         } else {
-            document.getElementById("show48").style.display = "none";
-            document.getElementById("show49").style.display = "none";
+            document.getElementById("runTime").style.display = "none";
+            document.getElementById("runTimeText").style.display = "none";
         }
 
         if (document.getElementById("chk_run").checked && document.getElementById("chk_temperatureCurve").checked) {
-            document.getElementById("show50").style.display = "block";
-            document.getElementById("show51").style.display = "block";
+            document.getElementById("runTemperatureCurveTitle").style.display = "block";
+            document.getElementById("runTemperatureCurveIMG").style.display = "block";
         } else {
-            document.getElementById("show50").style.display = "none";
-            document.getElementById("show51").style.display = "none";
+            document.getElementById("runTemperatureCurveTitle").style.display = "none";
+            document.getElementById("runTemperatureCurveIMG").style.display = "none";
         }
 
         // Quantification
         if (document.getElementById("chk_analysis").checked) {
-            document.getElementById("show52").style.display = "block";
+            document.getElementById("analysisTitle").style.display = "block";
         } else {
-            document.getElementById("show52").style.display = "none";
+            document.getElementById("analysisTitle").style.display = "none";
         }
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_quantification").checked) {
-            document.getElementById("show53").style.display = "block";
-            document.getElementById("show54").style.display = "block";
-            document.getElementById("show55").style.display = "block";
-            document.getElementById("show56").style.display = "block";
-            document.getElementById("show57").style.display = "block";
+            document.getElementById("analysisQuantification").style.display = "block";
+            document.getElementById("analysisCurveCq").style.display = "block";
+            document.getElementById("analysisCurveCqIMG").style.display = "block";
+            document.getElementById("analysisCurveClog").style.display = "block";
+            document.getElementById("analysisCurveClogIMG").style.display = "block";
         } else {
-            document.getElementById("show53").style.display = "none";
-            document.getElementById("show54").style.display = "none";
-            document.getElementById("show55").style.display = "none";
-            document.getElementById("show56").style.display = "none";
-            document.getElementById("show57").style.display = "none";
+            document.getElementById("analysisQuantification").style.display = "none";
+            document.getElementById("analysisCurveCq").style.display = "none";
+            document.getElementById("analysisCurveCqIMG").style.display = "none";
+            document.getElementById("analysisCurveClog").style.display = "none";
+            document.getElementById("analysisCurveClogIMG").style.display = "none";
         }
 
+        // 标准曲线
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_standardCurve").checked) {
-            document.getElementById("show58").style.display = "block";
-            document.getElementById("show59").style.display = "block";
+            document.getElementById("analysisStandardCurveTitle").style.display = "block";
+            document.getElementById("analysisStandardCurveIMG").style.display = "block";
         } else {
-            document.getElementById("show58").style.display = "none";
-            document.getElementById("show59").style.display = "none";
+            document.getElementById("analysisStandardCurveTitle").style.display = "none";
+            document.getElementById("analysisStandardCurveIMG").style.display = "none";
         }
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_quantificationData").checked) {
-            document.getElementById("show60").style.display = "block";
-            document.getElementById("show61").style.display = "block";
+            document.getElementById("analysisQDTitle").style.display = "block";
+            document.getElementById("analysisQDTable").style.display = "block";
         } else {
-            document.getElementById("show60").style.display = "none";
-            document.getElementById("show61").style.display = "none";
+            document.getElementById("analysisQDTitle").style.display = "none";
+            document.getElementById("analysisQDTable").style.display = "none";
         }
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_meltCurve").checked) {
-            document.getElementById("show62").style.display = "block";
-            document.getElementById("show63").style.display = "block";
-            document.getElementById("show64").style.display = "block";
-            document.getElementById("show65").style.display = "block";
-            document.getElementById("show66").style.display = "block";
+            document.getElementById("analysisMeltCurve").style.display = "block";
+            document.getElementById("analysisPreCurve").style.display = "block";
+            document.getElementById("analysisPreCurveIMG").style.display = "block";
+            document.getElementById("analysisMeltPeak").style.display = "block";
+            document.getElementById("analysisMeltPeakIMG").style.display = "block";
         } else {
-            document.getElementById("show62").style.display = "none";
-            document.getElementById("show63").style.display = "none";
-            document.getElementById("show64").style.display = "none";
-            document.getElementById("show65").style.display = "none";
-            document.getElementById("show66").style.display = "none";
+            document.getElementById("analysisMeltCurve").style.display = "none";
+            document.getElementById("analysisPreCurve").style.display = "none";
+            document.getElementById("analysisPreCurveIMG").style.display = "none";
+            document.getElementById("analysisMeltPeak").style.display = "none";
+            document.getElementById("analysisMeltPeakIMG").style.display = "none";
         }
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_meltData").checked) {
-            document.getElementById("show67").style.display = "block";
-            document.getElementById("show68").style.display = "block";
+            document.getElementById("analysisMeltDataTitle").style.display = "block";
+            document.getElementById("analysisMeltDataTable").style.display = "block";
         } else {
-            document.getElementById("show67").style.display = "none";
-            document.getElementById("show68").style.display = "none";
+            document.getElementById("analysisMeltDataTitle").style.display = "none";
+            document.getElementById("analysisMeltDataTable").style.display = "none";
         }
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_geneExpression").checked) {
-            document.getElementById("show69").style.display = "block";
-            document.getElementById("show70").style.display = "block";
-            document.getElementById("show71").style.display = "block";
-            document.getElementById("show72").style.display = "block";
-            document.getElementById("show73").style.display = "block";
-            document.getElementById("show74").style.display = "block";
+            document.getElementById("analysisGeneExpressionTitle").style.display = "block";
+            document.getElementById("analysisGeneExpressionBar").style.display = "block";
+            document.getElementById("analysisGeneExpressionBarIMG").style.display = "block";
+            document.getElementById("analysisGeneExpressionMode").style.display = "block";
+            document.getElementById("analysisGeneExpressionData").style.display = "block";
+            document.getElementById("analysisGeneExpressionDataTable").style.display = "block";
         } else {
-            document.getElementById("show69").style.display = "none";
-            document.getElementById("show70").style.display = "none";
-            document.getElementById("show71").style.display = "none";
-            document.getElementById("show72").style.display = "none";
-            document.getElementById("show73").style.display = "none";
-            document.getElementById("show74").style.display = "none";
+            document.getElementById("analysisGeneExpressionTitle").style.display = "none";
+            document.getElementById("analysisGeneExpressionBar").style.display = "none";
+            document.getElementById("analysisGeneExpressionBarIMG").style.display = "none";
+            document.getElementById("analysisGeneExpressionMode").style.display = "none";
+            document.getElementById("analysisGeneExpressionData").style.display = "none";
+            document.getElementById("analysisGeneExpressionDataTable").style.display = "none";
         }
 
     }
@@ -1020,9 +860,9 @@ $(() => {
     // 给DIV插入内容
     function insertText() {
         // Header
-        document.getElementById("show1").innerHTML = data.header.tittle;
-        document.getElementById("show2").innerHTML = data.header.subTittle;
-        document.getElementById("show0").src = data.header.imgLogo;
+        document.getElementById("title").innerHTML = data.header.tittle;
+        document.getElementById("subTitle").innerHTML = data.header.subTittle;
+        document.getElementById("head").src = data.header.imgLogo;
 
         // Experiment
         // Information
@@ -1041,37 +881,35 @@ $(() => {
         document.getElementById("PS_CT").innerHTML = data.experiment.parameterSetting.coverTemp;
         document.getElementById("PS_LCT").innerHTML = data.experiment.parameterSetting.lidCloseTemp;
         // Comments
-        document.getElementById("show20").src = data.experiment.imgLoadPreviewPlate;
+        document.getElementById("commentsIMG").src = data.experiment.imgLoadPreviewPlate;
         // LoadPreview
-        document.getElementById("show22").src = data.experiment.imgLoadPreviewProtocol;
+        document.getElementById("loadPreviewIMG").src = data.experiment.imgLoadPreviewProtocol;
 
         // Plate edit
         // Plate Edit
         // 创建内容
-        let trSum = 0;
-        for (let i = 0; i < data.plate.plateLayout.length; i++) {
-            //创建行tr
-            let tr = document.createElement('tr');
-            //将新创建的行tr添加给tbody
-            document.querySelector('#plateBody').appendChild(tr);
-            for (let k in data.plate.plateLayout[i]) {
-                // 创建td元素
-                let th = document.createElement('td');
-                // 将每个对象中的属性值传给td
-                th.innerHTML = data.plate.plateLayout[i][k];
-                //给tr添加td子元素
-                tr.appendChild(th);
-            }
-            // 3、内层for循环，创建每一行中的所有单元格td，单元格td的数量与对象中的属性多少有关，故用for...in...
-        }
+           for (let i = 0; i < data.plate.plateLayout.length; i++) {
+               //创建行tr
+               let tr = document.createElement('tr');
+               //将新创建的行tr添加给table
+               $('#plateEditTable').append(tr);
+               for (let k in data.plate.plateLayout[i]) {
+                   // 创建th元素
+                   let th = document.createElement('th');
+                   // 将每个对象中的属性值传给td
+                   th.innerHTML = data.plate.plateLayout[i][k];
+                   //给tr添加th子元素
+                   tr.appendChild(th);
+               }
+           }
 
         // Task
-        document.getElementById("show27").innerHTML = data.plate.task;
+        document.getElementById("plateEditTaskText").innerHTML = data.plate.task;
 
         // Target
         // 创建标题
         let targetHead_tr = document.createElement('tr');
-        document.querySelector('#targetHead').appendChild(targetHead_tr);
+        $("#plateEditTargetTable").append(targetHead_tr);
         for (let k in data.plate.target[0]) {
             // 创建th元素
             let th = document.createElement('th');
@@ -1085,7 +923,7 @@ $(() => {
             //创建行tr
             let tr = document.createElement('tr');
             //将新创建的行tr添加给tbody
-            document.querySelector('#targetBody').appendChild(tr);
+            $('#plateEditTargetTable').append(tr);
             // 3、内层for循环，创建每一行中的所有单元格td，单元格td的数量与对象中的属性多少有关，故用for...in...
             for (let k in data.plate.target[i]) {
                 // 创建td元素
@@ -1098,11 +936,11 @@ $(() => {
         }
 
         // Split Plate
-        document.getElementById("show31").innerHTML = data.plate.splitPlate;
+        document.getElementById("plateEditSplitPlateText").innerHTML = data.plate.splitPlate;
 
         // Sample
         let sampleHead_tr = document.createElement('tr');
-        document.querySelector('#sampleHead').appendChild(sampleHead_tr);
+        $('#plateEditSampleTable').append(sampleHead_tr);
         for (let k in data.plate.sample[0]) {
             let th = document.createElement('th');
             th.innerHTML = data.plate.sample[0][k];
@@ -1110,7 +948,7 @@ $(() => {
         }
         for (let i = 1; i < data.plate.sample.length; i++) {
             let tr = document.createElement('tr');
-            document.querySelector('#sampleBody').appendChild(tr);
+            $('#plateEditSampleTable').append(tr);
             for (let k in data.plate.sample[i]) {
                 let td = document.createElement('td');
                 td.innerHTML = data.plate.sample[i][k];
@@ -1131,24 +969,24 @@ $(() => {
 
         // Protocol Edit
         // Protocol
-        document.getElementById("show46").innerHTML = data.protocol.protocol;
+        document.getElementById("protocolText").innerHTML = data.protocol.protocol;
 
         // Run
         // Run Time
-        document.getElementById("show49").innerHTML = data.run.runTime;
-        document.getElementById("show51").src = data.run.imgTemperatureCurve;
+        document.getElementById("runTimeText").innerHTML = data.run.runTime;
+        document.getElementById("runTemperatureCurveIMG").src = data.run.imgTemperatureCurve;
 
         // Analysis
         // Quantification
-        document.getElementById("show55").src = data.analysis.imgAmplificationCurve_cq;
-        document.getElementById("show57").src = data.analysis.imgAmplificationCurve_log;
+        document.getElementById("analysisCurveCqIMG").src = data.analysis.imgAmplificationCurve_cq;
+        document.getElementById("analysisCurveClogIMG").src = data.analysis.imgAmplificationCurve_log;
 
         // 标准曲线
-        document.getElementById("show59").src = data.analysis.imgStandardCurve;
+        document.getElementById("analysisStandardCurveIMG").src = data.analysis.imgStandardCurve;
 
         // Quantification Data
         let QD_tr = document.createElement('tr');
-        document.querySelector('#QDHead').appendChild(QD_tr);
+        $('#analysisQDTable').append(QD_tr);
         for (let k in data.analysis.quantificationData[0]) {
             let th = document.createElement('th');
             th.innerHTML = data.analysis.quantificationData[0][k];
@@ -1156,7 +994,7 @@ $(() => {
         }
         for (let i = 1; i < data.analysis.quantificationData.length; i++) {
             let tr = document.createElement('tr');
-            document.querySelector('#QDBody').appendChild(tr);
+            $('#analysisQDTable').append(tr);
             for (let k in data.analysis.quantificationData[i]) {
                 let td = document.createElement('td');
                 td.innerHTML = data.analysis.quantificationData[i][k];
@@ -1165,12 +1003,12 @@ $(() => {
         }
 
         // Melt Curve
-        document.getElementById("show64").src = data.analysis.imgMeltCurve;
-        document.getElementById("show66").src = data.analysis.imgMeltPeak;
+        document.getElementById("analysisPreCurveIMG").src = data.analysis.imgMeltCurve;
+        document.getElementById("analysisMeltPeakIMG").src = data.analysis.imgMeltPeak;
 
         // Melt Data
         let MT_tr = document.createElement('tr');
-        document.querySelector('#MTHead').appendChild(MT_tr);
+        $('#analysisMeltDataTable').append(MT_tr);
         for (let k in data.analysis.meltData[0]) {
             let th = document.createElement('th');
             th.innerHTML = data.analysis.meltData[0][k];
@@ -1178,7 +1016,7 @@ $(() => {
         }
         for (let i = 1; i < data.analysis.meltData.length; i++) {
             let tr = document.createElement('tr');
-            document.querySelector('#MTBody').appendChild(tr);
+            $('#analysisMeltDataTable').append(tr);
             for (let k in data.analysis.meltData[i]) {
                 let td = document.createElement('td');
                 td.innerHTML = data.analysis.meltData[i][k];
@@ -1187,10 +1025,10 @@ $(() => {
         }
 
         // Gene expression
-        document.getElementById("show71").src = data.analysis.imgGeneExpressionBar;
+        document.getElementById("analysisGeneExpressionBarIMG").src = data.analysis.imgGeneExpressionBar;
         document.getElementById("geneExpressionMode").innerHTML = data.analysis.geneExpressionMode;
         let GE_tr = document.createElement('tr');
-        document.querySelector('#GEHead').appendChild(GE_tr);
+        $('#analysisGeneExpressionDataTable').append(GE_tr);
         for (let k in data.analysis.geneExpressionData[0]) {
             let th = document.createElement('th');
             th.innerHTML = data.analysis.geneExpressionData[0][k];
@@ -1198,7 +1036,7 @@ $(() => {
         }
         for (let i = 1; i < data.analysis.geneExpressionData.length; i++) {
             let tr = document.createElement('tr');
-            document.querySelector('#GEBody').appendChild(tr);
+            $('#analysisGeneExpressionDataTable').append(tr);
             for (let k in data.analysis.geneExpressionData[i]) {
                 let td = document.createElement('td');
                 td.innerHTML = data.analysis.geneExpressionData[i][k];
