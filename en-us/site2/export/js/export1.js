@@ -430,8 +430,9 @@ $(() => {
 
     // 更新时间
     function updateDate() {
+        let data = new Date();
         let myDate = document.getElementById("myDate");
-        myDate.value = new Date().getFullYear() + '/' + (new Date().getMonth() + 1) + '/' + new Date().getDate() + ' ' + new Date().getHours() + ':' + new Date().getMinutes();
+        myDate.value = data.getFullYear() + '/' + (data.getMonth() + 1) + '/' + data.getDate() + ' ' + data.getHours() + ':' + data.getMinutes();
     }
 
     // 上传图片
@@ -537,12 +538,11 @@ $(() => {
             let outerHTML = this.outerHTML; // 当前元素的 html 字符串
             if (this.style.display === "none") {
                 htmlList[htmlList.length - 1] += outerHTML; // 如果隐藏直接塞进去
-            } /*else {
+            } else {
                 if (this.tagName.toLowerCase() === "table") { // 如果是 table 标签
                     $this.find("tr").each(function () { // 对每个 tr 遍历
                         let $this = $(this);
                         let outerHTML = this.outerHTML;
-                        console.log(outerHTML);
                         let height = $this.outerHeight();   // tr 高度
                         if (h + height > pageHeight) {  // 超出一页
                             if ($this.index() !== 0) htmlList[htmlList.length - 1] += "</table>";// 如果不是第一个 tr，则给上一个封底
@@ -550,12 +550,12 @@ $(() => {
                             h = height;  // 重置高度
                         } else {    // 没超出一页
                             h += height;    // 对计算高度累加
-                            if ($this.index() === 0) htmlList[htmlList.length - 1] += "<table>";    // 如果是第一个 tr，则先封顶
+                            if ($this.index() === 0) htmlList[htmlList.length - 1] += "<table>";// 如果是第一个 tr，则先封顶
                             htmlList[htmlList.length - 1] += outerHTML; // 将 tr 塞进去
                         }
                     });
-                    htmlList[htmlList.length - 1] += "</table>";    // 封底
-                } */else {    // 非 table 标签
+                    htmlList[htmlList.length - 1] += "</table>"; // 封底
+                } else {    // 非 table 标签
                     let height = $this.outerHeight() + margin;  // 计算高度，height + padding + margin
                     if (h + height > pageHeight) {  // 超出一页
                         htmlList[htmlList.length] = outerHTML;  // 起新的一页，直接塞进去
@@ -565,9 +565,8 @@ $(() => {
                         htmlList[htmlList.length - 1] += outerHTML; // 直接塞进去
                     }
                 }
-            // }
+            }
         });
-        console.log(htmlList);
         $("#container").html(htmlList.map(html => `<div>${html}</div>`).join(""));
 
     }
@@ -888,20 +887,20 @@ $(() => {
         // Plate edit
         // Plate Edit
         // 创建内容
-           for (let i = 0; i < data.plate.plateLayout.length; i++) {
-               //创建行tr
-               let tr = document.createElement('tr');
-               //将新创建的行tr添加给table
-               $('#plateEditTable').append(tr);
-               for (let k in data.plate.plateLayout[i]) {
-                   // 创建th元素
-                   let th = document.createElement('th');
-                   // 将每个对象中的属性值传给td
-                   th.innerHTML = data.plate.plateLayout[i][k];
-                   //给tr添加th子元素
-                   tr.appendChild(th);
-               }
-           }
+        for (let i = 0; i < data.plate.plateLayout.length; i++) {
+            //创建行tr
+            let tr = document.createElement('tr');
+            //将新创建的行tr添加给table
+            $('#plateEditTable').append(tr);
+            for (let k in data.plate.plateLayout[i]) {
+                // 创建th元素
+                let th = document.createElement('th');
+                // 将每个对象中的属性值传给td
+                th.innerHTML = data.plate.plateLayout[i][k];
+                //给tr添加th子元素
+                tr.appendChild(th);
+            }
+        }
 
         // Task
         document.getElementById("plateEditTaskText").innerHTML = data.plate.task;
