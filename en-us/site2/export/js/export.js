@@ -10,7 +10,6 @@ $(function () {
     $(".main").on("click", "div", function () {
 
         $(this).next().slideToggle("fast");
-        // $(".main ul li").slideToggle("fast");
 
         // 图标变换
         if ($(this).hasClass('expand')) {

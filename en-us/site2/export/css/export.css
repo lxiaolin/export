@@ -100,7 +100,7 @@
     cursor: pointer;
 }
 
-#inputLogo {
+.inputLogo {
     cursor: pointer;
     font-size: 0;
     height: 20px;
@@ -321,19 +321,19 @@
 }
 
 /*word页面*/
-#container div > div, p, table {
+.right div > div, p, table {
     display: none;
 }
 
-#container div th {
+.right div th {
     text-align: center;
 }
 
-#container div table {
+.right div table {
     text-indent: 0;
 }
 
-#container div table td {
+.right div table td {
     text-align: center;
 }
 
