@@ -1,88 +1,127 @@
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 5px 0;
+}
+
+li input[type="checkbox"] {
+    vertical-align: top;
+    cursor: pointer;
+}
+
+li span,
+.btnScale {
+    -moz-user-select: none; /*火狐*/
+    -webkit-user-select: none; /*webkit浏览器*/
+    -ms-user-select: none; /*IE10*/
+    -khtml-user-select: none; /*早期浏览器*/
+    user-select: none;
+}
+
+.left {
+    height: 100%;
+    width: 35%;
+    float: left;
+}
+
+.left > section {
+    height: 50%;
+    width: 100%;
+}
+
+.left > section:first-child {
+    padding-bottom: 5px;
+}
+
+.left > section:last-child {
+    padding-top: 5px;
+}
+
+/* 左上容器 */
+.topLeft {
+    height: 100%;
+    width: 100%;
+    padding: 0 5px;
+    border: 1px solid #8a868b;
+    overflow: auto;
+}
+
+.topLeft ul {
+    display: none;
+}
+
+.picExpand {
+    background: url("../../images/expend.png") no-repeat;
+    height: 9px;
+    width: 9px;
+    float: left;
+    margin: 6px 5px;
+    cursor: pointer;
+}
+
+.picCollapse {
+    background: url("../../images/collapse.png") no-repeat;
+    height: 9px;
+    width: 9px;
+    float: left;
+    margin: 6px 5px;
+    cursor: pointer;
+}
+
 /*左下容器*/
 .bottomLeft {
     height: 100%;
     width: 100%;
-    padding: 15px 15px 5px 15px;
+    padding: 10px;
     border: 1px solid #8a868b;
-    margin-top: -5px;
 }
 
-.header {
+.bottomLeft > div {
     position: relative;
     height: 100%;
     width: 100%;
+    padding: 10px;
     border: 1px solid #dfdbe0;
 }
 
-._title {
-    height: 30px;
-    margin-top: 10px;
+.menuDetailTitle {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background-color: #fff;
+    margin: 0 !important;
 }
 
-._title div {
+.headerMenuDetail > div {
+    margin: 0 0 10px;
+}
+
+.headerMenuDetailSection div {
     display: inline-block;
-    height: 25px;
     width: 80px;
-    margin-left: 5px;
 }
 
-._title input {
+.headerMenuDetailSection input,
+.headerMenuDetailSection select {
     display: inline-block;
-    width: calc(100% - 90px);
+    width: calc(100% - 85px);
 }
 
-.subtitle {
-    height: 30px;
-    margin-top: 5px;
-}
-
-.subtitle div {
-    display: inline-block;
-    height: 25px;
-    width: 80px;
-    margin-left: 5px;
-}
-
-.subtitle input {
-    display: inline-block;
-    width: calc(100% - 90px);
-}
-
-.align {
-    height: 25px;
-    margin-top: 5px;
-}
-
-.align div {
-    display: inline-block;
-    height: 25px;
-    width: 80px;
-    margin-left: 5px;
-}
-
-.align select {
-    display: inline-block;
-    width: calc(100% - 90px);
+.headerMenuDetailSection select {
     background-color: #c3bfc4;
 }
 
-.select {
-    /*border: 1px solid blueviolet;*/
-    margin-left: 3%;
-    width: 87%;
-    background: #c3bfc4;
-}
-
 .logoAll {
-    height: calc(100% - 120px);
-    width: calc(100% - 10px);
-    margin: 5px;
+    height: calc(100% - 100px);
+    width: 100%;
     border: 1px solid #dfdbe0;
     position: relative;
     padding: 10px;
 }
 
-.logoText {
+.logoContainer {
     width: 100%;
     padding: 10px;
     overflow: auto;
@@ -91,7 +130,7 @@
     height: calc(100% - 25px);
 }
 
-.selectLogo {
+.btnLogo {
     line-height: 20px;
     margin-right: 10px;
     background: #c3bfc4;
@@ -100,110 +139,15 @@
     cursor: pointer;
 }
 
-.inputLogo {
-    cursor: pointer;
-    font-size: 0;
-    height: 20px;
-    width: 76px;
-    margin-right: -76px;
-    float: right;
-    opacity: 0;
-}
-
-.clearLogo {
-    line-height: 20px;
-    margin-right: 10px;
-    background: #c3bfc4;
-    border: 1px solid #000000;
-    float: right;
-    cursor: pointer;
-}
-
-.button {
-    line-height: 20px;
-    width: 100%;
-    cursor: pointer;
-}
-
-.updateButton {
-    width: 100px;
-    border: 1px solid #000;
-    margin: 5px auto;
-    background: #c3bfc4;
-    text-align: center;
-}
-
-.scroll::-webkit-scrollbar {
-    display: none;
-}
-
-/*左上容器*/
-.topLeft {
-    height: calc(100% - 15px);
-    width: 100%;
-    padding: 0 5px;
-    border: 1px solid #8a868b;
-    margin-top: 5px;
-    overflow: auto;
-}
-
-.topLeft ul {
-    list-style: none;
-    padding-left: 20px;
-}
-
-.topLeft  ul  li {
-    margin: 5px 0;
-}
-
-.main ul {
-    display: none;
-}
-
-.expand {
-    background: url(../../images/topLeft+.png) no-repeat;
-    height: 9px;
-    width: 9px;
-    float: left;
-    margin: 6px 5px;
-}
-
-.collapse {
-    background: url(../../images/topLeft-.png) no-repeat;
-    height: 9px;
-    width: 9px;
-    float: left;
-    margin: 6px 5px;
-    display: block;
-}
-
-.divList {
-    text-decoration: none;
-    color: #000000;
-    margin-top: -22px;
-    margin-left: 23px;
-}
-
-.topLeft ul li ul li input {
-    margin-left: 10px;
-}
-
-.topLeft ul li input {
-    vertical-align: top;
-    margin-right: 2px;
-}
-
-/*右容器*/
+/* 右容器 */
 .right {
-    /*height: 100%;*/
     width: 65%;
     background-color: #d8d8d8;
-    padding: 10px;
+    padding: 25px;
     overflow: auto;
-    margin: 4.5px 1px;
 }
 
-.right > div {
+.right article {
     overflow: hidden;
     padding: 2.54cm 3.17cm;
     border: 1px outset;
@@ -215,14 +159,83 @@
     text-indent: 2em;
 }
 
-.change_down change_up {
-    padding: 2px;
+.btnScale {
+    position: fixed;
+    top: 65px;
+    right: 40px;
+    padding: 2px 10px;
     border: 1px solid;
     background-color: #9F9F9F;
     cursor: pointer;
 }
 
-.right div p span:first-child {
+/* 缩放 */
+.scale0 > article {
+    transform-origin: top;
+    transform: scale(0.5);
+    margin-bottom: -15cm !important;
+}
+
+.scale1 > article {
+    transform-origin: top;
+    transform: scale(0.6);
+    margin-bottom: -12cm !important;
+}
+
+.scale2 > article {
+    transform-origin: top;
+    transform: scale(0.7);
+    margin-bottom: -9cm !important;
+}
+
+.scale3 > article {
+    transform-origin: top;
+    transform: scale(0.8);
+    margin-bottom: -6cm !important;
+}
+
+.scale4 > article {
+    transform-origin: top;
+    transform: scale(0.9);
+    margin-bottom: -3cm !important;
+}
+
+.scale5 > article {
+    transform: scale(1);
+}
+
+.scale6 > article {
+    transform-origin: top;
+    transform: scale(1.1);
+    margin-bottom: 4cm !important;
+}
+
+.scale7 > article {
+    transform-origin: top;
+    transform: scale(1.2);
+    margin-bottom: 7cm !important;
+}
+
+.scale8 > article {
+    transform-origin: top;
+    transform: scale(1.3);
+    margin-bottom: 10cm !important;
+}
+
+.scale9 > article {
+    transform-origin: top;
+    transform: scale(1.4);
+    margin-bottom: 13cm !important;
+}
+
+.scale10 > article {
+    transform-origin: top;
+    transform: scale(1.5);
+    margin-bottom: 16cm !important;
+}
+
+/* TODO: 以下内容暂未处理 */
+.wordContainer article p span:first-child {
     font-weight: bold;
 }
 
@@ -256,93 +269,24 @@
     line-height: 1.5em;
 }
 
-.change0 {
-    transform-origin: top;
-    transform: scale(0.5);
-    margin-bottom: -14cm !important;
-}
-
-.change1 {
-    transform-origin: top;
-    transform: scale(0.6);
-    margin-bottom: -12cm !important;
-}
-
-.change2 {
-    transform-origin: top;
-    transform: scale(0.7);
-    margin-bottom: -8cm !important;
-}
-
-.change3 {
-    transform-origin: top;
-    transform: scale(0.8);
-    margin-bottom: -4cm !important;
-}
-
-.change4 {
-    transform-origin: top;
-    transform: scale(0.9);
-    margin-bottom: -2cm !important;
-}
-
-.change5 {
-    transform: scale(1);
-}
-
-.change6 {
-    transform-origin: top;
-    transform: scale(1.1);
-    margin-bottom: 4cm !important;
-}
-
-.change7 {
-    transform-origin: top;
-    transform: scale(1.2);
-    margin-bottom: 8cm !important;
-}
-
-.change8 {
-    transform-origin: top;
-    transform: scale(1.3);
-    margin-bottom: 12cm !important;
-}
-
-.change9 {
-    transform-origin: top;
-    transform: scale(1.4);
-    margin-bottom: 16cm !important;
-}
-
-.change10 {
-    transform-origin: top;
-    transform: scale(1.5);
-    margin-bottom: 20cm !important;
-}
-
 /*word页面*/
-.right div > div, p, table {
+article > p div table img {
     display: none;
 }
 
-.right div th {
-    text-align: center;
-}
-
-.right div table {
+article > table {
     text-indent: 0;
+    width: 670px;
+    margin-left: -50px;
+    border: 1px solid #000000;
 }
 
-.right div table td {
+article table td,th{
     text-align: center;
+    border: 1px solid #000000;
+
 }
 
-.plateTable td {
-    height: 44px;
-    width: 44px;
+article th{
+    width: 150px;
 }
-
-.tableTh th {
-    width: 110px;
-}
-
