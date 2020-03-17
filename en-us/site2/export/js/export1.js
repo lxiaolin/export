@@ -430,9 +430,9 @@ $(() => {
 
     // 更新时间
     function updateDate() {
-        let data = new Date();
+        let date = new Date();
         let myDate = document.getElementById("myDate");
-        myDate.value = data.getFullYear() + '/' + (data.getMonth() + 1) + '/' + data.getDate() + ' ' + data.getHours() + ':' + data.getMinutes();
+        myDate.value = date.getFullYear() + '/' + (date.getMonth() + 1) + '/' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes();
     }
 
     // 上传图片
