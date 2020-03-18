@@ -1206,11 +1206,11 @@ $(() => {
                             let height = $this.outerHeight();   // tr 高度
                             if (h + height > pageHeight) {  // 超出一页
                                 if ($this.index() !== 0) htmlList[htmlList.length - 1] += "</table>";// 如果不是第一个 tr，则给上一个封底
-                                htmlList[htmlList.length] = "<table " + tableID + " border=\"1\">" + outerHTML; // 起新的一页，封顶，不写 thead 和 tbody，让浏览器自行处理
+                                htmlList[htmlList.length] = "<table " + tableID + ">" + outerHTML; // 起新的一页，封顶，不写 thead 和 tbody，让浏览器自行处理
                                 h = height;  // 重置高度
                             } else {    // 没超出一页
                                 h += height;    // 对计算高度累加
-                                if ($this.index() === 0) htmlList[htmlList.length - 1] += "<table " + tableID + " border=\"1\">";// 如果是第一个 tr，则先封顶
+                                if ($this.index() === 0) htmlList[htmlList.length - 1] += "<table " + tableID + ">";// 如果是第一个 tr，则先封顶
                                 htmlList[htmlList.length - 1] += outerHTML; // 将 tr 塞进去
                             }
                         });
