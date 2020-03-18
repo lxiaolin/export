@@ -156,7 +156,7 @@ li span,
     background-color: #FFF;
     margin: 30px auto;
     line-height: 1.5;
-    text-indent: 2em;
+    /*text-indent: 2em;*/
 }
 
 .btnScale {
@@ -275,6 +275,11 @@ article > div,
 article > table,
 article > img {
     display: none;
+}
+
+article > p {
+    margin-top: 6px;
+    margin-bottom: 6px;
 }
 
 article > table {
