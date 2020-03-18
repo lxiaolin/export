@@ -3415,7 +3415,7 @@ $(() => {
     }
 
     function adjust() {
-        let h = 0, margin = 30, pageHeight = 928, htmlList = [""];
+        let h = 0, margin = 30, pageHeight = 1000, htmlList = [""];
         $("#container > article > p, #container > article > img, #container > article > table, #container > article > div").each(function () {
                 let $this = $(this);
                 let outerHTML = this.outerHTML; // 当前元素的 html 字符串
