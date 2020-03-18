@@ -270,7 +270,10 @@ li span,
 }
 
 /*word页面*/
-article > p, article > div, article > table, article > img {
+article > p,
+article > div,
+article > table,
+article > img {
     display: none;
 }
 
@@ -281,12 +284,9 @@ article > table {
     border: 1px solid #000000;
 }
 
-article td {
+article > table td,
+article > table th {
     text-align: center;
-    border: 1px solid #000000;
-}
-
-article th {
     width: 150px;
     border: 1px solid #000000;
 }
