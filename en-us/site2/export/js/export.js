@@ -417,7 +417,6 @@ $(() => {
         adjust();
     };
 
-
     // 下载
     let $alertDownload = $("#alertDownload");
     $("#save").on("click", () => $alertDownload.fadeIn("fast"));
