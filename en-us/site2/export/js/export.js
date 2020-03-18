@@ -3453,7 +3453,6 @@ $(() => {
             }
         );
         $("#container").html(htmlList.map(html => `<article>${html}</article>`).join(""));
-
     }
 })
 ;
