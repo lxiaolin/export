@@ -3273,7 +3273,7 @@ $(() => {
         }
 
         // Task
-        document.getElementById("plateEditTaskText").innerHTML = data.plate.task.replace(/\n/g,"<br>");
+        document.getElementById("plateEditTaskText").innerHTML = data.plate.task.replace(/\n/g, "<br>");
 
         // Target
         // 创建标题
@@ -3338,11 +3338,11 @@ $(() => {
 
         // Protocol Edit
         // Protocol
-        document.getElementById("protocolText").innerHTML = data.protocol.protocol.replace(/\n/g,"<br>");
+        document.getElementById("protocolText").innerHTML = data.protocol.protocol.replace(/\n/g, "<br>");
 
         // Run
         // Run Time
-        document.getElementById("runTimeText").innerHTML = data.run.runTime.replace(/\n/g,"<br>");
+        document.getElementById("runTimeText").innerHTML = data.run.runTime.replace(/\n/g, "<br>");
         document.getElementById("runTemperatureCurveIMG").src = preBase + data.run.imgTemperatureCurve;
 
         // Analysis
@@ -3454,5 +3454,12 @@ $(() => {
         );
         $("#container").html(htmlList.map(html => `<article>${html}</article>`).join(""));
     }
-})
-;
+
+    if (location.href.indexOf("#reloaded") == -1) {
+        location.href = location.href + "#reloaded";
+        location.reload();
+    }
+
+});
+
+
