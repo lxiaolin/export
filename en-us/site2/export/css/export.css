@@ -278,11 +278,12 @@ article > table {
     text-indent: 0;
     width: 670px;
     margin-left: -50px;
-    border: 1px solid #000000;
+    /*border: 1px solid #000000;*/
 }
 
 article table td,th{
     text-align: center;
+    /*border: 1px solid #000000;*/
 }
 
 article th{
