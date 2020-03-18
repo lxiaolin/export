@@ -743,14 +743,14 @@ $(() => {
         }
 
         // Experiment
-        if (document.getElementById("chk_experiment").checked) {
+        if (data.hasExperiment) {
             document.getElementById("experimentTitle").style.display = "block";
         } else {
             document.getElementById("experimentTitle").style.display = "none";
         }
 
         // Information
-        if (document.getElementById("chk_experiment").checked && document.getElementById("chk_information").checked) {
+        if (data.hasExperiment && data.experiment.hasInformation) {
             document.getElementById("informationTitle").style.display = "block";
             document.getElementById("informationName").style.display = "block";
             document.getElementById("informationBarcode").style.display = "block";
@@ -767,7 +767,7 @@ $(() => {
         }
 
         // experimentSetting
-        if (document.getElementById("chk_experiment").checked && document.getElementById("chk_experimentSetting").checked) {
+        if (data.hasExperiment && data.experiment.hasExperimentSetting) {
             document.getElementById("experimentSettingTitle").style.display = "block";
             document.getElementById("experimentSetting_ET").style.display = "block";
             document.getElementById("experimentSettingChemistry").style.display = "block";
@@ -780,7 +780,7 @@ $(() => {
         }
 
         // Parameter Setting
-        if (document.getElementById("chk_experiment").checked && document.getElementById("chk_parameterSetting").checked) {
+        if (data.hasExperiment && data.experiment.hasParameterSetting) {
             document.getElementById("parameterSettingTitle").style.display = "block";
             document.getElementById("parameterSettingRV").style.display = "block";
             document.getElementById("parameterSettingLHS").style.display = "block";
@@ -795,7 +795,7 @@ $(() => {
         }
 
         // Comments
-        if (document.getElementById("chk_experiment").checked && document.getElementById("chk_comments").checked) {
+        if (data.hasExperiment && data.experiment.hasComments) {
             document.getElementById("commentsTitle").style.display = "block";
             document.getElementById("commentsIMG").style.display = "block";
         } else {
@@ -804,7 +804,7 @@ $(() => {
         }
 
         // Load Preview
-        if (document.getElementById("chk_experiment").checked && document.getElementById("chk_loadPreview").checked) {
+        if (data.hasExperiment && data.experiment.hasLoadPreview) {
             document.getElementById("loadPreviewTitle").style.display = "block";
             document.getElementById("loadPreviewIMG").style.display = "block";
         } else {
@@ -813,14 +813,14 @@ $(() => {
         }
 
         // Plate
-        if (document.getElementById("chk_plateEdit").checked) {
+        if (data.hasPlate) {
             document.getElementById("plateEditTitleH1").style.display = "block";
         } else {
             document.getElementById("plateEditTitleH1").style.display = "none";
         }
 
         // Plate Edit
-        if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_plateLayout").checked) {
+        if (data.hasPlate && data.plate.hasPlateLayout) {
             document.getElementById("plateEditTitleH2").style.display = "block";
             document.getElementById("plateEditTable").style.display = "block";
         } else {
@@ -828,7 +828,7 @@ $(() => {
             document.getElementById("plateEditTable").style.display = "none";
         }
         // Task 信息
-        if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_task").checked) {
+        if (data.hasPlate && data.plate.hasTask) {
             document.getElementById("plateEditTaskTitle").style.display = "block";
             document.getElementById("plateEditTaskText").style.display = "block";
         } else {
@@ -837,7 +837,7 @@ $(() => {
         }
 
         // Target 信息
-        if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_target").checked) {
+        if (data.hasPlate && data.plate.hasTarget) {
             document.getElementById("plateEditTargetTitle").style.display = "block";
             document.getElementById("plateEditTargetTable").style.display = "block";
         } else {
@@ -846,7 +846,7 @@ $(() => {
         }
 
         // Split Plate
-        if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_splitPlate").checked) {
+        if (data.hasPlate && data.plate.hasSplitPlate) {
             document.getElementById("plateEditSplitPlateTitle").style.display = "block";
             document.getElementById("plateEditSplitPlateText").style.display = "block";
         } else {
@@ -855,7 +855,7 @@ $(() => {
         }
 
         //Sample 信息
-        if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_sample").checked) {
+        if (data.hasPlate && data.plate.hasSample) {
             document.getElementById("plateEditSampleTitle").style.display = "block";
             document.getElementById("plateEditSampleTable").style.display = "block";
         } else {
@@ -864,7 +864,7 @@ $(() => {
         }
 
         //Standard 信息
-        if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_standard").checked) {
+        if (data.hasPlate && data.plate.hasStandard) {
             document.getElementById("plateEditStandardTitle").style.display = "block";
             document.getElementById("plateEditStandardSt").style.display = "block";
             document.getElementById("plateEditStandardSA").style.display = "block";
@@ -889,13 +889,13 @@ $(() => {
         }
 
         // Protocol
-        if (document.getElementById("chk_protocolEdit").checked) {
+        if (data.hasProtocol) {
             document.getElementById("protocolEditTitle").style.display = "block";
         } else {
             document.getElementById("protocolEditTitle").style.display = "none";
         }
 
-        if (document.getElementById("chk_protocolEdit").checked && document.getElementById("chk_protocol").checked) {
+        if (data.hasProtocol && data.protocol.hasProtocol) {
             document.getElementById("protocolTitle").style.display = "block";
             document.getElementById("protocolText").style.display = "block";
         } else {
@@ -904,13 +904,13 @@ $(() => {
         }
 
         // Run
-        if (document.getElementById("chk_run").checked) {
+        if (data.hasRun) {
             document.getElementById("runTitle").style.display = "block";
         } else {
             document.getElementById("runTitle").style.display = "none";
         }
 
-        if (document.getElementById("chk_run").checked && document.getElementById("chk_runTime").checked) {
+        if (data.hasRun && data.run.hasRunTime) {
             document.getElementById("runTime").style.display = "block";
             document.getElementById("runTimeText").style.display = "block";
         } else {
@@ -918,7 +918,7 @@ $(() => {
             document.getElementById("runTimeText").style.display = "none";
         }
 
-        if (document.getElementById("chk_run").checked && document.getElementById("chk_temperatureCurve").checked) {
+        if (data.hasRun && data.run.hasTemperatureCurve) {
             document.getElementById("runTemperatureCurveTitle").style.display = "block";
             document.getElementById("runTemperatureCurveIMG").style.display = "block";
         } else {
@@ -927,13 +927,13 @@ $(() => {
         }
 
         // Quantification
-        if (document.getElementById("chk_analysis").checked) {
+        if (data.hasAnalysis) {
             document.getElementById("analysisTitle").style.display = "block";
         } else {
             document.getElementById("analysisTitle").style.display = "none";
         }
 
-        if (document.getElementById("chk_analysis").checked && document.getElementById("chk_quantification").checked) {
+        if (data.hasAnalysis && data.analysis.hasQuantification) {
             document.getElementById("analysisQuantification").style.display = "block";
             document.getElementById("analysisCurveCq").style.display = "block";
             document.getElementById("analysisCurveCqIMG").style.display = "block";
@@ -948,7 +948,7 @@ $(() => {
         }
 
         // 标准曲线
-        if (document.getElementById("chk_analysis").checked && document.getElementById("chk_standardCurve").checked) {
+        if (data.hasAnalysis && data.analysis.hasStandardCurve) {
             document.getElementById("analysisStandardCurveTitle").style.display = "block";
             document.getElementById("analysisStandardCurveIMG").style.display = "block";
         } else {
@@ -956,7 +956,7 @@ $(() => {
             document.getElementById("analysisStandardCurveIMG").style.display = "none";
         }
 
-        if (document.getElementById("chk_analysis").checked && document.getElementById("chk_quantificationData").checked) {
+        if (data.hasAnalysis && data.analysis.hasQuantificationData) {
             document.getElementById("analysisQDTitle").style.display = "block";
             document.getElementById("analysisQDTable").style.display = "block";
         } else {
@@ -964,7 +964,7 @@ $(() => {
             document.getElementById("analysisQDTable").style.display = "none";
         }
 
-        if (document.getElementById("chk_analysis").checked && document.getElementById("chk_meltCurve").checked) {
+        if (data.hasAnalysis && data.analysis.hasMelt) {
             document.getElementById("analysisMeltCurve").style.display = "block";
             document.getElementById("analysisPreCurve").style.display = "block";
             document.getElementById("analysisPreCurveIMG").style.display = "block";
@@ -978,7 +978,7 @@ $(() => {
             document.getElementById("analysisMeltPeakIMG").style.display = "none";
         }
 
-        if (document.getElementById("chk_analysis").checked && document.getElementById("chk_meltData").checked) {
+        if (data.hasAnalysis && data.analysis.hasMeltData) {
             document.getElementById("analysisMeltDataTitle").style.display = "block";
             document.getElementById("analysisMeltDataTable").style.display = "block";
         } else {
