@@ -180,7 +180,8 @@ $(() => {
                     "",
                     "",
                     ""
-                ]
+                ],
+
             ],
             hasTask: true,
             task: "",
@@ -822,28 +823,28 @@ $(() => {
         // Plate Edit
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_plateLayout").checked) {
             document.getElementById("plateEditTitleH2").style.display = "block";
-            document.getElementById("plateEditTable").style.display = "block";
+            // document.getElementById("plateEditTable").style.display = "block";
         } else {
             document.getElementById("plateEditTitleH2").style.display = "none";
-            document.getElementById("plateEditTable").style.display = "none";
+            // document.getElementById("plateEditTable").style.display = "none";
         }
         // Task 信息
-         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_task").checked) {
-             document.getElementById("plateEditTaskTitle").style.display = "block";
-             document.getElementById("plateEditTaskText").style.display = "block";
-         } else {
-             document.getElementById("plateEditTaskTitle").style.display = "none";
-             document.getElementById("plateEditTaskText").style.display = "none";
-         }
+        if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_task").checked) {
+            document.getElementById("plateEditTaskTitle").style.display = "block";
+            document.getElementById("plateEditTaskText").style.display = "block";
+        } else {
+            document.getElementById("plateEditTaskTitle").style.display = "none";
+            document.getElementById("plateEditTaskText").style.display = "none";
+        }
 
-         // Target 信息
-         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_target").checked) {
-             document.getElementById("plateEditTargetTitle").style.display = "block";
-             document.getElementById("plateEditTargetTable").style.display = "block";
-         } else {
-             document.getElementById("plateEditTargetTitle").style.display = "none";
-             document.getElementById("plateEditTargetTable").style.display = "none";
-         }
+        // Target 信息
+        if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_target").checked) {
+            document.getElementById("plateEditTargetTitle").style.display = "block";
+            // document.getElementById("plateEditTargetTable").style.display = "block";
+        } else {
+            document.getElementById("plateEditTargetTitle").style.display = "none";
+            // document.getElementById("plateEditTargetTable").style.display = "none";
+        }
 
         // Split Plate
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_splitPlate").checked) {
@@ -857,10 +858,10 @@ $(() => {
         //Sample 信息
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_sample").checked) {
             document.getElementById("plateEditSampleTitle").style.display = "block";
-            document.getElementById("plateEditSampleTable").style.display = "block";
+            // document.getElementById("plateEditSampleTable").style.display = "block";
         } else {
             document.getElementById("plateEditSampleTitle").style.display = "none";
-            document.getElementById("plateEditSampleTable").style.display = "none";
+            // document.getElementById("plateEditSampleTable").style.display = "none";
         }
 
         //Standard 信息
@@ -958,10 +959,10 @@ $(() => {
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_quantificationData").checked) {
             document.getElementById("analysisQDTitle").style.display = "block";
-            document.getElementById("analysisQDTable").style.display = "block";
+            // document.getElementById("analysisQDTable").style.display = "block";
         } else {
             document.getElementById("analysisQDTitle").style.display = "none";
-            document.getElementById("analysisQDTable").style.display = "none";
+            // document.getElementById("analysisQDTable").style.display = "none";
         }
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_meltCurve").checked) {
@@ -980,10 +981,10 @@ $(() => {
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_meltData").checked) {
             document.getElementById("analysisMeltDataTitle").style.display = "block";
-            document.getElementById("analysisMeltDataTable").style.display = "block";
+            // document.getElementById("analysisMeltDataTable").style.display = "block";
         } else {
             document.getElementById("analysisMeltDataTitle").style.display = "none";
-            document.getElementById("analysisMeltDataTable").style.display = "none";
+            // document.getElementById("analysisMeltDataTable").style.display = "none";
         }
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_geneExpression").checked) {
@@ -992,14 +993,14 @@ $(() => {
             document.getElementById("analysisGeneExpressionBarIMG").style.display = "block";
             document.getElementById("analysisGeneExpressionMode").style.display = "block";
             document.getElementById("analysisGeneExpressionData").style.display = "block";
-            document.getElementById("analysisGeneExpressionDataTable").style.display = "block";
+            // document.getElementById("analysisGeneExpressionDataTable").style.display = "block";
         } else {
             document.getElementById("analysisGeneExpressionTitle").style.display = "none";
             document.getElementById("analysisGeneExpressionBar").style.display = "none";
             document.getElementById("analysisGeneExpressionBarIMG").style.display = "none";
             document.getElementById("analysisGeneExpressionMode").style.display = "none";
             document.getElementById("analysisGeneExpressionData").style.display = "none";
-            document.getElementById("analysisGeneExpressionDataTable").style.display = "none";
+            // document.getElementById("analysisGeneExpressionDataTable").style.display = "none";
         }
     }
 
@@ -1048,175 +1049,175 @@ $(() => {
             }
         }
 
-          // Task
-          document.getElementById("plateEditTaskText").innerHTML = data.plate.task;
+        // Task
+        document.getElementById("plateEditTaskText").innerHTML = data.plate.task;
 
-          // Target
-          // 创建标题
-          let targetHead_tr = document.createElement('tr');
-          $("#plateEditTargetTable").append(targetHead_tr);
-          for (let k in data.plate.target[0]) {
-              // 创建th元素
-              let th = document.createElement('th');
-              // 将每个对象中的属性值传给th
-              th.innerHTML = data.plate.target[0][k];
-              //给tr添加th子元素
-              targetHead_tr.appendChild(th);
-          }
-          // 创建内容
-          for (let i = 1; i < data.plate.target.length; i++) {
-              //创建行tr
-              let tr = document.createElement('tr');
-              //将新创建的行tr添加给tbody
-              $('#plateEditTargetTable').append(tr);
-              // 3、内层for循环，创建每一行中的所有单元格td，单元格td的数量与对象中的属性多少有关，故用for...in...
-              for (let k in data.plate.target[i]) {
-                  // 创建td元素
-                  let td = document.createElement('td');
-                  // 将每个对象中的属性值传给td
-                  td.innerHTML = data.plate.target[i][k];
-                  //给tr添加td子元素
-                  tr.appendChild(td);
-              }
-          }
+        // Target
+        // 创建标题
+        let targetHead_tr = document.createElement('tr');
+        $("#plateEditTargetTable").append(targetHead_tr);
+        for (let k in data.plate.target[0]) {
+            // 创建th元素
+            let th = document.createElement('th');
+            // 将每个对象中的属性值传给th
+            th.innerHTML = data.plate.target[0][k];
+            //给tr添加th子元素
+            targetHead_tr.appendChild(th);
+        }
+        // 创建内容
+        for (let i = 1; i < data.plate.target.length; i++) {
+            //创建行tr
+            let tr = document.createElement('tr');
+            //将新创建的行tr添加给tbody
+            $('#plateEditTargetTable').append(tr);
+            // 3、内层for循环，创建每一行中的所有单元格td，单元格td的数量与对象中的属性多少有关，故用for...in...
+            for (let k in data.plate.target[i]) {
+                // 创建td元素
+                let td = document.createElement('td');
+                // 将每个对象中的属性值传给td
+                td.innerHTML = data.plate.target[i][k];
+                //给tr添加td子元素
+                tr.appendChild(td);
+            }
+        }
 
-          // Split Plate
-          document.getElementById("plateEditSplitPlateText").innerHTML = data.plate.splitPlate;
+        // Split Plate
+        document.getElementById("plateEditSplitPlateText").innerHTML = data.plate.splitPlate;
 
-          // Sample
-          let sampleHead_tr = document.createElement('tr');
-          $('#plateEditSampleTable').append(sampleHead_tr);
-          for (let k in data.plate.sample[0]) {
-              let th = document.createElement('th');
-              th.innerHTML = data.plate.sample[0][k];
-              sampleHead_tr.appendChild(th);
-          }
-          for (let i = 1; i < data.plate.sample.length; i++) {
-              let tr = document.createElement('tr');
-              $('#plateEditSampleTable').append(tr);
-              for (let k in data.plate.sample[i]) {
-                  let td = document.createElement('td');
-                  td.innerHTML = data.plate.sample[i][k];
-                  tr.appendChild(td);
-              }
-          }
+        // Sample
+        let sampleHead_tr = document.createElement('tr');
+        $('#plateEditSampleTable').append(sampleHead_tr);
+        for (let k in data.plate.sample[0]) {
+            let th = document.createElement('th');
+            th.innerHTML = data.plate.sample[0][k];
+            sampleHead_tr.appendChild(th);
+        }
+        for (let i = 1; i < data.plate.sample.length; i++) {
+            let tr = document.createElement('tr');
+            $('#plateEditSampleTable').append(tr);
+            for (let k in data.plate.sample[i]) {
+                let td = document.createElement('td');
+                td.innerHTML = data.plate.sample[i][k];
+                tr.appendChild(td);
+            }
+        }
 
-          // Standard
-          document.getElementById("standard_ST").innerHTML = data.plate.standard.selectTarget;
-          document.getElementById("standard_SA").innerHTML = data.plate.standard.standardAmount;
-          document.getElementById("standard_SN").innerHTML = data.plate.standard.standardNumber;
-          document.getElementById("standard_F").innerHTML = data.plate.standard.factor;
-          document.getElementById("standard_DF").innerHTML = data.plate.standard.dilutionFactor;
-          document.getElementById("standard_Unit").innerHTML = data.plate.standard.unit;
-          document.getElementById("standard_R").innerHTML = data.plate.standard.replicates;
-          document.getElementById("standard_ID").innerHTML = data.plate.standard.increasing_decreasing;
-          document.getElementById("standard_Assignment").innerHTML = data.plate.standard.assignment;
+        // Standard
+        document.getElementById("standard_ST").innerHTML = data.plate.standard.selectTarget;
+        document.getElementById("standard_SA").innerHTML = data.plate.standard.standardAmount;
+        document.getElementById("standard_SN").innerHTML = data.plate.standard.standardNumber;
+        document.getElementById("standard_F").innerHTML = data.plate.standard.factor;
+        document.getElementById("standard_DF").innerHTML = data.plate.standard.dilutionFactor;
+        document.getElementById("standard_Unit").innerHTML = data.plate.standard.unit;
+        document.getElementById("standard_R").innerHTML = data.plate.standard.replicates;
+        document.getElementById("standard_ID").innerHTML = data.plate.standard.increasing_decreasing;
+        document.getElementById("standard_Assignment").innerHTML = data.plate.standard.assignment;
 
-          // Protocol Edit
-          // Protocol
-          document.getElementById("protocolText").innerHTML = data.protocol.protocol;
+        // Protocol Edit
+        // Protocol
+        document.getElementById("protocolText").innerHTML = data.protocol.protocol;
 
-          // Run
-          // Run Time
-          document.getElementById("runTimeText").innerHTML = data.run.runTime;
-          document.getElementById("runTemperatureCurveIMG").src = data.run.imgTemperatureCurve;
+        // Run
+        // Run Time
+        document.getElementById("runTimeText").innerHTML = data.run.runTime;
+        document.getElementById("runTemperatureCurveIMG").src = data.run.imgTemperatureCurve;
 
-          // Analysis
-          // Quantification
-          document.getElementById("analysisCurveCqIMG").src = data.analysis.imgAmplificationCurve_cq;
-          document.getElementById("analysisCurveClogIMG").src = data.analysis.imgAmplificationCurve_log;
+        // Analysis
+        // Quantification
+        document.getElementById("analysisCurveCqIMG").src = data.analysis.imgAmplificationCurve_cq;
+        document.getElementById("analysisCurveClogIMG").src = data.analysis.imgAmplificationCurve_log;
 
-          // 标准曲线
-          document.getElementById("analysisStandardCurveIMG").src = data.analysis.imgStandardCurve;
+        // 标准曲线
+        document.getElementById("analysisStandardCurveIMG").src = data.analysis.imgStandardCurve;
 
-          // Quantification Data
-          let QD_tr = document.createElement('tr');
-          $('#analysisQDTable').append(QD_tr);
-          for (let k in data.analysis.quantificationData[0]) {
-              let th = document.createElement('th');
-              th.innerHTML = data.analysis.quantificationData[0][k];
-              QD_tr.appendChild(th);
-          }
-          for (let i = 1; i < data.analysis.quantificationData.length; i++) {
-              let tr = document.createElement('tr');
-              $('#analysisQDTable').append(tr);
-              for (let k in data.analysis.quantificationData[i]) {
-                  let td = document.createElement('td');
-                  td.innerHTML = data.analysis.quantificationData[i][k];
-                  tr.appendChild(td);
-              }
-          }
+        // Quantification Data
+        let QD_tr = document.createElement('tr');
+        $('#analysisQDTable').append(QD_tr);
+        for (let k in data.analysis.quantificationData[0]) {
+            let th = document.createElement('th');
+            th.innerHTML = data.analysis.quantificationData[0][k];
+            QD_tr.appendChild(th);
+        }
+        for (let i = 1; i < data.analysis.quantificationData.length; i++) {
+            let tr = document.createElement('tr');
+            $('#analysisQDTable').append(tr);
+            for (let k in data.analysis.quantificationData[i]) {
+                let td = document.createElement('td');
+                td.innerHTML = data.analysis.quantificationData[i][k];
+                tr.appendChild(td);
+            }
+        }
 
-          // Melt Curve
-          document.getElementById("analysisPreCurveIMG").src = data.analysis.imgMeltCurve;
-          document.getElementById("analysisMeltPeakIMG").src = data.analysis.imgMeltPeak;
+        // Melt Curve
+        document.getElementById("analysisPreCurveIMG").src = data.analysis.imgMeltCurve;
+        document.getElementById("analysisMeltPeakIMG").src = data.analysis.imgMeltPeak;
 
-          // Melt Data
-          let MT_tr = document.createElement('tr');
-          $('#analysisMeltDataTable').append(MT_tr);
-          for (let k in data.analysis.meltData[0]) {
-              let th = document.createElement('th');
-              th.innerHTML = data.analysis.meltData[0][k];
-              MT_tr.appendChild(th);
-          }
-          for (let i = 1; i < data.analysis.meltData.length; i++) {
-              let tr = document.createElement('tr');
-              $('#analysisMeltDataTable').append(tr);
-              for (let k in data.analysis.meltData[i]) {
-                  let td = document.createElement('td');
-                  td.innerHTML = data.analysis.meltData[i][k];
-                  tr.appendChild(td);
-              }
-          }
+        // Melt Data
+        let MT_tr = document.createElement('tr');
+        $('#analysisMeltDataTable').append(MT_tr);
+        for (let k in data.analysis.meltData[0]) {
+            let th = document.createElement('th');
+            th.innerHTML = data.analysis.meltData[0][k];
+            MT_tr.appendChild(th);
+        }
+        for (let i = 1; i < data.analysis.meltData.length; i++) {
+            let tr = document.createElement('tr');
+            $('#analysisMeltDataTable').append(tr);
+            for (let k in data.analysis.meltData[i]) {
+                let td = document.createElement('td');
+                td.innerHTML = data.analysis.meltData[i][k];
+                tr.appendChild(td);
+            }
+        }
 
-          // Gene expression
-          document.getElementById("analysisGeneExpressionBarIMG").src = data.analysis.imgGeneExpressionBar;
-          document.getElementById("geneExpressionMode").innerHTML = data.analysis.geneExpressionMode;
-          let GE_tr = document.createElement('tr');
-          $('#analysisGeneExpressionDataTable').append(GE_tr);
-          for (let k in data.analysis.geneExpressionData[0]) {
-              let th = document.createElement('th');
-              th.innerHTML = data.analysis.geneExpressionData[0][k];
-              GE_tr.appendChild(th);
-          }
-          for (let i = 1; i < data.analysis.geneExpressionData.length; i++) {
-              let tr = document.createElement('tr');
-              $('#analysisGeneExpressionDataTable').append(tr);
-              for (let k in data.analysis.geneExpressionData[i]) {
-                  let td = document.createElement('td');
-                  td.innerHTML = data.analysis.geneExpressionData[i][k];
-                  tr.appendChild(td);
-              }
-          }
+        // Gene expression
+        document.getElementById("analysisGeneExpressionBarIMG").src = data.analysis.imgGeneExpressionBar;
+        document.getElementById("geneExpressionMode").innerHTML = data.analysis.geneExpressionMode;
+        let GE_tr = document.createElement('tr');
+        $('#analysisGeneExpressionDataTable').append(GE_tr);
+        for (let k in data.analysis.geneExpressionData[0]) {
+            let th = document.createElement('th');
+            th.innerHTML = data.analysis.geneExpressionData[0][k];
+            GE_tr.appendChild(th);
+        }
+        for (let i = 1; i < data.analysis.geneExpressionData.length; i++) {
+            let tr = document.createElement('tr');
+            $('#analysisGeneExpressionDataTable').append(tr);
+            for (let k in data.analysis.geneExpressionData[i]) {
+                let td = document.createElement('td');
+                td.innerHTML = data.analysis.geneExpressionData[i][k];
+                tr.appendChild(td);
+            }
+        }
     }
 
     function adjust() {
-        let h = 0, margin = 30, pageHeight = 1400, htmlList = [""];
+        let h = 0, margin = 30, pageHeight = 1000, htmlList = [""];
         $("#container > article > p, #container > article > img, #container > article > table, #container > article > div").each(function () {
             let $this = $(this);
             let outerHTML = this.outerHTML; // 当前元素的 html 字符串
             if (this.style.display === "none") {
                 htmlList[htmlList.length - 1] += outerHTML; // 如果隐藏直接塞进去
-            } /*else {
+            } else {
                 if (this.tagName.toLowerCase() === "table") { // 如果是 table 标签
                     // if ((this.outerHTML.split(" ",5)[1])==="id=\"plateEditTable\""){
-                        $this.find("tr").each(function () { // 对每个 tr 遍历
-                            let $this = $(this);
-                            let outerHTML = this.outerHTML;
-                            let height = $this.outerHeight();   // tr 高度
-                            if (h + height > pageHeight) {  // 超出一页
-                                if ($this.index() !== 0) htmlList[htmlList.length - 1] += "</table>";// 如果不是第一个 tr，则给上一个封底
-                                htmlList[htmlList.length] = "<table>" + outerHTML; // 起新的一页，封顶，不写 thead 和 tbody，让浏览器自行处理
-                                h = height;  // 重置高度
-                            } else {    // 没超出一页
-                                h += height;    // 对计算高度累加
-                                if ($this.index() === 0) htmlList[htmlList.length - 1] += "<table>";// 如果是第一个 tr，则先封顶
-                                htmlList[htmlList.length - 1] += outerHTML; // 将 tr 塞进去
-                            }
-                        });
-                        htmlList[htmlList.length - 1] += "</table>"; // 封底
+                    $this.find("tr").each(function () { // 对每个 tr 遍历
+                        let $this = $(this);
+                        let outerHTML = this.outerHTML;
+                        let height = $this.outerHeight();   // tr 高度
+                        if (h + height > pageHeight) {  // 超出一页
+                            if ($this.index() !== 0) htmlList[htmlList.length - 1] += "</table>";// 如果不是第一个 tr，则给上一个封底
+                            htmlList[htmlList.length] = "<table>" + outerHTML; // 起新的一页，封顶，不写 thead 和 tbody，让浏览器自行处理
+                            h = height;  // 重置高度
+                        } else {    // 没超出一页
+                            h += height;    // 对计算高度累加
+                            if ($this.index() === 0) htmlList[htmlList.length - 1] += "<table>";// 如果是第一个 tr，则先封顶
+                            htmlList[htmlList.length - 1] += outerHTML; // 将 tr 塞进去
+                        }
+                    });
+                    htmlList[htmlList.length - 1] += "</table>"; // 封底
                     // }
-                } */else {    // 非 table 标签
+                } else {    // 非 table 标签
                     let height = $this.outerHeight() + margin;  // 计算高度，height + padding + margin
                     if (h + height > pageHeight) {  // 超出一页
                         htmlList[htmlList.length] = outerHTML;  // 起新的一页，直接塞进去
@@ -1226,7 +1227,7 @@ $(() => {
                         htmlList[htmlList.length - 1] += outerHTML; // 直接塞进去
                     }
                 }
-            // }
+            }
         });
         $("#container").html(htmlList.map(html => `<article>${html}</article>`).join(""));
 
