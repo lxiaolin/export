@@ -181,7 +181,6 @@ $(() => {
                     "",
                     ""
                 ],
-
             ],
             hasTask: true,
             task: "",
@@ -823,10 +822,10 @@ $(() => {
         // Plate Edit
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_plateLayout").checked) {
             document.getElementById("plateEditTitleH2").style.display = "block";
-            // document.getElementById("plateEditTable").style.display = "block";
+            document.getElementById("plateEditTable").style.display = "block";
         } else {
             document.getElementById("plateEditTitleH2").style.display = "none";
-            // document.getElementById("plateEditTable").style.display = "none";
+            document.getElementById("plateEditTable").style.display = "none";
         }
         // Task 信息
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_task").checked) {
@@ -840,10 +839,10 @@ $(() => {
         // Target 信息
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_target").checked) {
             document.getElementById("plateEditTargetTitle").style.display = "block";
-            // document.getElementById("plateEditTargetTable").style.display = "block";
+            document.getElementById("plateEditTargetTable").style.display = "block";
         } else {
             document.getElementById("plateEditTargetTitle").style.display = "none";
-            // document.getElementById("plateEditTargetTable").style.display = "none";
+            document.getElementById("plateEditTargetTable").style.display = "none";
         }
 
         // Split Plate
@@ -858,10 +857,10 @@ $(() => {
         //Sample 信息
         if (document.getElementById("chk_plateEdit").checked && document.getElementById("chk_sample").checked) {
             document.getElementById("plateEditSampleTitle").style.display = "block";
-            // document.getElementById("plateEditSampleTable").style.display = "block";
+            document.getElementById("plateEditSampleTable").style.display = "block";
         } else {
             document.getElementById("plateEditSampleTitle").style.display = "none";
-            // document.getElementById("plateEditSampleTable").style.display = "none";
+            document.getElementById("plateEditSampleTable").style.display = "none";
         }
 
         //Standard 信息
@@ -959,10 +958,10 @@ $(() => {
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_quantificationData").checked) {
             document.getElementById("analysisQDTitle").style.display = "block";
-            // document.getElementById("analysisQDTable").style.display = "block";
+            document.getElementById("analysisQDTable").style.display = "block";
         } else {
             document.getElementById("analysisQDTitle").style.display = "none";
-            // document.getElementById("analysisQDTable").style.display = "none";
+            document.getElementById("analysisQDTable").style.display = "none";
         }
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_meltCurve").checked) {
@@ -981,10 +980,10 @@ $(() => {
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_meltData").checked) {
             document.getElementById("analysisMeltDataTitle").style.display = "block";
-            // document.getElementById("analysisMeltDataTable").style.display = "block";
+            document.getElementById("analysisMeltDataTable").style.display = "block";
         } else {
             document.getElementById("analysisMeltDataTitle").style.display = "none";
-            // document.getElementById("analysisMeltDataTable").style.display = "none";
+            document.getElementById("analysisMeltDataTable").style.display = "none";
         }
 
         if (document.getElementById("chk_analysis").checked && document.getElementById("chk_geneExpression").checked) {
@@ -993,14 +992,14 @@ $(() => {
             document.getElementById("analysisGeneExpressionBarIMG").style.display = "block";
             document.getElementById("analysisGeneExpressionMode").style.display = "block";
             document.getElementById("analysisGeneExpressionData").style.display = "block";
-            // document.getElementById("analysisGeneExpressionDataTable").style.display = "block";
+            document.getElementById("analysisGeneExpressionDataTable").style.display = "block";
         } else {
             document.getElementById("analysisGeneExpressionTitle").style.display = "none";
             document.getElementById("analysisGeneExpressionBar").style.display = "none";
             document.getElementById("analysisGeneExpressionBarIMG").style.display = "none";
             document.getElementById("analysisGeneExpressionMode").style.display = "none";
             document.getElementById("analysisGeneExpressionData").style.display = "none";
-            // document.getElementById("analysisGeneExpressionDataTable").style.display = "none";
+            document.getElementById("analysisGeneExpressionDataTable").style.display = "none";
         }
     }
 
@@ -1192,44 +1191,45 @@ $(() => {
     }
 
     function adjust() {
-        let h = 0, margin = 30, pageHeight = 1000, htmlList = [""];
+        let h = 0, margin = 30, pageHeight = 1200, htmlList = [""];
         $("#container > article > p, #container > article > img, #container > article > table, #container > article > div").each(function () {
-            let $this = $(this);
-            let outerHTML = this.outerHTML; // 当前元素的 html 字符串
-            if (this.style.display === "none") {
-                htmlList[htmlList.length - 1] += outerHTML; // 如果隐藏直接塞进去
-            } else {
-                if (this.tagName.toLowerCase() === "table") { // 如果是 table 标签
-                    // if ((this.outerHTML.split(" ",5)[1])==="id=\"plateEditTable\""){
-                    $this.find("tr").each(function () { // 对每个 tr 遍历
-                        let $this = $(this);
-                        let outerHTML = this.outerHTML;
-                        let height = $this.outerHeight();   // tr 高度
+                let $this = $(this);
+                let outerHTML = this.outerHTML; // 当前元素的 html 字符串
+                if (this.style.display === "none") {
+                    htmlList[htmlList.length - 1] += outerHTML; // 如果隐藏直接塞进去
+                } else {
+                    if (this.tagName.toLowerCase() === "table") { // 如果是 table 标签
+                        let tableID = this.outerHTML.split(" ", 5)[1];// 获取table的ID
+                        $this.find("tr").each(function () { // 对每个 tr 遍历
+                            let $this = $(this);
+                            let outerHTML = this.outerHTML;
+                            let height = $this.outerHeight();   // tr 高度
+                            if (h + height > pageHeight) {  // 超出一页
+                                if ($this.index() !== 0) htmlList[htmlList.length - 1] += "</table>";// 如果不是第一个 tr，则给上一个封底
+                                htmlList[htmlList.length] = "<table " + tableID + " border=\"1\">" + outerHTML; // 起新的一页，封顶，不写 thead 和 tbody，让浏览器自行处理
+                                h = height;  // 重置高度
+                            } else {    // 没超出一页
+                                h += height;    // 对计算高度累加
+                                if ($this.index() === 0) htmlList[htmlList.length - 1] += "<table " + tableID + " border=\"1\">";// 如果是第一个 tr，则先封顶
+                                htmlList[htmlList.length - 1] += outerHTML; // 将 tr 塞进去
+                            }
+                        });
+                        htmlList[htmlList.length - 1] += "</table>"; // 封底
+                    } else {    // 非 table 标签
+                        let height = $this.outerHeight() + margin;  // 计算高度，height + padding + margin
                         if (h + height > pageHeight) {  // 超出一页
-                            if ($this.index() !== 0) htmlList[htmlList.length - 1] += "</table>";// 如果不是第一个 tr，则给上一个封底
-                            htmlList[htmlList.length] = "<table>" + outerHTML; // 起新的一页，封顶，不写 thead 和 tbody，让浏览器自行处理
-                            h = height;  // 重置高度
-                        } else {    // 没超出一页
+                            htmlList[htmlList.length] = outerHTML;  // 起新的一页，直接塞进去
+                            h = height; // 重置高度
+                        } else {    // 未超出一页
                             h += height;    // 对计算高度累加
-                            if ($this.index() === 0) htmlList[htmlList.length - 1] += "<table>";// 如果是第一个 tr，则先封顶
-                            htmlList[htmlList.length - 1] += outerHTML; // 将 tr 塞进去
+                            htmlList[htmlList.length - 1] += outerHTML; // 直接塞进去
                         }
-                    });
-                    htmlList[htmlList.length - 1] += "</table>"; // 封底
-                    // }
-                } else {    // 非 table 标签
-                    let height = $this.outerHeight() + margin;  // 计算高度，height + padding + margin
-                    if (h + height > pageHeight) {  // 超出一页
-                        htmlList[htmlList.length] = outerHTML;  // 起新的一页，直接塞进去
-                        h = height; // 重置高度
-                    } else {    // 未超出一页
-                        h += height;    // 对计算高度累加
-                        htmlList[htmlList.length - 1] += outerHTML; // 直接塞进去
                     }
                 }
             }
-        });
+        );
         $("#container").html(htmlList.map(html => `<article>${html}</article>`).join(""));
 
     }
-});
+})
+;
