@@ -2992,12 +2992,12 @@ $(() => {
         // experimentSetting
         if (data.hasExperiment && data.experiment.hasExperimentSetting) {
             document.getElementById("experimentSettingTitle").style.display = "block";
-            document.getElementById("experimentSetting_ET").style.display = "block";
+            document.getElementById("experimentSettingExperimentType").style.display = "block";
             document.getElementById("experimentSettingChemistry").style.display = "block";
             document.getElementById("experimentSettingRunMode").style.display = "block";
         } else {
             document.getElementById("experimentSettingTitle").style.display = "none";
-            document.getElementById("experimentSetting_ET").style.display = "none";
+            document.getElementById("experimentSettingExperimentType").style.display = "none";
             document.getElementById("experimentSettingChemistry").style.display = "none";
             document.getElementById("experimentSettingRunMode").style.display = "none";
         }
@@ -3005,16 +3005,16 @@ $(() => {
         // Parameter Setting
         if (data.hasExperiment && data.experiment.hasParameterSetting) {
             document.getElementById("parameterSettingTitle").style.display = "block";
-            document.getElementById("parameterSettingRV").style.display = "block";
-            document.getElementById("parameterSettingLHS").style.display = "block";
-            document.getElementById("parameterSettingCT").style.display = "block";
-            document.getElementById("parameterSettingLCT").style.display = "block";
+            document.getElementById("parameterSettingReactionVolume").style.display = "block";
+            document.getElementById("parameterSettingLidHeatingSwitch").style.display = "block";
+            document.getElementById("parameterSettingCoverTemp").style.display = "block";
+            document.getElementById("parameterSettingLidCloseTemp").style.display = "block";
         } else {
             document.getElementById("parameterSettingTitle").style.display = "none";
-            document.getElementById("parameterSettingRV").style.display = "none";
-            document.getElementById("parameterSettingLHS").style.display = "none";
-            document.getElementById("parameterSettingCT").style.display = "none";
-            document.getElementById("parameterSettingLCT").style.display = "none";
+            document.getElementById("parameterSettingReactionVolume").style.display = "none";
+            document.getElementById("parameterSettingLidHeatingSwitch").style.display = "none";
+            document.getElementById("parameterSettingCoverTemp").style.display = "none";
+            document.getElementById("parameterSettingLidCloseTemp").style.display = "none";
         }
 
         // Comments
@@ -3089,26 +3089,26 @@ $(() => {
         //Standard 信息
         if (data.hasPlate && data.plate.hasStandard) {
             document.getElementById("plateEditStandardTitle").style.display = "block";
-            document.getElementById("plateEditStandardSt").style.display = "block";
-            document.getElementById("plateEditStandardSA").style.display = "block";
-            document.getElementById("plateEditStandardSN").style.display = "block";
-            document.getElementById("plateEditStandardF").style.display = "block";
-            document.getElementById("plateEditStandardDF").style.display = "block";
+            document.getElementById("plateEditStandardSelectTarget").style.display = "block";
+            document.getElementById("plateEditStandardStandardAmount").style.display = "block";
+            document.getElementById("plateEditStandardStandardNumber").style.display = "block";
+            document.getElementById("plateEditStandardFactor").style.display = "block";
+            document.getElementById("plateEditStandardDilutionFactor").style.display = "block";
             document.getElementById("plateEditStandardUnit").style.display = "block";
-            document.getElementById("plateEditStandardR").style.display = "block";
-            document.getElementById("plateEditStandardID").style.display = "block";
-            document.getElementById("plateEditStandardA").style.display = "block";
+            document.getElementById("plateEditStandardReplicates").style.display = "block";
+            document.getElementById("plateEditStandardIncreasingDecreasing").style.display = "block";
+            document.getElementById("plateEditStandardAssignment").style.display = "block";
         } else {
             document.getElementById("plateEditStandardTitle").style.display = "none";
-            document.getElementById("plateEditStandardSt").style.display = "none";
-            document.getElementById("plateEditStandardSA").style.display = "none";
-            document.getElementById("plateEditStandardSN").style.display = "none";
-            document.getElementById("plateEditStandardF").style.display = "none";
-            document.getElementById("plateEditStandardDF").style.display = "none";
+            document.getElementById("plateEditStandardSelectTarget").style.display = "none";
+            document.getElementById("plateEditStandardStandardAmount").style.display = "none";
+            document.getElementById("plateEditStandardStandardNumber").style.display = "none";
+            document.getElementById("plateEditStandardFactor").style.display = "none";
+            document.getElementById("plateEditStandardDilutionFactor").style.display = "none";
             document.getElementById("plateEditStandardUnit").style.display = "none";
-            document.getElementById("plateEditStandardR").style.display = "none";
-            document.getElementById("plateEditStandardID").style.display = "none";
-            document.getElementById("plateEditStandardA").style.display = "none";
+            document.getElementById("plateEditStandardReplicates").style.display = "none";
+            document.getElementById("plateEditStandardIncreasingDecreasing").style.display = "none";
+            document.getElementById("plateEditStandardAssignment").style.display = "none";
         }
 
         // Protocol
@@ -3158,16 +3158,16 @@ $(() => {
 
         if (data.hasAnalysis && data.analysis.hasQuantification) {
             document.getElementById("analysisQuantification").style.display = "block";
-            document.getElementById("analysisCurveCq").style.display = "block";
-            document.getElementById("analysisCurveCqIMG").style.display = "block";
-            document.getElementById("analysisCurveClog").style.display = "block";
-            document.getElementById("analysisCurveClogIMG").style.display = "block";
+            document.getElementById("analysisAmplificationCurve-Cq").style.display = "block";
+            document.getElementById("analysisAmplificationCurve-CqIMG").style.display = "block";
+            document.getElementById("analysisAmplificationCurve-Clog").style.display = "block";
+            document.getElementById("analysisAmplificationCurve-ClogIMG").style.display = "block";
         } else {
             document.getElementById("analysisQuantification").style.display = "none";
-            document.getElementById("analysisCurveCq").style.display = "none";
-            document.getElementById("analysisCurveCqIMG").style.display = "none";
-            document.getElementById("analysisCurveClog").style.display = "none";
-            document.getElementById("analysisCurveClogIMG").style.display = "none";
+            document.getElementById("analysisAmplificationCurve-Cq").style.display = "none";
+            document.getElementById("analysisAmplificationCurve-CqIMG").style.display = "none";
+            document.getElementById("analysisAmplificationCurve-Clog").style.display = "none";
+            document.getElementById("analysisAmplificationCurve-ClogIMG").style.display = "none";
         }
 
         // 标准曲线
@@ -3180,11 +3180,11 @@ $(() => {
         }
 
         if (data.hasAnalysis && data.analysis.hasQuantificationData) {
-            document.getElementById("analysisQDTitle").style.display = "block";
-            document.getElementById("analysisQDTable").style.display = "block";
+            document.getElementById("analysisQuantificationDataTitle").style.display = "block";
+            document.getElementById("analysisQuantificationDataTable").style.display = "block";
         } else {
-            document.getElementById("analysisQDTitle").style.display = "none";
-            document.getElementById("analysisQDTable").style.display = "none";
+            document.getElementById("analysisQuantificationDataTitle").style.display = "none";
+            document.getElementById("analysisQuantificationDataTable").style.display = "none";
         }
 
         if (data.hasAnalysis && data.analysis.hasMelt) {
@@ -3229,26 +3229,26 @@ $(() => {
     function insertText() {
         let preBase = "data:image/png;base64,";
         // Header
-        document.getElementById("title").innerHTML = data.header.title;
-        document.getElementById("subTitle").innerHTML = data.header.subTitle;
+        document.getElementById("title").innerText = data.header.title;
+        document.getElementById("subTitle").innerText = data.header.subTitle;
         document.getElementById("head").src = data.header.imgLogo;
 
         // Experiment
         // Information
-        document.getElementById("Information_Name").innerHTML = data.experiment.information.name;
-        document.getElementById("Information_Barcode").innerHTML = data.experiment.information.barcode;
-        document.getElementById("Information_UserName").innerHTML = data.experiment.information.userName;
-        document.getElementById("Information_InsName").innerHTML = data.experiment.information.instrumentName;
-        document.getElementById("Information_BlockType").innerHTML = data.experiment.information.blockType;
+        document.getElementById("docInformationName").innerText = data.experiment.information.name;
+        document.getElementById("docInformationBarcode").innerText = data.experiment.information.barcode;
+        document.getElementById("docInformationUserName").innerText = data.experiment.information.userName;
+        document.getElementById("docInformationInsName").innerText = data.experiment.information.instrumentName;
+        document.getElementById("docInformationBlockType").innerText = data.experiment.information.blockType;
         // ExperimentSetting
-        document.getElementById("ES_ET").innerHTML = data.experiment.experimentSetting.experimentType;
-        document.getElementById("ES_Chemistry").innerHTML = data.experiment.experimentSetting.chemistry;
-        document.getElementById("ES_RunMode").innerHTML = data.experiment.experimentSetting.runMode;
+        document.getElementById("docExperimentSettingExperimentType").innerText = data.experiment.experimentSetting.experimentType;
+        document.getElementById("docExperimentSettingChemistry").innerText = data.experiment.experimentSetting.chemistry;
+        document.getElementById("docExperimentSettingRunMode").innerText = data.experiment.experimentSetting.runMode;
         // ParameterSetting
-        document.getElementById("PS_RV").innerHTML = data.experiment.parameterSetting.reactionVolume;
-        document.getElementById("PS_LHS").innerHTML = data.experiment.parameterSetting.lidHeatingSwitch;
-        document.getElementById("PS_CT").innerHTML = data.experiment.parameterSetting.coverTemp;
-        document.getElementById("PS_LCT").innerHTML = data.experiment.parameterSetting.lidCloseTemp;
+        document.getElementById("docParameterSettingReactionVolume").innerText = data.experiment.parameterSetting.reactionVolume;
+        document.getElementById("docParameterSettingLidHeatingSwitch").innerText = data.experiment.parameterSetting.lidHeatingSwitch;
+        document.getElementById("docParameterSettingCoverTemp").innerText = data.experiment.parameterSetting.coverTemp;
+        document.getElementById("docParameterSettingLidCloseTemp").innerText = data.experiment.parameterSetting.lidCloseTemp;
         // Comments
         document.getElementById("commentsIMG").src = preBase + data.experiment.imgLoadPreviewPlate;
         // LoadPreview
@@ -3266,7 +3266,7 @@ $(() => {
                 // 创建th元素
                 let th = document.createElement('th');
                 // 将每个对象中的属性值传给td
-                th.innerHTML = data.plate.plateLayout[i][k];
+                th.innerText = data.plate.plateLayout[i][k];
                 //给tr添加th子元素
                 tr.appendChild(th);
             }
@@ -3283,7 +3283,7 @@ $(() => {
             // 创建th元素
             let th = document.createElement('th');
             // 将每个对象中的属性值传给th
-            th.innerHTML = data.plate.target[0][k];
+            th.innerText = data.plate.target[0][k];
             //给tr添加th子元素
             targetHead_tr.appendChild(th);
         }
@@ -3298,21 +3298,21 @@ $(() => {
                 // 创建td元素
                 let td = document.createElement('td');
                 // 将每个对象中的属性值传给td
-                td.innerHTML = data.plate.target[i][k];
+                td.innerText = data.plate.target[i][k];
                 //给tr添加td子元素
                 tr.appendChild(td);
             }
         }
 
         // Split Plate
-        document.getElementById("plateEditSplitPlateText").innerHTML = data.plate.splitPlate;
+        document.getElementById("plateEditSplitPlateText").innerText = data.plate.splitPlate;
 
         // Sample
         let sampleHead_tr = document.createElement('tr');
         $('#plateEditSampleTable').append(sampleHead_tr);
         for (let k in data.plate.sample[0]) {
             let th = document.createElement('th');
-            th.innerHTML = data.plate.sample[0][k];
+            th.innerText = data.plate.sample[0][k];
             sampleHead_tr.appendChild(th);
         }
         for (let i = 1; i < data.plate.sample.length; i++) {
@@ -3320,21 +3320,21 @@ $(() => {
             $('#plateEditSampleTable').append(tr);
             for (let k in data.plate.sample[i]) {
                 let td = document.createElement('td');
-                td.innerHTML = data.plate.sample[i][k];
+                td.innerText = data.plate.sample[i][k];
                 tr.appendChild(td);
             }
         }
 
         // Standard
-        document.getElementById("standard_ST").innerHTML = data.plate.standard.selectTarget;
-        document.getElementById("standard_SA").innerHTML = data.plate.standard.standardAmount;
-        document.getElementById("standard_SN").innerHTML = data.plate.standard.standardNumber;
-        document.getElementById("standard_F").innerHTML = data.plate.standard.factor;
-        document.getElementById("standard_DF").innerHTML = data.plate.standard.dilutionFactor;
-        document.getElementById("standard_Unit").innerHTML = data.plate.standard.unit;
-        document.getElementById("standard_R").innerHTML = data.plate.standard.replicates;
-        document.getElementById("standard_ID").innerHTML = data.plate.standard.increasing_decreasing;
-        document.getElementById("standard_Assignment").innerHTML = data.plate.standard.assignment;
+        document.getElementById("docPlateEditStandardSelectTarget").innerText = data.plate.standard.selectTarget;
+        document.getElementById("docPlateEditStandardStandardAmount").innerText = data.plate.standard.standardAmount;
+        document.getElementById("docPlateEditStandardStandardNumber").innerText = data.plate.standard.standardNumber;
+        document.getElementById("docPlateEditStandardFactor").innerText = data.plate.standard.factor;
+        document.getElementById("docPlateEditStandardDilutionFactor").innerText = data.plate.standard.dilutionFactor;
+        document.getElementById("standard_Unit").innerText = data.plate.standard.unit;
+        document.getElementById("docPlateEditStandardReplicates").innerText = data.plate.standard.replicates;
+        document.getElementById("docPlateEditStandardIncreasingDecreasing").innerText = data.plate.standard.increasing_decreasing;
+        document.getElementById("docPlateEditStandardAssignment").innerText = data.plate.standard.assignment;
 
         // Protocol Edit
         // Protocol
@@ -3347,26 +3347,26 @@ $(() => {
 
         // Analysis
         // Quantification
-        document.getElementById("analysisCurveCqIMG").src = preBase + data.analysis.imgAmplificationCurve_cq;
-        document.getElementById("analysisCurveClogIMG").src = preBase + data.analysis.imgAmplificationCurve_log;
+        document.getElementById("analysisAmplificationCurve-CqIMG").src = preBase + data.analysis.imgAmplificationCurve_cq;
+        document.getElementById("analysisAmplificationCurve-ClogIMG").src = preBase + data.analysis.imgAmplificationCurve_log;
 
         // 标准曲线
         document.getElementById("analysisStandardCurveIMG").src = preBase + data.analysis.imgStandardCurve;
 
         // Quantification Data
         let QD_tr = document.createElement('tr');
-        $('#analysisQDTable').append(QD_tr);
+        $('#analysisQuantificationDataTable').append(QD_tr);
         for (let k in data.analysis.quantificationData[0]) {
             let th = document.createElement('th');
-            th.innerHTML = data.analysis.quantificationData[0][k];
+            th.innerText = data.analysis.quantificationData[0][k];
             QD_tr.appendChild(th);
         }
         for (let i = 1; i < data.analysis.quantificationData.length; i++) {
             let tr = document.createElement('tr');
-            $('#analysisQDTable').append(tr);
+            $('#analysisQuantificationDataTable').append(tr);
             for (let k in data.analysis.quantificationData[i]) {
                 let td = document.createElement('td');
-                td.innerHTML = data.analysis.quantificationData[i][k];
+                td.innerText = data.analysis.quantificationData[i][k];
                 tr.appendChild(td);
             }
         }
@@ -3380,7 +3380,7 @@ $(() => {
         $('#analysisMeltDataTable').append(MT_tr);
         for (let k in data.analysis.meltData[0]) {
             let th = document.createElement('th');
-            th.innerHTML = data.analysis.meltData[0][k];
+            th.innerText = data.analysis.meltData[0][k];
             MT_tr.appendChild(th);
         }
         for (let i = 1; i < data.analysis.meltData.length; i++) {
@@ -3388,19 +3388,19 @@ $(() => {
             $('#analysisMeltDataTable').append(tr);
             for (let k in data.analysis.meltData[i]) {
                 let td = document.createElement('td');
-                td.innerHTML = data.analysis.meltData[i][k];
+                td.innerText = data.analysis.meltData[i][k];
                 tr.appendChild(td);
             }
         }
 
         // Gene expression
         document.getElementById("analysisGeneExpressionBarIMG").src = preBase + data.analysis.imgGeneExpressionBar;
-        document.getElementById("geneExpressionMode").innerHTML = data.analysis.geneExpressionMode;
+        document.getElementById("geneExpressionMode").innerText = data.analysis.geneExpressionMode;
         let GE_tr = document.createElement('tr');
         $('#analysisGeneExpressionDataTable').append(GE_tr);
         for (let k in data.analysis.geneExpressionData[0]) {
             let th = document.createElement('th');
-            th.innerHTML = data.analysis.geneExpressionData[0][k];
+            th.innerText = data.analysis.geneExpressionData[0][k];
             GE_tr.appendChild(th);
         }
         for (let i = 1; i < data.analysis.geneExpressionData.length; i++) {
@@ -3408,14 +3408,14 @@ $(() => {
             $('#analysisGeneExpressionDataTable').append(tr);
             for (let k in data.analysis.geneExpressionData[i]) {
                 let td = document.createElement('td');
-                td.innerHTML = data.analysis.geneExpressionData[i][k];
+                td.innerText = data.analysis.geneExpressionData[i][k];
                 tr.appendChild(td);
             }
         }
     }
 
     function adjust() {
-        let h = 0, margin = 30, pageHeight = 1000, htmlList = [""];
+        let h = 0, margin = 30, pageHeight = 928, htmlList = [""];
         $("#container > article > p, #container > article > img, #container > article > table, #container > article > div").each(function () {
                 let $this = $(this);
                 let outerHTML = this.outerHTML; // 当前元素的 html 字符串
