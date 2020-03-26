@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="../../../lib/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../../lib/custom/scrollbar.css">
     <link rel="stylesheet" type="text/css" href="css/export.css">
+    <link rel="stylesheet" type="text/css" href="css/docTool.css">
 </head>
 <body>
 <header>
@@ -80,24 +81,24 @@
                     </ul>
                 </li>
                 <li>
-                    <input type="checkbox" checked id="chk_plateEdit" disabled>
+                    <input type="checkbox" checked id="chk_plateEdit">
                     <span>Plate edit</span>
                     <div class="picExpand"></div>
                     <ul>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_plateLayout">
+                            <input type="checkbox" checked id="chk_plateLayout">
                             <span>Plate Edit</span>
                         </li>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_task">
+                            <input type="checkbox" checked id="chk_task">
                             <span>Task 信息</span>
                         </li>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_target">
+                            <input type="checkbox" checked id="chk_target">
                             <span>Target 信息</span>
                         </li>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_splitPlate">
+                            <input type="checkbox" checked id="chk_splitPlate">
                             <span>Split Plate</span>
                         </li>
                         <li>
@@ -105,29 +106,29 @@
                             <span>Sample 信息</span>
                         </li>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_standard">
+                            <input type="checkbox" checked id="chk_standard">
                             <span>Standard 信息</span>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <input type="checkbox" checked id="chk_protocolEdit" disabled>
+                    <input type="checkbox" checked id="chk_protocolEdit">
                     <span>Protocol Edit</span>
                     <div class="picExpand"></div>
                     <ul>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_protocol">
+                            <input type="checkbox" checked id="chk_protocol">
                             <span>Protocol</span>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <input type="checkbox" checked id="chk_run" disabled>
+                    <input type="checkbox" checked id="chk_run">
                     <span>Run 原始结果信息</span>
                     <div class="picExpand"></div>
                     <ul>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_runTime">
+                            <input type="checkbox" checked id="chk_runTime">
                             <span>Run time</span>
                         </li>
                         <li>
@@ -137,41 +138,36 @@
                     </ul>
                 </li>
                 <li>
-                    <input type="checkbox" checked disabled id="chk_analysis">
+                    <input type="checkbox" checked id="chk_analysis">
                     <span>Analysis 信息</span>
                     <div class="picExpand"></div>
                     <ul>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_quantification">
+                            <input type="checkbox" checked id="chk_quantification">
                             <span>Quantification</span>
                         </li>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_standardCurve">
+                            <input type="checkbox" checked id="chk_standardCurve">
                             <span>标准曲线</span>
                         </li>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_quantificationData">
+                            <input type="checkbox" checked id="chk_quantificationData">
                             <span>Quantification data</span>
                         </li>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_meltCurve">
+                            <input type="checkbox" checked id="chk_meltCurve">
                             <span>Melt curve</span>
                         </li>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_meltData">
+                            <input type="checkbox" checked id="chk_meltData">
                             <span>Melt data</span>
                         </li>
                         <li>
-                            <input type="checkbox" checked disabled id="chk_geneExpression">
+                            <input type="checkbox" checked id="chk_geneExpression">
                             <span>Gene expression</span>
                         </li>
                     </ul>
                 </li>
-                <!--<li>-->
-                <!--    <input type="checkbox" checked id="chk_qc">-->
-                <!--    <span>QC</span>-->
-                <!--    <div class="picExpand"></div>-->
-                <!--</li>-->
             </ul>
         </section>
         <!--左下容器-->
@@ -210,156 +206,156 @@
             </div>
         </section>
     </div>
-    <!--右容器-->
+    <!-- 右容器 -->
     <div class="right customScrollbar">
         <span id="zoomOut" class="btnScale">缩小</span>
         <span id="zoomIn" class="btnScale" style="right: 100px">放大</span>
         <section id="container" class="wordContainer" data-scale="5">
-            <article>
-                <img id="head" src="../images/logo.png" alt="">
-                <p></p>
-                <img id="customLogo" src="" alt="" style="float: right;">
-                <p id="title" class="docTittle"></p>
-                <p id="subTitle" class="docSubTittle"></p>
-                <p id="experimentTitle" class="docH1">Experiment</p>
-                <p id="informationTitle" class="docH2">Information</p>
-                <p id="informationName">
-                    <span>Name:</span>
-                    <span id="docInformationName"></span>
-                </p>
-                <p id="informationBarcode">
-                    <span>Barcode:</span>
-                    <span id="docInformationBarcode"></span>
-                </p>
-                <p id="informationUserName">
-                    <span>User Name:</span>
-                    <span id="docInformationUserName"></span>
-                </p>
-                <p id="informationInsName">
-                    <span>Instrument Name:</span>
-                    <span id="docInformationInsName"></span>
-                </p>
-                <p id="informationBlockType">
-                    <span>Block type:</span>
-                    <span id="docInformationBlockType"></span>
-                </p>
-                <p id="experimentSettingTitle" class="docH2">Experiment Setting</p>
-                <p id="experimentSettingExperimentType">
-                    <span>Experiment Type:</span>
-                    <span id="docExperimentSettingExperimentType"></span>
-                </p>
-                <p id="experimentSettingChemistry">
-                    <span>Chemistry:</span>
-                    <span id="docExperimentSettingChemistry"></span>
-                </p>
-                <p id="experimentSettingRunMode">
-                    <span>Run Mode:</span>
-                    <span id="docExperimentSettingRunMode"></span>
-                </p>
-                <p id="parameterSettingTitle" class="docH2">Parameter Setting</p>
-                <p id="parameterSettingReactionVolume">
-                    <span>Reaction Volume:</span>
-                    <span id="docParameterSettingReactionVolume"></span>
-                </p>
-                <p id="parameterSettingLidHeatingSwitch">
-                    <span>Lid Heating Switch:</span>
-                    <span id="docParameterSettingLidHeatingSwitch"></span>
-                </p>
-                <p id="parameterSettingCoverTemp">
-                    <span>Cover Temp:</span>
-                    <span id="docParameterSettingCoverTemp"></span>
-                </p>
-                <p id="parameterSettingLidCloseTemp">
-                    <span>Lid Close Temp:</span>
-                    <span id="docParameterSettingLidCloseTemp"></span>
-                </p>
-                <p id="commentsTitle" class="docH2">Comments</p>
-                <p id="loadPreviewTitle" class="docH2">Load Preview</p>
-                <img id="commentsIMG" src="">
-                <img id="loadPreviewIMG" src="">
-                <p id="plateEditTitleH1" class="docH1">Plate edit</p>
-                <p id="plateEditTitleH2" class="docH2">Plate Edit</p>
-                <table id="plateEditTable"></table>
-                <p id="plateEditTaskTitle" class="docH2">Task 信息</p>
-                <div id="plateEditTaskText"></div>
-                <p id="plateEditTargetTitle" class="docH2">Target 信息</p>
-                <table id="plateEditTargetTable"></table>
-                <p id="plateEditSplitPlateTitle" class="docH2">Split Plate</p>
-                <div id="plateEditSplitPlateText"></div>
-                <p id="plateEditSampleTitle" class="docH2">Sample 信息</p>
-                <table id="plateEditSampleTable"></table>
-                <p id="plateEditStandardTitle" class="docH2">Standard 信息</p>
-                <p id="plateEditStandardSelectTarget">
-                    <span>Select Target:</span>
-                    <span id="docPlateEditStandardSelectTarget"></span>
-                </p>
-                <p id="plateEditStandardStandardAmount">
-                    <span>Standard Amount:</span>
-                    <span id="docPlateEditStandardStandardAmount"></span>
-                </p>
-                <p id="plateEditStandardStandardNumber">
-                    <span>Standard Number:</span>
-                    <span id="docPlateEditStandardStandardNumber"></span>
-                </p>
-                <p id="plateEditStandardFactor">
-                    <span>Factor:</span>
-                    <span id="docPlateEditStandardFactor"></span>
-                </p>
-                <p id="plateEditStandardDilutionFactor">
-                    <span>Dilution Factor:</span>
-                    <span id="docPlateEditStandardDilutionFactor"></span>
-                </p>
-                <p id="plateEditStandardUnit">
-                    <span>Unit:</span>
-                    <span id="standard_Unit"></span>
-                </p>
-                <p id="plateEditStandardReplicates">
-                    <span>Replicates:</span>
-                    <span id="docPlateEditStandardReplicates"></span>
-                </p>
-                <p id="plateEditStandardIncreasingDecreasing">
-                    <span>Increasing/Decreasing:</span>
-                    <span id="docPlateEditStandardIncreasingDecreasing"></span>
-                </p>
-                <p id="plateEditStandardAssignment">
-                    <span>Assignment:</span>
-                    <span id="docPlateEditStandardAssignment"></span>
-                </p>
-                <p id="protocolEditTitle" class="docH1">Protocol Edit</p>
-                <p id="protocolTitle" class="docH2">Protocol</p>
-                <div id="protocolText"></div>
-                <p id="runTitle" class="docH1">Run 原始结果信息</p>
-                <p id="runTime" class="docH2">Run Time</p>
-                <div id="runTimeText"></div>
-                <p id="runTemperatureCurveTitle" class="docH2">Temperature Curve</p>
-                <img id="runTemperatureCurveIMG" src="">
-                <p id="analysisTitle" class="docH1">Analysis 信息</p>
-                <p id="analysisQuantification" class="docH2">Quantification</p>
-                <img id="analysisAmplificationCurve-CqIMG" src="">
-                <p id="analysisAmplificationCurve-Cq" class="docText">Amplification curve-Cq</p>
-                <p id="analysisAmplificationCurve-Clog" class="docText">Amplification curve-Log</p>
-                <img id="analysisAmplificationCurve-ClogIMG" src="">
-                <p id="analysisStandardCurveTitle" class="docH2">标准曲线</p>
-                <img id="analysisStandardCurveIMG" src="">
-                <p id="analysisQuantificationDataTitle" class="docH2">Quantification Data</p>
-                <table id="analysisQuantificationDataTable"></table>
-                <p id="analysisMeltCurve" class="docH2">Melt Curve</p>
-                <p id="analysisPreCurve" class="docText">原始曲线</p>
-                <img id="analysisPreCurveIMG" src="">
-                <p id="analysisMeltPeak" class="docText">一阶导数图</p>
-                <img id="analysisMeltPeakIMG" src="">
-                <p id="analysisMeltDataTitle" class="docH2">Melt data</p>
-                <table id="analysisMeltDataTable"></table>
-                <p id="analysisGeneExpressionTitle" class="docH2">Gene expression</p>
-                <p id="analysisGeneExpressionBar" class="docText">Bar 图</p>
-                <img id="analysisGeneExpressionBarIMG" src="" style="transform: scale(0.7);margin-left: -180px;">
-                <p id="analysisGeneExpressionMode">
-                    <span>分析模型:</span>
-                    <span id="geneExpressionMode"></span>
-                </p>
-                <p id="analysisGeneExpressionData" class="docText">gene expression数据</p>
-                <table id="analysisGeneExpressionDataTable"></table>
-            </article>
+            <!-- <article>
+                 <img id="head" src="../images/logo.png" alt="">
+                 <p></p>
+                 <img id="customLogo" src="" alt="" style="float: right;">
+                 <p id="title" class="docTittle"></p>
+                 <p id="subTitle" class="docSubTittle"></p>
+                 <p id="experimentTitle" class="docH1">Experiment</p>
+                 <p id="informationTitle" class="docH2">Information</p>
+                 <p id="informationName">
+                     <span>Name:</span>
+                     <span id="docInformationName"></span>
+                 </p>
+                 <p id="informationBarcode">
+                     <span>Barcode:</span>
+                     <span id="docInformationBarcode"></span>
+                 </p>
+                 <p id="informationUserName">
+                     <span>User Name:</span>
+                     <span id="docInformationUserName"></span>
+                 </p>
+                 <p id="informationInsName">
+                     <span>Instrument Name:</span>
+                     <span id="docInformationInsName"></span>
+                 </p>
+                 <p id="informationBlockType">
+                     <span>Block type:</span>
+                     <span id="docInformationBlockType"></span>
+                 </p>
+                 <p id="experimentSettingTitle" class="docH2">Experiment Setting</p>
+                 <p id="experimentSettingExperimentType">
+                     <span>Experiment Type:</span>
+                     <span id="docExperimentSettingExperimentType"></span>
+                 </p>
+                 <p id="experimentSettingChemistry">
+                     <span>Chemistry:</span>
+                     <span id="docExperimentSettingChemistry"></span>
+                 </p>
+                 <p id="experimentSettingRunMode">
+                     <span>Run Mode:</span>
+                     <span id="docExperimentSettingRunMode"></span>
+                 </p>
+                 <p id="parameterSettingTitle" class="docH2">Parameter Setting</p>
+                 <p id="parameterSettingReactionVolume">
+                     <span>Reaction Volume:</span>
+                     <span id="docParameterSettingReactionVolume"></span>
+                 </p>
+                 <p id="parameterSettingLidHeatingSwitch">
+                     <span>Lid Heating Switch:</span>
+                     <span id="docParameterSettingLidHeatingSwitch"></span>
+                 </p>
+                 <p id="parameterSettingCoverTemp">
+                     <span>Cover Temp:</span>
+                     <span id="docParameterSettingCoverTemp"></span>
+                 </p>
+                 <p id="parameterSettingLidCloseTemp">
+                     <span>Lid Close Temp:</span>
+                     <span id="docParameterSettingLidCloseTemp"></span>
+                 </p>
+                 <p id="commentsTitle" class="docH2">Comments</p>
+                 <p id="loadPreviewTitle" class="docH2">Load Preview</p>
+                 <img id="commentsIMG" src="">
+                 <img id="loadPreviewIMG" src="">
+                 <p id="plateEditTitleH1" class="docH1">Plate edit</p>
+                 <p id="plateEditTitleH2" class="docH2">Plate Edit</p>
+                 <table id="plateEditTable"></table>
+                 <p id="plateEditTaskTitle" class="docH2">Task 信息</p>
+                 <div id="plateEditTaskText"></div>
+                 <p id="plateEditTargetTitle" class="docH2">Target 信息</p>
+                 <table id="plateEditTargetTable"></table>
+                 <p id="plateEditSplitPlateTitle" class="docH2">Split Plate</p>
+                 <div id="plateEditSplitPlateText"></div>
+                 <p id="plateEditSampleTitle" class="docH2">Sample 信息</p>
+                 <table id="plateEditSampleTable"></table>
+                 <p id="plateEditStandardTitle" class="docH2">Standard 信息</p>
+                 <p id="plateEditStandardSelectTarget">
+                     <span>Select Target:</span>
+                     <span id="docPlateEditStandardSelectTarget"></span>
+                 </p>
+                 <p id="plateEditStandardStandardAmount">
+                     <span>Standard Amount:</span>
+                     <span id="docPlateEditStandardStandardAmount"></span>
+                 </p>
+                 <p id="plateEditStandardStandardNumber">
+                     <span>Standard Number:</span>
+                     <span id="docPlateEditStandardStandardNumber"></span>
+                 </p>
+                 <p id="plateEditStandardFactor">
+                     <span>Factor:</span>
+                     <span id="docPlateEditStandardFactor"></span>
+                 </p>
+                 <p id="plateEditStandardDilutionFactor">
+                     <span>Dilution Factor:</span>
+                     <span id="docPlateEditStandardDilutionFactor"></span>
+                 </p>
+                 <p id="plateEditStandardUnit">
+                     <span>Unit:</span>
+                     <span id="standard_Unit"></span>
+                 </p>
+                 <p id="plateEditStandardReplicates">
+                     <span>Replicates:</span>
+                     <span id="docPlateEditStandardReplicates"></span>
+                 </p>
+                 <p id="plateEditStandardIncreasingDecreasing">
+                     <span>Increasing/Decreasing:</span>
+                     <span id="docPlateEditStandardIncreasingDecreasing"></span>
+                 </p>
+                 <p id="plateEditStandardAssignment">
+                     <span>Assignment:</span>
+                     <span id="docPlateEditStandardAssignment"></span>
+                 </p>
+                 <p id="protocolEditTitle" class="docH1">Protocol Edit</p>
+                 <p id="protocolTitle" class="docH2">Protocol</p>
+                 <div id="protocolText"></div>
+                 <p id="runTitle" class="docH1">Run 原始结果信息</p>
+                 <p id="runTime" class="docH2">Run Time</p>
+                 <div id="runTimeText"></div>
+                 <p id="runTemperatureCurveTitle" class="docH2">Temperature Curve</p>
+                 <img id="runTemperatureCurveIMG" src="">
+                 <p id="analysisTitle" class="docH1">Analysis 信息</p>
+                 <p id="analysisQuantification" class="docH2">Quantification</p>
+                 <img id="analysisAmplificationCurve-CqIMG" src="">
+                 <p id="analysisAmplificationCurve-Cq" class="docText">Amplification curve-Cq</p>
+                 <p id="analysisAmplificationCurve-Clog" class="docText">Amplification curve-Log</p>
+                 <img id="analysisAmplificationCurve-ClogIMG" src="">
+                 <p id="analysisStandardCurveTitle" class="docH2">标准曲线</p>
+                 <img id="analysisStandardCurveIMG" src="">
+                 <p id="analysisQuantificationDataTitle" class="docH2">Quantification Data</p>
+                 <table id="analysisQuantificationDataTable"></table>
+                 <p id="analysisMeltCurve" class="docH2">Melt Curve</p>
+                 <p id="analysisPreCurve" class="docText">原始曲线</p>
+                 <img id="analysisPreCurveIMG" src="">
+                 <p id="analysisMeltPeak" class="docText">一阶导数图</p>
+                 <img id="analysisMeltPeakIMG" src="">
+                 <p id="analysisMeltDataTitle" class="docH2">Melt data</p>
+                 <table id="analysisMeltDataTable"></table>
+                 <p id="analysisGeneExpressionTitle" class="docH2">Gene expression</p>
+                 <p id="analysisGeneExpressionBar" class="docText">Bar 图</p>
+                 <img id="analysisGeneExpressionBarIMG" src="" style="transform: scale(0.7);margin-left: -180px;">
+                 <p id="analysisGeneExpressionMode">
+                     <span>分析模型:</span>
+                     <span id="geneExpressionMode"></span>
+                 </p>
+                 <p id="analysisGeneExpressionData" class="docText">gene expression数据</p>
+                 <table id="analysisGeneExpressionDataTable"></table>
+             </article>-->
         </section>
     </div>
 </section>
@@ -380,6 +376,7 @@
 <script type="text/javascript" src="../../../lib/jquery/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="../../../lib/custom/alert.js"></script>
 <script type="text/javascript" src="js/export.js"></script>
+<script type="text/javascript" src="js/docTool.js"></script>
 <script type="text/javascript">
     window.addEventListener("load", () => setTimeout(() => top.loadStatus.export = true, 500));
 </script>

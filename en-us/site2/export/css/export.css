@@ -18,6 +18,7 @@ li span,
     -ms-user-select: none; /*IE10*/
     -khtml-user-select: none; /*早期浏览器*/
     user-select: none;
+    z-index: 1;
 }
 
 .left {
@@ -235,18 +236,19 @@ li span,
 }
 
 /* TODO: 以下内容暂未处理 */
+/*
 .wordContainer article p span:first-child {
     font-weight: bold;
 }
 
 .docTittle {
-    display: none;
+    !*display: none;*!
     font-size: 22pt;
     text-align: center;
 }
 
 .docSubTittle {
-    display: none;
+    !*display: none;*!
     font-size: 16pt;
     text-align: center;
 }
@@ -254,7 +256,6 @@ li span,
 .docH1 {
     font-size: 15pt;
     font-weight: bold;
-    display: none;
 }
 
 .docH2 {
@@ -268,16 +269,10 @@ li span,
     letter-spacing: 0.5px;
     line-height: 1.5em;
 }
+*/
 
 /*word页面*/
-article > p,
-article > div,
-article > table,
-article > img {
-    display: none;
-}
-
-article > p {
+/*article > p {
     margin-top: 6px;
     margin-bottom: 6px;
 }
@@ -287,11 +282,13 @@ article > table {
     width: 670px;
     margin-left: -50px;
     border: 1px solid #000000;
-}
+}*/
 
-article > table td,
-article > table th {
+/*
+article > table td {
     text-align: center;
     width: 150px;
     border: 1px solid #000000;
 }
+*/
+
