@@ -2635,8 +2635,6 @@ $(() => {
         update(data, obj);
         updateDate();
         show();
-        // changeState();
-        // adjust();
     };
 
 
