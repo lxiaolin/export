@@ -3014,9 +3014,6 @@ $(() => {
             if (data.plate.hasTask) {
                 doc.createH2("Task 信息");
                 doc.splitText(data.plate.task);
-                // for (let i = 0; i < arr.length; i++) {
-                //     doc.createText(arr[i]);
-                // }
             }
             if (data.plate.hasTarget) {
                 doc.createH2("Target 信息");
@@ -3049,9 +3046,6 @@ $(() => {
             if (data.protocol.hasProtocol) {
                 doc.createH2("Protocol");
                 doc.splitText(data.protocol.protocol);
-                // for (let i = 0; i < arr.length; i++) {
-                //     doc.createText(arr[i]);
-                // }
             }
         }
         if (data.hasRun) {
@@ -3059,9 +3053,6 @@ $(() => {
             if (data.run.hasRunTime) {
                 doc.createH2("Run time");
                 doc.splitText(data.run.runTime);
-                // for (let i = 0; i < arr.length; i++) {
-                //     doc.createText(arr[i]);
-                // }
             }
             if (data.run.hasTemperatureCurve) {
                 doc.createH2("Temperature curve");
