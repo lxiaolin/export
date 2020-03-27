@@ -2635,6 +2635,7 @@ $(() => {
         update(data, obj);
         updateDate();
         show();
+        console.log(data.hasHeader);
     };
 
 
@@ -2696,7 +2697,6 @@ $(() => {
     });
     document.addEventListener("keydown", e => (e.key === "Control") && (keyCtrlDowning = true));
     document.addEventListener("keyup", () => keyCtrlDowning = false);
-
 
     // Logo
     let domChkLogo = document.getElementById("chk_logo");
@@ -2938,17 +2938,6 @@ $(() => {
         updateReport({header: {hasLogo: false, imgLogo: ""}});
     });
 
-    /*  // 多行文本分割
-      function splitText(text, delimiter) {
-          let arr;
-          if (delimiter !== undefined) {
-              arr = text.split(delimiter);
-          } else {
-              arr = text.split("\n");
-          }
-          return arr;
-      }*/
-
     // 显示文档
     function show() {
         let doc = new DocTool("container");
@@ -2963,16 +2952,6 @@ $(() => {
                 doc.createSubTitle(data.header.subTitle);
             }
         }
-       /* if (data.hasHeader && data.header.hasLogo) {
-            doc.createImgInLineWithPath(data.header.imgLogo);
-        }
-        if (data.hasHeader && data.header.hasTitle) {
-            doc.createTitle(data.header.title);
-        }
-        if (data.hasHeader && data.header.hasSubTitle) {
-            doc.createSubTitle(data.header.subTitle);
-        }*/
-
         if (data.hasExperiment) {
             doc.createH1("Experiment");
             if (data.experiment.hasInformation) {
@@ -3009,7 +2988,7 @@ $(() => {
             doc.createH1("Plate edit");
             if (data.plate.hasPlateLayout) {
                 doc.createH2("Plate Edit");
-                doc.createSplitTable(data.plate.plateLayout, "docPlateEditTable");
+                doc.createTable(data.plate.plateLayout, {className: "docPlateEditTable"});
             }
             if (data.plate.hasTask) {
                 doc.createH2("Task 信息");
@@ -3017,8 +2996,7 @@ $(() => {
             }
             if (data.plate.hasTarget) {
                 doc.createH2("Target 信息");
-                doc.createTable(data.plate.target, "docTargetTable");
-
+                doc.createTable(data.plate.target, {className: "docTargetTable", multipleLine: false,topHeadNum: 1});
             }
             if (data.plate.hasSplitPlate) {
                 doc.createH2("Split Plate");
@@ -3026,7 +3004,7 @@ $(() => {
             }
             if (data.plate.hasSample) {
                 doc.createH2("Sample 信息");
-                doc.createTable(data.plate.sample, "docSampleTable");
+                doc.createTable(data.plate.sample, {className: "docSampleTable", multipleLine: false,topHeadNum: 1});
             }
             if (data.plate.hasStandard) {
                 doc.createH2("Standard 信息");
@@ -3074,7 +3052,11 @@ $(() => {
             }
             if (data.analysis.hasQuantificationData) {
                 doc.createH2("Quantification data");
-                doc.createTable(data.analysis.quantificationData, "docQuantificationDataTable");
+                doc.createTable(data.analysis.quantificationData, {
+                    className: "docQuantificationDataTable",
+                    multipleLine: false,
+                    topHeadNum: 1
+                });
             }
             if (data.analysis.hasMelt) {
                 doc.createH2("Melt curve");
@@ -3085,16 +3067,19 @@ $(() => {
             }
             if (data.analysis.hasMeltData) {
                 doc.createH2("Melt data")
-                doc.createTable(data.analysis.meltData, "docMeltDataTable");
+                doc.createTable(data.analysis.meltData, {className: "docMeltDataTable", multipleLine: false,topHeadNum: 1});
             }
             if (data.analysis.hasGeneExpression) {
                 doc.createH2("Gene expression");
                 doc.createText("Bar 图");
-                doc.createImgInLineWithBase64(data.analysis.imgGeneExpressionBar, {style: {width: "100%"}});
+                doc.createImgFloatWithBase64(data.analysis.imgGeneExpressionBar);
                 doc.createText("分析模型", data.analysis.geneExpressionMode);
                 doc.createText("gene expression 数据");
-                doc.createTable(data.analysis.geneExpressionData, "docGeneExpressionDataTable");
-
+                doc.createTable(data.analysis.geneExpressionData, {
+                    className: "docGeneExpressionDataTable",
+                    multipleLine: false,
+                    topHeadNum: 1
+                });
             }
         }
     }

@@ -925,19 +925,101 @@ class DocTool {
     }
 
 
+    /* /!**
+      * 创建表格
+      *
+      * @param table
+      * @param className
+      *!/
+     createTable(table, className, obj = {}) {
+         if (this.creating) {
+             this.taskQueue[this.taskQueue.length] = {method: this.createTable, argArray: Array.from(arguments)};
+         } else {
+             this.creating = true;
+             setTimeout(() => {
+                 this.__createTable(table, className, obj = {});
+                 this.creating = false;
+                 this.__continueWork();
+             });
+         }
+     }
+
+     /!**
+      * 创建表格核心代码
+      *
+      * @param table
+      * @param className
+      * @private
+      *!/
+     __createTable(table, className, obj = {}) {
+         let thisArg = this;
+         let article = this.__getLastPage(); // 最后一页
+         let h = this.__getContentHeight(article);   // 最后一页内容高度
+         let pageHeightLimit = this.__getPageHeightLimit();  // 一页的高度
+         let $new = $(`<table class="${className}"></table>`);
+         for (let i = 0; i < table.length; i++) {
+             let $tr = $(`<tr></tr>`);
+             for (let j = 0; j < table[i].length; j++) {
+                 let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
+                 $tr.append($td);
+                 $new.append($tr);
+             }
+         }
+         article.append($new);
+         let tableArr = [];
+         if ($new.outerHeight() > (pageHeightLimit - h)) {
+             let count = Math.ceil(($new.outerHeight() - (pageHeightLimit - h)) / pageHeightLimit);
+             for (let i = 0; i < count + 1; i++) {
+                 tableArr[i] = $(`<table class="${className}"></table>`);
+             }
+         } else {
+             tableArr[0] = $(`<table class="${className}"></table>`);
+         }
+         let num = 0;    // 第几个table
+         $new.find("tr").each(function () {
+             let outerHTML = this.outerHTML;   // tr 的html标签
+             let height = this.offsetHeight;   // tr 高度
+             if (h + height > pageHeightLimit) { // 超出一页
+                 num++;  // 对下一个table进行添加
+                 tableArr[num].append(outerHTML);
+                 h = height; // 重置高度
+             } else { // 没有超出一页
+                 h += height;
+                 tableArr[num].append(outerHTML);
+             }
+         });
+         $new.remove();  // 移除整个的table
+
+         /!*  if (typeof obj.style === "object" && obj.style !== null) {
+               let style = JSON.parse(JSON.stringify(obj.style));
+               // DocTool.deleteProperties(style, "float");
+               for (let i = 0; i < num + 1; i++) {
+                   tableArr[i].css(style);
+               }
+           }*!/
+
+         for (let i = 0; i < num + 1; i++) {
+             if (i === 0) {
+                 article.append(tableArr[i]);    // 用第一个表格把最后一页添加满
+             } else {
+                 thisArg.addPage().append(tableArr[i]);  // 新建一页添加新的表格
+             }
+         }
+     }*/
+
     /**
      * 创建表格
      *
-     * @param table
-     * @param className
+     * @param table {[]} 表格数组
+     * param obj {...object} className、multipleLine、css 样式等信息的对象
      */
-    createTable(table,className) {
+    createTable(table, obj) {
         if (this.creating) {
             this.taskQueue[this.taskQueue.length] = {method: this.createTable, argArray: Array.from(arguments)};
         } else {
             this.creating = true;
             setTimeout(() => {
-                this.__createTable(table,className);
+                this.__createTable(table, obj);
                 this.creating = false;
                 this.__continueWork();
             });
@@ -947,104 +1029,61 @@ class DocTool {
     /**
      * 创建表格核心代码
      *
-     * @param table
-     * @param className
-     * @private
+     * @param table {[]} 表格数组
+     * param obj {...object} className、multipleLine、css 样式等信息的对象
      */
-    __createTable(table,className) {
+    __createTable(table, obj) {
+        let defaultProp = {
+            className: "",
+            multipleLine: true,
+            multipleLineSplitSymbol: "\n",
+            topHeadNum: 0,
+            topHeadStyle: {},
+            leftHeadNum: 0,
+            leftHeadStyle: {},
+            rightHeadNum: 0,
+            rightHeadStyle: {},
+            bottomHeadNum: 0,
+            bottomHeadStyle: {},
+            contentStyle: {},
+            contentStyles: []
+        }
+        DocTool.shallowCopy(defaultProp, obj);
         let thisArg = this;
         let article = this.__getLastPage(); // 最后一页
         let h = this.__getContentHeight(article);   // 最后一页内容高度
         let pageHeightLimit = this.__getPageHeightLimit();  // 一页的高度
-        let $new = $(`<table class="${className}"></table>`);
+        let $new = $(`<table class="${defaultProp.className}"></table>`);    // 创建完整的表格
         for (let i = 0; i < table.length; i++) {
             let $tr = $(`<tr></tr>`);
-            for (let j = 0; j < table[i].length; j++) {
-                let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
-                $tr.append($td);
-                $new.append($tr);
-            }
-        }
-        article.append($new);
-        let tableArr = [];
-        if ($new.outerHeight() > (pageHeightLimit - h)) {
-            let count = Math.ceil(($new.outerHeight() - (pageHeightLimit - h)) / pageHeightLimit);
-            for (let i = 0; i < count + 1; i++) {
-                tableArr[i] = $(`<table class="${className}"></table>`);
-            }
-        }else {
-            tableArr[0] = $(`<table class="${className}"></table>`);
-        }
-        let num = 0;    // 第几个table
-        $new.find("tr").each(function () {
-            let outerHTML = this.outerHTML;   // tr 的html标签
-            let height = this.offsetHeight;   // tr 高度
-            if (h + height > pageHeightLimit) { // 超出一页
-                num++;  // 对下一个table进行添加
-                tableArr[num].append(outerHTML);
-                h = height; // 重置高度
-            } else { // 没有超出一页
-                h += height;
-                tableArr[num].append(outerHTML);
-            }
-        });
-        $new.remove();  // 移除整个的table
-        for (let i = 0; i < num + 1; i++) {
-            if (i === 0) {
-                article.append(tableArr[i]);    // 用第一个表格把最后一页添加满
-            } else {
-                thisArg.addPage().append(tableArr[i]);  // 新建一页添加新的表格
-            }
-        }
-    }
 
-    /**
-     * 创建含分割符的表格
-     *
-     * @param table {[]} 表格数组
-     * param obj {...object | undefined} css 样式等信息的对象
-     */
-    createSplitTable(table, className) {
-        if (this.creating) {
-            this.taskQueue[this.taskQueue.length] = {method: this.createSplitTable, argArray: Array.from(arguments)};
-        } else {
-            this.creating = true;
-            setTimeout(() => {
-                this.__createSplitTable(table, className);
-                this.creating = false;
-                this.__continueWork();
-            });
-        }
-    }
+            if (defaultProp.topHeadNum > 0) {
+                defaultProp.topHeadNum--;
+                $tr = $(`<tr style="font-weight: bold"></tr>`);
+            }
 
-    /**
-     * 创建含分割符的表格核心代码
-     *
-     * @param table {[]} 表格数组
-     * param obj {...object | undefined} css 样式等信息的对象
-     */
-    __createSplitTable(table, className) {
-        let thisArg = this;
-        let article = this.__getLastPage(); // 最后一页
-        let h = this.__getContentHeight(article);   // 最后一页内容高度
-        let pageHeightLimit = this.__getPageHeightLimit();  // 一页的高度
-        let $new = $(`<table class="${className}"></table>`);    // 创建完整的表格
-        for (let i = 0; i < table.length; i++) {
-            let $tr = $(`<tr></tr>`);
-            for (let j = 0; j < table[i].length; j++) {
-                let arr = this.splitTableText(table[i][j]);
-                if (this.judge(table[i][j]) > 0) {
-                    let $td = $(`<td></td>`);
-                    for (let k = 0; k < arr.length; k++) {
-                        let $div = $(`<div>${DocTool.htmlEncode(arr[k])}</div>`);
-                        $td.append($div);
+            if (defaultProp.multipleLine) { // 判断是否需要对表格内容进行分割
+                for (let j = 0; j < table[i].length; j++) {
+                    let arr = this.splitTableText(table[i][j], defaultProp.multipleLineSplitSymbol);
+                    if (this.judge(table[i][j], defaultProp.multipleLineSplitSymbol) > 0) {  // 表格内容中含有分割符
+                        let $td = $(`<td></td>`);
+                        for (let k = 0; k < arr.length; k++) {
+                            let $div = $(`<div>${DocTool.htmlEncode(arr[k])}</div>`);
+                            $td.append($div);
+                        }
+                        $tr.append($td);
+                    } else {
+                        let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
+                        $tr.append($td);
                     }
-                    $tr.append($td);
-                } else {
+                    $new.append($tr);
+                }
+            } else {    // 表格内容中不含分割符
+                for (let j = 0; j < table[i].length; j++) {
                     let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
                     $tr.append($td);
+                    $new.append($tr);
                 }
-                $new.append($tr);
             }
         }
         article.append($new);   // 先把完整的表格加到最后一页
@@ -1052,12 +1091,12 @@ class DocTool {
         if ($new.outerHeight() > (pageHeightLimit - h)) {   // 最后一页放不下完整的表格
             let count = Math.ceil(($new.outerHeight() - (pageHeightLimit - h)) / pageHeightLimit);  // 需要新加的表格数
             for (let i = 0; i < count + 1; i++) {
-                tableArr[i] = $(`<table class="${className}"></table>`);
+                tableArr[i] = $(`<table class="${defaultProp.className}"></table>`);
             }
-        }else {
-            tableArr[0] = $(`<table class="${className}"></table>`);
+        } else {
+            tableArr[0] = $(`<table class="${defaultProp.className}"></table>`);
         }
-        let num = 0;    // 第几个table
+        let num = 0;    // 第几个 table
         $new.find("tr").each(function () {
             let outerHTML = this.outerHTML;   // tr 的html标签
             let height = this.offsetHeight;   // tr 高度
@@ -1122,7 +1161,7 @@ class DocTool {
      * @param delimiter 分割符
      * @returns {*} 返回分割后的数组
      */
-    splitTableText(text,delimiter){
+    splitTableText(text, delimiter) {
         let arr;
         if (delimiter !== undefined) {
             arr = text.split(delimiter);
@@ -1218,6 +1257,20 @@ class DocTool {
         for (let item in obj) {
             if (obj.hasOwnProperty(item) && item.includes(searchString)) {
                 delete obj[item];
+            }
+        }
+    }
+
+    /**
+     * 改变默认参数
+     *
+     * @param obj1  默认参数
+     * @param obj2  新参数
+     */
+    static shallowCopy(obj1, obj2) {
+        for (let item in obj2) {
+            if (obj1.hasOwnProperty(item) && obj2.hasOwnProperty(item)) {
+                obj1[item] = obj2[item];
             }
         }
     }
