@@ -960,7 +960,7 @@ class DocTool {
         for (let i = 0; i < table.length; i++) {
             let $tr = $(`<tr></tr>`);
             for (let j = 0; j < table[i].length; j++) {
-                let $td = $(`<td>${table[i][j]}</td>`);
+                let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
                 $tr.append($td);
                 $new.append($tr);
             }
@@ -1036,7 +1036,7 @@ class DocTool {
                 if (this.judge(table[i][j]) > 0) {
                     let $td = $(`<td></td>`);
                     for (let k = 0; k < arr.length; k++) {
-                        let $div = $(`<div>${arr[k]}</div>`);
+                        let $div = $(`<div>${DocTool.htmlEncode(arr[k])}</div>`);
                         $td.append($div);
                     }
                     $tr.append($td);

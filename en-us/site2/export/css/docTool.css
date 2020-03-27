@@ -77,14 +77,20 @@
     text-align: center;
 }
 
+/*.docContainer img{
+    width: 100%;
+}*/
+/*表格*/
+
 .docPlateEditTable {
-    width: 650px;
-    /*margin-left: -40px;*/
+    width: 100%;
+    font-weight: bold;
+    font-size: 12px;
 }
 
 .docPlateEditTable td {
+    width: 70px;
     text-align: center;
-    width: 100px;
     border: 1px solid #000000;
 }
 
@@ -92,24 +98,27 @@
     width: 10px;
 }
 
-.docPlateEditTable tr {
-    font-weight: bold;
+.docTargetTable{
+    width: 100%;
 }
 
 .docTargetTable td {
     text-align: center;
-    width: 110px;
     border: 1px solid #000000;
 }
 
+.docSampleTable{
+    width: 100%;
+}
+
 .docSampleTable td {
+    width: 50px;
     text-align: center;
-    width: 110px;
     border: 1px solid #000000;
 }
 
 .docQuantificationDataTable {
-    width: 600px;
+    width: 100%;
 }
 
 .docQuantificationDataTable td {
@@ -118,8 +127,7 @@
 }
 
 .docMeltDataTable {
-    width: 600px;
-
+    width: 100%;
 }
 
 .docMeltDataTable td {
@@ -128,12 +136,12 @@
 }
 
 .docGeneExpressionDataTable {
-    width: 600px;
+    width: 100%;
 }
 
 .docGeneExpressionDataTable td {
-    text-align: center;
     width: 50px;
+    text-align: center;
     border: 1px solid #000000;
 }
 
