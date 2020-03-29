@@ -924,89 +924,6 @@ class DocTool {
         }
     }
 
-
-    /* /!**
-      * 创建表格
-      *
-      * @param table
-      * @param className
-      *!/
-     createTable(table, className, obj = {}) {
-         if (this.creating) {
-             this.taskQueue[this.taskQueue.length] = {method: this.createTable, argArray: Array.from(arguments)};
-         } else {
-             this.creating = true;
-             setTimeout(() => {
-                 this.__createTable(table, className, obj = {});
-                 this.creating = false;
-                 this.__continueWork();
-             });
-         }
-     }
-
-     /!**
-      * 创建表格核心代码
-      *
-      * @param table
-      * @param className
-      * @private
-      *!/
-     __createTable(table, className, obj = {}) {
-         let thisArg = this;
-         let article = this.__getLastPage(); // 最后一页
-         let h = this.__getContentHeight(article);   // 最后一页内容高度
-         let pageHeightLimit = this.__getPageHeightLimit();  // 一页的高度
-         let $new = $(`<table class="${className}"></table>`);
-         for (let i = 0; i < table.length; i++) {
-             let $tr = $(`<tr></tr>`);
-             for (let j = 0; j < table[i].length; j++) {
-                 let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
-                 $tr.append($td);
-                 $new.append($tr);
-             }
-         }
-         article.append($new);
-         let tableArr = [];
-         if ($new.outerHeight() > (pageHeightLimit - h)) {
-             let count = Math.ceil(($new.outerHeight() - (pageHeightLimit - h)) / pageHeightLimit);
-             for (let i = 0; i < count + 1; i++) {
-                 tableArr[i] = $(`<table class="${className}"></table>`);
-             }
-         } else {
-             tableArr[0] = $(`<table class="${className}"></table>`);
-         }
-         let num = 0;    // 第几个table
-         $new.find("tr").each(function () {
-             let outerHTML = this.outerHTML;   // tr 的html标签
-             let height = this.offsetHeight;   // tr 高度
-             if (h + height > pageHeightLimit) { // 超出一页
-                 num++;  // 对下一个table进行添加
-                 tableArr[num].append(outerHTML);
-                 h = height; // 重置高度
-             } else { // 没有超出一页
-                 h += height;
-                 tableArr[num].append(outerHTML);
-             }
-         });
-         $new.remove();  // 移除整个的table
-
-         /!*  if (typeof obj.style === "object" && obj.style !== null) {
-               let style = JSON.parse(JSON.stringify(obj.style));
-               // DocTool.deleteProperties(style, "float");
-               for (let i = 0; i < num + 1; i++) {
-                   tableArr[i].css(style);
-               }
-           }*!/
-
-         for (let i = 0; i < num + 1; i++) {
-             if (i === 0) {
-                 article.append(tableArr[i]);    // 用第一个表格把最后一页添加满
-             } else {
-                 thisArg.addPage().append(tableArr[i]);  // 新建一页添加新的表格
-             }
-         }
-     }*/
-
     /**
      * 创建表格
      *
@@ -1053,34 +970,102 @@ class DocTool {
         let article = this.__getLastPage(); // 最后一页
         let h = this.__getContentHeight(article);   // 最后一页内容高度
         let pageHeightLimit = this.__getPageHeightLimit();  // 一页的高度
-        let $new = $(`<table class="${defaultProp.className}"></table>`);    // 创建完整的表格
+        //  contentStyle
+        let contentStyleString = "";    // table的行间样式
+        for (let key of Object.keys(defaultProp.contentStyle)) {
+            contentStyleString += defaultProp.contentStyle[key] + ";";
+        }
+        let $new = $(`<table class="${defaultProp.className}" style="${contentStyleString}"></table>`);    // 创建完整的表格
         for (let i = 0; i < table.length; i++) {
             let $tr = $(`<tr></tr>`);
-
+            let flag = defaultProp.topHeadNum;
+            // topHeadStyle
             if (defaultProp.topHeadNum > 0) {
+                let topHeadStyleString = "";
                 defaultProp.topHeadNum--;
-                $tr = $(`<tr style="font-weight: bold"></tr>`);
+                for (let key of Object.keys(defaultProp.topHeadStyle)) {
+                    topHeadStyleString += defaultProp.topHeadStyle[key] + ";";
+                }
+                $tr = $(`<tr style="${topHeadStyleString}"></tr>`);
             }
+            // bottomHeadStyle
+            if (defaultProp.bottomHeadNum > 0 && i >= flag && i === (table.length - defaultProp.bottomHeadNum)) {
+                let bottomHeadStyleString = "";
+                defaultProp.bottomHeadNum--;
+                for (let key of Object.keys(defaultProp.bottomHeadStyle)) {
+                    bottomHeadStyleString += defaultProp.bottomHeadStyle[key] + ";";
+                }
+                $tr = $(`<tr style="${bottomHeadStyleString}"></tr>`);
 
+            }
             if (defaultProp.multipleLine) { // 判断是否需要对表格内容进行分割
                 for (let j = 0; j < table[i].length; j++) {
                     let arr = this.splitTableText(table[i][j], defaultProp.multipleLineSplitSymbol);
-                    if (this.judge(table[i][j], defaultProp.multipleLineSplitSymbol) > 0) {  // 表格内容中含有分割符
+                    if (this.judge(table[i][j], defaultProp.multipleLineSplitSymbol) > 0) {  // 表格内容中此单元格含有分割符
                         let $td = $(`<td></td>`);
+                        //  leftHeadStyle
+                        if (defaultProp.leftHeadNum > 0 && j < defaultProp.leftHeadNum) {
+                            let leftHeadStyleString = "";
+                            for (let key of Object.keys(defaultProp.leftHeadStyle)) {
+                                leftHeadStyleString += defaultProp.leftHeadStyle[key] + ";";
+                            }
+                            $td = $(`<td style="${leftHeadStyleString}"></td>`);
+                        }
+                        //  rightHeadStyle
+                        if (defaultProp.rightHeadNum > 0 && j >= (table[i].length - defaultProp.rightHeadNum)) {
+                            let rightHeadStyleString = "";
+                            for (let key of Object.keys(defaultProp.rightHeadStyle)) {
+                                rightHeadStyleString += defaultProp.rightHeadStyle[key] + ";";
+                            }
+                            $td = $(`<td style="${rightHeadStyleString}"></td>`);
+                        }
+
                         for (let k = 0; k < arr.length; k++) {
                             let $div = $(`<div>${DocTool.htmlEncode(arr[k])}</div>`);
                             $td.append($div);
                         }
                         $tr.append($td);
-                    } else {
+                    } else {    //  表格内容中此单元格不含分割符
                         let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
+                        //  leftHeadStyle
+                        if (defaultProp.leftHeadNum > 0 && j < defaultProp.leftHeadNum) {
+                            let leftHeadStyleString = "";
+                            for (let key of Object.keys(defaultProp.leftHeadStyle)) {
+                                leftHeadStyleString += defaultProp.leftHeadStyle[key] + ";";
+                            }
+                            $td = $(`<td style="${leftHeadStyleString}">${DocTool.htmlEncode(table[i][j])}</td>`);
+                        }
+                        //  rightHeadStyle
+                        if (defaultProp.rightHeadNum > 0 && j >= (table[i].length - defaultProp.rightHeadNum)) {
+                            let rightHeadStyleString = "";
+                            for (let key of Object.keys(defaultProp.rightHeadStyle)) {
+                                rightHeadStyleString += defaultProp.rightHeadStyle[key] + ";";
+                            }
+                            $td = $(`<td style="${rightHeadStyleString}">${DocTool.htmlEncode(table[i][j])}</td>`);
+                        }
                         $tr.append($td);
                     }
                     $new.append($tr);
                 }
-            } else {    // 表格内容中不含分割符
+            } else {    // 表格内容不需要分割
                 for (let j = 0; j < table[i].length; j++) {
                     let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
+                    //  leftHeadStyle
+                    if (defaultProp.leftHeadNum > 0 && j < defaultProp.leftHeadNum) {
+                        let leftHeadStyleString = "";
+                        for (let key of Object.keys(defaultProp.leftHeadStyle)) {
+                            leftHeadStyleString += defaultProp.leftHeadStyle[key] + ";";
+                        }
+                        $td = $(`<td style="${leftHeadStyleString}">${DocTool.htmlEncode(table[i][j])}</td>`);
+                    }
+                    //  rightHeadStyle
+                    if (defaultProp.rightHeadNum > 0 && j >= (table[i].length - defaultProp.rightHeadNum)) {
+                        let rightHeadStyleString = "";
+                        for (let key of Object.keys(defaultProp.rightHeadStyle)) {
+                            rightHeadStyleString += defaultProp.rightHeadStyle[key] + ";";
+                        }
+                        $td = $(`<td style="${rightHeadStyleString}">${DocTool.htmlEncode(table[i][j])}</td>`);
+                    }
                     $tr.append($td);
                     $new.append($tr);
                 }
@@ -1091,10 +1076,10 @@ class DocTool {
         if ($new.outerHeight() > (pageHeightLimit - h)) {   // 最后一页放不下完整的表格
             let count = Math.ceil(($new.outerHeight() - (pageHeightLimit - h)) / pageHeightLimit);  // 需要新加的表格数
             for (let i = 0; i < count + 1; i++) {
-                tableArr[i] = $(`<table class="${defaultProp.className}"></table>`);
+                tableArr[i] = $(`<table class="${defaultProp.className}" style="${contentStyleString}"></table>`);
             }
         } else {
-            tableArr[0] = $(`<table class="${defaultProp.className}"></table>`);
+            tableArr[0] = $(`<table class="${defaultProp.className}" style="${contentStyleString}"></table>`);
         }
         let num = 0;    // 第几个 table
         $new.find("tr").each(function () {
@@ -1133,7 +1118,6 @@ class DocTool {
         } else {
             return text.indexOf("\n");
         }
-
     }
 
     /**

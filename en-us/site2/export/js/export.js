@@ -2638,7 +2638,6 @@ $(() => {
         console.log(data.hasHeader);
     };
 
-
     // 下载
     let $alertDownload = $("#alertDownload");
     $("#save").on("click", () => $alertDownload.fadeIn("fast"));
@@ -2926,8 +2925,8 @@ $(() => {
         let fileReader = new FileReader();
         fileReader.onload = e => {
             previewDom.src = e.target.result;
-            updateReport({header: {hasLogo: true, imgLogo: e.target.result.split(",")[1]}});
-            console.log(e.target.result);
+            // updateReport({header: {hasLogo: true, imgLogo: e.target.result.split(",")[1]}});
+            updateReport({header: {hasLogo: true, imgLogo: e.target.result}});
         };
         fileReader.readAsDataURL(file);
     });
@@ -2996,7 +2995,12 @@ $(() => {
             }
             if (data.plate.hasTarget) {
                 doc.createH2("Target 信息");
-                doc.createTable(data.plate.target, {className: "docTargetTable", multipleLine: false,topHeadNum: 1});
+                doc.createTable(data.plate.target, {
+                    className: "docTargetTable", multipleLine: false, topHeadNum: 1,
+                    topHeadStyle: {
+                        fontWeight: "font-weight:bold"
+                    }
+                });
             }
             if (data.plate.hasSplitPlate) {
                 doc.createH2("Split Plate");
@@ -3004,7 +3008,11 @@ $(() => {
             }
             if (data.plate.hasSample) {
                 doc.createH2("Sample 信息");
-                doc.createTable(data.plate.sample, {className: "docSampleTable", multipleLine: false,topHeadNum: 1});
+                doc.createTable(data.plate.sample, {
+                    className: "docSampleTable", multipleLine: false, topHeadNum: 1, topHeadStyle: {
+                        fontWeight: "font-weight:bold"
+                    }
+                });
             }
             if (data.plate.hasStandard) {
                 doc.createH2("Standard 信息");
@@ -3055,7 +3063,10 @@ $(() => {
                 doc.createTable(data.analysis.quantificationData, {
                     className: "docQuantificationDataTable",
                     multipleLine: false,
-                    topHeadNum: 1
+                    topHeadNum: 1,
+                    topHeadStyle: {
+                        fontWeight: "font-weight:bold"
+                    }
                 });
             }
             if (data.analysis.hasMelt) {
@@ -3067,7 +3078,14 @@ $(() => {
             }
             if (data.analysis.hasMeltData) {
                 doc.createH2("Melt data")
-                doc.createTable(data.analysis.meltData, {className: "docMeltDataTable", multipleLine: false,topHeadNum: 1});
+                doc.createTable(data.analysis.meltData, {
+                    className: "docMeltDataTable",
+                    multipleLine: false,
+                    topHeadNum: 1,
+                    topHeadStyle: {
+                        fontWeight: "font-weight:bold"
+                    }
+                });
             }
             if (data.analysis.hasGeneExpression) {
                 doc.createH2("Gene expression");
@@ -3078,531 +3096,16 @@ $(() => {
                 doc.createTable(data.analysis.geneExpressionData, {
                     className: "docGeneExpressionDataTable",
                     multipleLine: false,
-                    topHeadNum: 1
+                    topHeadNum: 1,
+                    topHeadStyle: {
+                        fontWeight: "font-weight:bold"
+                    }
                 });
             }
         }
     }
 
     show();
-// insertText();
-// changeState();
-// adjust();
-
-
-    /*   function changeState() {
-           // Header
-           if (data.hasHeader && data.header.hasTitle) {
-               document.getElementById("title").style.display = "block";
-           } else {
-               document.getElementById("title").style.display = "none";
-           }
-
-           if (data.hasHeader && data.header.hasSubTitle) {
-               document.getElementById("subTitle").style.display = "block";
-           } else {
-               document.getElementById("subTitle").style.display = "none";
-           }
-
-           if (data.hasHeader && data.header.hasLogo) {
-               document.getElementById("head").style.display = "block";
-           } else {
-               document.getElementById("head").style.display = "none";
-           }
-
-           // Experiment
-           if (data.hasExperiment) {
-               document.getElementById("experimentTitle").style.display = "block";
-           } else {
-               document.getElementById("experimentTitle").style.display = "none";
-           }
-
-           // Information
-           if (data.hasExperiment && data.experiment.hasInformation) {
-               document.getElementById("informationTitle").style.display = "block";
-               document.getElementById("informationName").style.display = "block";
-               document.getElementById("informationBarcode").style.display = "block";
-               document.getElementById("informationUserName").style.display = "block";
-               document.getElementById("informationInsName").style.display = "block";
-               document.getElementById("informationBlockType").style.display = "block";
-           } else {
-               document.getElementById("informationTitle").style.display = "none";
-               document.getElementById("informationName").style.display = "none";
-               document.getElementById("informationBarcode").style.display = "none";
-               document.getElementById("informationUserName").style.display = "none";
-               document.getElementById("informationInsName").style.display = "none";
-               document.getElementById("informationBlockType").style.display = "none";
-           }
-
-           // experimentSetting
-           if (data.hasExperiment && data.experiment.hasExperimentSetting) {
-               document.getElementById("experimentSettingTitle").style.display = "block";
-               document.getElementById("experimentSettingExperimentType").style.display = "block";
-               document.getElementById("experimentSettingChemistry").style.display = "block";
-               document.getElementById("experimentSettingRunMode").style.display = "block";
-           } else {
-               document.getElementById("experimentSettingTitle").style.display = "none";
-               document.getElementById("experimentSettingExperimentType").style.display = "none";
-               document.getElementById("experimentSettingChemistry").style.display = "none";
-               document.getElementById("experimentSettingRunMode").style.display = "none";
-           }
-
-           // Parameter Setting
-           if (data.hasExperiment && data.experiment.hasParameterSetting) {
-               document.getElementById("parameterSettingTitle").style.display = "block";
-               document.getElementById("parameterSettingReactionVolume").style.display = "block";
-               document.getElementById("parameterSettingLidHeatingSwitch").style.display = "block";
-               document.getElementById("parameterSettingCoverTemp").style.display = "block";
-               document.getElementById("parameterSettingLidCloseTemp").style.display = "block";
-           } else {
-               document.getElementById("parameterSettingTitle").style.display = "none";
-               document.getElementById("parameterSettingReactionVolume").style.display = "none";
-               document.getElementById("parameterSettingLidHeatingSwitch").style.display = "none";
-               document.getElementById("parameterSettingCoverTemp").style.display = "none";
-               document.getElementById("parameterSettingLidCloseTemp").style.display = "none";
-           }
-
-           // Comments
-           if (data.hasExperiment && data.experiment.hasComments) {
-               document.getElementById("commentsTitle").style.display = "block";
-               document.getElementById("commentsIMG").style.display = "block";
-           } else {
-               document.getElementById("commentsTitle").style.display = "none";
-               document.getElementById("commentsIMG").style.display = "none";
-           }
-
-           // Load Preview
-           if (data.hasExperiment && data.experiment.hasLoadPreview) {
-               document.getElementById("loadPreviewTitle").style.display = "block";
-               document.getElementById("loadPreviewIMG").style.display = "block";
-           } else {
-               document.getElementById("loadPreviewTitle").style.display = "none";
-               document.getElementById("loadPreviewIMG").style.display = "none";
-           }
-
-           // Plate
-           if (data.hasPlate) {
-               document.getElementById("plateEditTitleH1").style.display = "block";
-           } else {
-               document.getElementById("plateEditTitleH1").style.display = "none";
-           }
-
-           // Plate Edit
-           if (data.hasPlate && data.plate.hasPlateLayout) {
-               document.getElementById("plateEditTitleH2").style.display = "block";
-               document.getElementById("plateEditTable").style.display = "block";
-           } else {
-               document.getElementById("plateEditTitleH2").style.display = "none";
-               document.getElementById("plateEditTable").style.display = "none";
-           }
-           // Task 信息
-           if (data.hasPlate && data.plate.hasTask) {
-               document.getElementById("plateEditTaskTitle").style.display = "block";
-               document.getElementById("plateEditTaskText").style.display = "block";
-           } else {
-               document.getElementById("plateEditTaskTitle").style.display = "none";
-               document.getElementById("plateEditTaskText").style.display = "none";
-           }
-
-           // Target 信息
-           if (data.hasPlate && data.plate.hasTarget) {
-               document.getElementById("plateEditTargetTitle").style.display = "block";
-               document.getElementById("plateEditTargetTable").style.display = "block";
-           } else {
-               document.getElementById("plateEditTargetTitle").style.display = "none";
-               document.getElementById("plateEditTargetTable").style.display = "none";
-           }
-
-           // Split Plate
-           if (data.hasPlate && data.plate.hasSplitPlate) {
-               document.getElementById("plateEditSplitPlateTitle").style.display = "block";
-               document.getElementById("plateEditSplitPlateText").style.display = "block";
-           } else {
-               document.getElementById("plateEditSplitPlateTitle").style.display = "none";
-               document.getElementById("plateEditSplitPlateText").style.display = "none";
-           }
-
-           //Sample 信息
-           if (data.hasPlate && data.plate.hasSample) {
-               document.getElementById("plateEditSampleTitle").style.display = "block";
-               document.getElementById("plateEditSampleTable").style.display = "block";
-           } else {
-               document.getElementById("plateEditSampleTitle").style.display = "none";
-               document.getElementById("plateEditSampleTable").style.display = "none";
-           }
-
-           //Standard 信息
-           if (data.hasPlate && data.plate.hasStandard) {
-               document.getElementById("plateEditStandardTitle").style.display = "block";
-               document.getElementById("plateEditStandardSelectTarget").style.display = "block";
-               document.getElementById("plateEditStandardStandardAmount").style.display = "block";
-               document.getElementById("plateEditStandardStandardNumber").style.display = "block";
-               document.getElementById("plateEditStandardFactor").style.display = "block";
-               document.getElementById("plateEditStandardDilutionFactor").style.display = "block";
-               document.getElementById("plateEditStandardUnit").style.display = "block";
-               document.getElementById("plateEditStandardReplicates").style.display = "block";
-               document.getElementById("plateEditStandardIncreasingDecreasing").style.display = "block";
-               document.getElementById("plateEditStandardAssignment").style.display = "block";
-           } else {
-               document.getElementById("plateEditStandardTitle").style.display = "none";
-               document.getElementById("plateEditStandardSelectTarget").style.display = "none";
-               document.getElementById("plateEditStandardStandardAmount").style.display = "none";
-               document.getElementById("plateEditStandardStandardNumber").style.display = "none";
-               document.getElementById("plateEditStandardFactor").style.display = "none";
-               document.getElementById("plateEditStandardDilutionFactor").style.display = "none";
-               document.getElementById("plateEditStandardUnit").style.display = "none";
-               document.getElementById("plateEditStandardReplicates").style.display = "none";
-               document.getElementById("plateEditStandardIncreasingDecreasing").style.display = "none";
-               document.getElementById("plateEditStandardAssignment").style.display = "none";
-           }
-
-           // Protocol
-           if (data.hasProtocol) {
-               document.getElementById("protocolEditTitle").style.display = "block";
-           } else {
-               document.getElementById("protocolEditTitle").style.display = "none";
-           }
-
-           if (data.hasProtocol && data.protocol.hasProtocol) {
-               document.getElementById("protocolTitle").style.display = "block";
-               document.getElementById("protocolText").style.display = "block";
-           } else {
-               document.getElementById("protocolTitle").style.display = "none";
-               document.getElementById("protocolText").style.display = "none";
-           }
-
-           // Run
-           if (data.hasRun) {
-               document.getElementById("runTitle").style.display = "block";
-           } else {
-               document.getElementById("runTitle").style.display = "none";
-           }
-
-           if (data.hasRun && data.run.hasRunTime) {
-               document.getElementById("runTime").style.display = "block";
-               document.getElementById("runTimeText").style.display = "block";
-           } else {
-               document.getElementById("runTime").style.display = "none";
-               document.getElementById("runTimeText").style.display = "none";
-           }
-
-           if (data.hasRun && data.run.hasTemperatureCurve) {
-               document.getElementById("runTemperatureCurveTitle").style.display = "block";
-               document.getElementById("runTemperatureCurveIMG").style.display = "block";
-           } else {
-               document.getElementById("runTemperatureCurveTitle").style.display = "none";
-               document.getElementById("runTemperatureCurveIMG").style.display = "none";
-           }
-
-           // Quantification
-           if (data.hasAnalysis) {
-               document.getElementById("analysisTitle").style.display = "block";
-           } else {
-               document.getElementById("analysisTitle").style.display = "none";
-           }
-
-           if (data.hasAnalysis && data.analysis.hasQuantification) {
-               document.getElementById("analysisQuantification").style.display = "block";
-               document.getElementById("analysisAmplificationCurve-Cq").style.display = "block";
-               document.getElementById("analysisAmplificationCurve-CqIMG").style.display = "block";
-               document.getElementById("analysisAmplificationCurve-Clog").style.display = "block";
-               document.getElementById("analysisAmplificationCurve-ClogIMG").style.display = "block";
-           } else {
-               document.getElementById("analysisQuantification").style.display = "none";
-               document.getElementById("analysisAmplificationCurve-Cq").style.display = "none";
-               document.getElementById("analysisAmplificationCurve-CqIMG").style.display = "none";
-               document.getElementById("analysisAmplificationCurve-Clog").style.display = "none";
-               document.getElementById("analysisAmplificationCurve-ClogIMG").style.display = "none";
-           }
-
-           // 标准曲线
-           if (data.hasAnalysis && data.analysis.hasStandardCurve) {
-               document.getElementById("analysisStandardCurveTitle").style.display = "block";
-               document.getElementById("analysisStandardCurveIMG").style.display = "block";
-           } else {
-               document.getElementById("analysisStandardCurveTitle").style.display = "none";
-               document.getElementById("analysisStandardCurveIMG").style.display = "none";
-           }
-
-           if (data.hasAnalysis && data.analysis.hasQuantificationData) {
-               document.getElementById("analysisQuantificationDataTitle").style.display = "block";
-               document.getElementById("analysisQuantificationDataTable").style.display = "block";
-           } else {
-               document.getElementById("analysisQuantificationDataTitle").style.display = "none";
-               document.getElementById("analysisQuantificationDataTable").style.display = "none";
-           }
-
-           if (data.hasAnalysis && data.analysis.hasMelt) {
-               document.getElementById("analysisMeltCurve").style.display = "block";
-               document.getElementById("analysisPreCurve").style.display = "block";
-               document.getElementById("analysisPreCurveIMG").style.display = "block";
-               document.getElementById("analysisMeltPeak").style.display = "block";
-               document.getElementById("analysisMeltPeakIMG").style.display = "block";
-           } else {
-               document.getElementById("analysisMeltCurve").style.display = "none";
-               document.getElementById("analysisPreCurve").style.display = "none";
-               document.getElementById("analysisPreCurveIMG").style.display = "none";
-               document.getElementById("analysisMeltPeak").style.display = "none";
-               document.getElementById("analysisMeltPeakIMG").style.display = "none";
-           }
-
-           if (data.hasAnalysis && data.analysis.hasMeltData) {
-               document.getElementById("analysisMeltDataTitle").style.display = "block";
-               document.getElementById("analysisMeltDataTable").style.display = "block";
-           } else {
-               document.getElementById("analysisMeltDataTitle").style.display = "none";
-               document.getElementById("analysisMeltDataTable").style.display = "none";
-           }
-
-           if (document.getElementById("chk_analysis").checked && document.getElementById("chk_geneExpression").checked) {
-               document.getElementById("analysisGeneExpressionTitle").style.display = "block";
-               document.getElementById("analysisGeneExpressionBar").style.display = "block";
-               document.getElementById("analysisGeneExpressionBarIMG").style.display = "block";
-               document.getElementById("analysisGeneExpressionMode").style.display = "block";
-               document.getElementById("analysisGeneExpressionData").style.display = "block";
-               document.getElementById("analysisGeneExpressionDataTable").style.display = "block";
-           } else {
-               document.getElementById("analysisGeneExpressionTitle").style.display = "none";
-               document.getElementById("analysisGeneExpressionBar").style.display = "none";
-               document.getElementById("analysisGeneExpressionBarIMG").style.display = "none";
-               document.getElementById("analysisGeneExpressionMode").style.display = "none";
-               document.getElementById("analysisGeneExpressionData").style.display = "none";
-               document.getElementById("analysisGeneExpressionDataTable").style.display = "none";
-           }
-       }*/
-
-    /*
-        function insertText() {
-            let preBase = "data:image/png;base64,";
-            // Header
-            document.getElementById("title").innerText = data.header.title;
-            document.getElementById("subTitle").innerText = data.header.subTitle;
-            document.getElementById("head").src = data.header.imgLogo;
-
-            // Experiment
-            // Information
-            document.getElementById("docInformationName").innerText = data.experiment.information.name;
-            document.getElementById("docInformationBarcode").innerText = data.experiment.information.barcode;
-            document.getElementById("docInformationUserName").innerText = data.experiment.information.userName;
-            document.getElementById("docInformationInsName").innerText = data.experiment.information.instrumentName;
-            document.getElementById("docInformationBlockType").innerText = data.experiment.information.blockType;
-            // ExperimentSetting
-            document.getElementById("docExperimentSettingExperimentType").innerText = data.experiment.experimentSetting.experimentType;
-            document.getElementById("docExperimentSettingChemistry").innerText = data.experiment.experimentSetting.chemistry;
-            document.getElementById("docExperimentSettingRunMode").innerText = data.experiment.experimentSetting.runMode;
-            // ParameterSetting
-            document.getElementById("docParameterSettingReactionVolume").innerText = data.experiment.parameterSetting.reactionVolume;
-            document.getElementById("docParameterSettingLidHeatingSwitch").innerText = data.experiment.parameterSetting.lidHeatingSwitch;
-            document.getElementById("docParameterSettingCoverTemp").innerText = data.experiment.parameterSetting.coverTemp;
-            document.getElementById("docParameterSettingLidCloseTemp").innerText = data.experiment.parameterSetting.lidCloseTemp;
-            // Comments
-            document.getElementById("commentsIMG").src = preBase + data.experiment.imgLoadPreviewPlate;
-            // LoadPreview
-            document.getElementById("loadPreviewIMG").src = preBase + data.experiment.imgLoadPreviewProtocol;
-
-            // Plate edit
-            // Plate Edit
-            // 创建内容
-            for (let i = 0; i < data.plate.plateLayout.length; i++) {
-                //创建行tr
-                let tr = document.createElement('tr');
-                //将新创建的行tr添加给table
-                $('#plateEditTable').append(tr);
-                for (let k in data.plate.plateLayout[i]) {
-                    // 创建th元素
-                    let th = document.createElement('th');
-                    // 将每个对象中的属性值传给td
-                    th.innerText = data.plate.plateLayout[i][k];
-                    //给tr添加th子元素
-                    tr.appendChild(th);
-                }
-            }
-
-            // Task
-            document.getElementById("plateEditTaskText").innerHTML = data.plate.task.replace(/\n/g, "<br>");
-
-            // Target
-            // 创建标题
-            let targetHead_tr = document.createElement('tr');
-            $("#plateEditTargetTable").append(targetHead_tr);
-            for (let k in data.plate.target[0]) {
-                // 创建th元素
-                let th = document.createElement('th');
-                // 将每个对象中的属性值传给th
-                th.innerText = data.plate.target[0][k];
-                //给tr添加th子元素
-                targetHead_tr.appendChild(th);
-            }
-            // 创建内容
-            for (let i = 1; i < data.plate.target.length; i++) {
-                //创建行tr
-                let tr = document.createElement('tr');
-                //将新创建的行tr添加给tbody
-                $('#plateEditTargetTable').append(tr);
-                // 3、内层for循环，创建每一行中的所有单元格td，单元格td的数量与对象中的属性多少有关，故用for...in...
-                for (let k in data.plate.target[i]) {
-                    // 创建td元素
-                    let td = document.createElement('td');
-                    // 将每个对象中的属性值传给td
-                    td.innerText = data.plate.target[i][k];
-                    //给tr添加td子元素
-                    tr.appendChild(td);
-                }
-            }
-
-            // Split Plate
-            document.getElementById("plateEditSplitPlateText").innerText = data.plate.splitPlate;
-
-            // Sample
-            let sampleHead_tr = document.createElement('tr');
-            $('#plateEditSampleTable').append(sampleHead_tr);
-            for (let k in data.plate.sample[0]) {
-                let th = document.createElement('th');
-                th.innerText = data.plate.sample[0][k];
-                sampleHead_tr.appendChild(th);
-            }
-            for (let i = 1; i < data.plate.sample.length; i++) {
-                let tr = document.createElement('tr');
-                $('#plateEditSampleTable').append(tr);
-                for (let k in data.plate.sample[i]) {
-                    let td = document.createElement('td');
-                    td.innerText = data.plate.sample[i][k];
-                    tr.appendChild(td);
-                }
-            }
-
-            // Standard
-            document.getElementById("docPlateEditStandardSelectTarget").innerText = data.plate.standard.selectTarget;
-            document.getElementById("docPlateEditStandardStandardAmount").innerText = data.plate.standard.standardAmount;
-            document.getElementById("docPlateEditStandardStandardNumber").innerText = data.plate.standard.standardNumber;
-            document.getElementById("docPlateEditStandardFactor").innerText = data.plate.standard.factor;
-            document.getElementById("docPlateEditStandardDilutionFactor").innerText = data.plate.standard.dilutionFactor;
-            document.getElementById("standard_Unit").innerText = data.plate.standard.unit;
-            document.getElementById("docPlateEditStandardReplicates").innerText = data.plate.standard.replicates;
-            document.getElementById("docPlateEditStandardIncreasingDecreasing").innerText = data.plate.standard.increasing_decreasing;
-            document.getElementById("docPlateEditStandardAssignment").innerText = data.plate.standard.assignment;
-
-            // Protocol Edit
-            // Protocol
-            document.getElementById("protocolText").innerHTML = data.protocol.protocol.replace(/\n/g, "<br>");
-
-            // Run
-            // Run Time
-            document.getElementById("runTimeText").innerHTML = data.run.runTime.replace(/\n/g, "<br>");
-            document.getElementById("runTemperatureCurveIMG").src = preBase + data.run.imgTemperatureCurve;
-
-            // Analysis
-            // Quantification
-            document.getElementById("analysisAmplificationCurve-CqIMG").src = preBase + data.analysis.imgAmplificationCurve_cq;
-            document.getElementById("analysisAmplificationCurve-ClogIMG").src = preBase + data.analysis.imgAmplificationCurve_log;
-
-            // 标准曲线
-            document.getElementById("analysisStandardCurveIMG").src = preBase + data.analysis.imgStandardCurve;
-
-            // Quantification Data
-            let QD_tr = document.createElement('tr');
-            $('#analysisQuantificationDataTable').append(QD_tr);
-            for (let k in data.analysis.quantificationData[0]) {
-                let th = document.createElement('th');
-                th.innerText = data.analysis.quantificationData[0][k];
-                QD_tr.appendChild(th);
-            }
-            for (let i = 1; i < data.analysis.quantificationData.length; i++) {
-                let tr = document.createElement('tr');
-                $('#analysisQuantificationDataTable').append(tr);
-                for (let k in data.analysis.quantificationData[i]) {
-                    let td = document.createElement('td');
-                    td.innerText = data.analysis.quantificationData[i][k];
-                    tr.appendChild(td);
-                }
-            }
-
-            // Melt Curve
-            document.getElementById("analysisPreCurveIMG").src = preBase + data.analysis.imgMeltCurve;
-            document.getElementById("analysisMeltPeakIMG").src = preBase + data.analysis.imgMeltPeak;
-
-            // Melt Data
-            let MT_tr = document.createElement('tr');
-            $('#analysisMeltDataTable').append(MT_tr);
-            for (let k in data.analysis.meltData[0]) {
-                let th = document.createElement('th');
-                th.innerText = data.analysis.meltData[0][k];
-                MT_tr.appendChild(th);
-            }
-            for (let i = 1; i < data.analysis.meltData.length; i++) {
-                let tr = document.createElement('tr');
-                $('#analysisMeltDataTable').append(tr);
-                for (let k in data.analysis.meltData[i]) {
-                    let td = document.createElement('td');
-                    td.innerText = data.analysis.meltData[i][k];
-                    tr.appendChild(td);
-                }
-            }
-
-            // Gene expression
-            document.getElementById("analysisGeneExpressionBarIMG").src = preBase + data.analysis.imgGeneExpressionBar;
-            document.getElementById("geneExpressionMode").innerText = data.analysis.geneExpressionMode;
-            let GE_tr = document.createElement('tr');
-            $('#analysisGeneExpressionDataTable').append(GE_tr);
-            for (let k in data.analysis.geneExpressionData[0]) {
-                let th = document.createElement('th');
-                th.innerText = data.analysis.geneExpressionData[0][k];
-                GE_tr.appendChild(th);
-            }
-            for (let i = 1; i < data.analysis.geneExpressionData.length; i++) {
-                let tr = document.createElement('tr');
-                $('#analysisGeneExpressionDataTable').append(tr);
-                for (let k in data.analysis.geneExpressionData[i]) {
-                    let td = document.createElement('td');
-                    td.innerText = data.analysis.geneExpressionData[i][k];
-                    tr.appendChild(td);
-                }
-            }
-        }
-    */
-
-    /*function adjust() {
-        let h = 0, margin = 30, pageHeight = 928, htmlList = [""];
-        $("#container > article > p, #container > article > img, #container > article > table, #container > article > div").each(function () {
-                let $this = $(this);
-                let outerHTML = this.outerHTML; // 当前元素的 html 字符串
-                if (this.style.display === "none") {
-                    htmlList[htmlList.length - 1] += outerHTML; // 如果隐藏直接塞进去
-                } else {
-                    if (this.tagName.toLowerCase() === "table") { // 如果是 table 标签
-                        let tablePre = this.outerHTML.split(">")[0];// 获取table的ID
-                        $this.find("tr").each(function () { // 对每个 tr 遍历
-                            let $this = $(this);
-                            let outerHTML = this.outerHTML;
-                            let height = $this.outerHeight();   // tr 高度
-                            if (h + height > pageHeight) {  // 超出一页
-                                if ($this.index() !== 0) htmlList[htmlList.length - 1] += "</table>";// 如果不是第一个 tr，则给上一个封底
-                                htmlList[htmlList.length] = tablePre + ">" + outerHTML; // 起新的一页，封顶，不写 thead 和 tbody，让浏览器自行处理
-                                h = height;  // 重置高度
-                            } else {    // 没超出一页
-                                h += height;    // 对计算高度累加
-                                if ($this.index() === 0) htmlList[htmlList.length - 1] += tablePre + ">";// 如果是第一个 tr，则先封顶
-                                htmlList[htmlList.length - 1] += outerHTML; // 将 tr 塞进去
-                            }
-                        });
-                        htmlList[htmlList.length - 1] += "</table>"; // 封底
-                    } else {    // 非 table 标签
-                        let height = $this.outerHeight() + margin;  // 计算高度，height + padding + margin
-                        if (h + height > pageHeight) {  // 超出一页
-                            htmlList[htmlList.length] = outerHTML;  // 起新的一页，直接塞进去
-                            h = height; // 重置高度
-                        } else {    // 未超出一页
-                            h += height;    // 对计算高度累加
-                            htmlList[htmlList.length - 1] += outerHTML; // 直接塞进去
-                        }
-                    }
-                }
-            }
-        );
-        $("#container").html(htmlList.map(html => `<article>${html}</article>`).join(""));
-    }
-
-*/
 });
 
 
