@@ -954,6 +954,10 @@ class DocTool {
             className: "",
             multipleLine: true,
             multipleLineSplitSymbol: "\n",
+            centerCol: [],   // 指定的某几行
+            centerColStyle: {},     // 指定的某几行样式
+            centerRow: [],   // 指定的某几列
+            centerRowStyle: {},     // 指定的某几列样式
             topHeadNum: 0,
             topHeadStyle: {},
             leftHeadNum: 0,
@@ -976,9 +980,20 @@ class DocTool {
             contentStyleString += defaultProp.contentStyle[key] + ";";
         }
         let $new = $(`<table class="${defaultProp.className}" style="${contentStyleString}"></table>`);    // 创建完整的表格
+        let colNum = 0;     // 行样式数
         for (let i = 0; i < table.length; i++) {
+            let rowNum = 0;     // 列样式数
             let $tr = $(`<tr></tr>`);
             let flag = defaultProp.topHeadNum;
+            // centerCol
+            if (colNum < defaultProp.centerCol.length && i === (defaultProp.centerCol[colNum] - 1)) {
+                colNum++;
+                let centerColString = "";
+                for (let key of Object.keys(defaultProp.centerColStyle)) {
+                    centerColString += defaultProp.centerColStyle[key] + ";";
+                }
+                $tr = $(`<tr style="${centerColString}"></tr>`);
+            }
             // topHeadStyle
             if (defaultProp.topHeadNum > 0) {
                 let topHeadStyleString = "";
@@ -1003,6 +1018,15 @@ class DocTool {
                     let arr = this.splitTableText(table[i][j], defaultProp.multipleLineSplitSymbol);
                     if (this.judge(table[i][j], defaultProp.multipleLineSplitSymbol) > 0) {  // 表格内容中此单元格含有分割符
                         let $td = $(`<td></td>`);
+                        // centerRow
+                        if (j === (defaultProp.centerRow[rowNum] - 1)) {
+                            rowNum++;
+                            let centerRowString = "";
+                            for (let key of Object.keys(defaultProp.centerRowStyle)) {
+                                centerRowString += defaultProp.centerRowStyle[key] + ";";
+                            }
+                            $td = $(`<td style="${centerRowString}"></td>`);
+                        }
                         //  leftHeadStyle
                         if (defaultProp.leftHeadNum > 0 && j < defaultProp.leftHeadNum) {
                             let leftHeadStyleString = "";
@@ -1027,6 +1051,15 @@ class DocTool {
                         $tr.append($td);
                     } else {    //  表格内容中此单元格不含分割符
                         let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
+                        // centerRow
+                        if (j === (defaultProp.centerRow[rowNum] - 1)) {
+                            rowNum++;
+                            let centerRowString = "";
+                            for (let key of Object.keys(defaultProp.centerRowStyle)) {
+                                centerRowString += defaultProp.centerRowStyle[key] + ";";
+                            }
+                            $td = $(`<td style="${centerRowString}">${DocTool.htmlEncode(table[i][j])}</td>`);
+                        }
                         //  leftHeadStyle
                         if (defaultProp.leftHeadNum > 0 && j < defaultProp.leftHeadNum) {
                             let leftHeadStyleString = "";
@@ -1050,6 +1083,15 @@ class DocTool {
             } else {    // 表格内容不需要分割
                 for (let j = 0; j < table[i].length; j++) {
                     let $td = $(`<td>${DocTool.htmlEncode(table[i][j])}</td>`);
+                    // centerRow
+                    if (j === (defaultProp.centerRow[rowNum] - 1)) {
+                        rowNum++;
+                        let centerRowString = "";
+                        for (let key of Object.keys(defaultProp.centerRowStyle)) {
+                            centerRowString += defaultProp.centerRowStyle[key] + ";";
+                        }
+                        $td = $(`<td style="${centerRowString}">${DocTool.htmlEncode(table[i][j])}</td>`);
+                    }
                     //  leftHeadStyle
                     if (defaultProp.leftHeadNum > 0 && j < defaultProp.leftHeadNum) {
                         let leftHeadStyleString = "";
